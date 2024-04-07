@@ -1,0 +1,8 @@
+/node_modules
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+/docs/.vitepress/dist
+yarn.lock
+/docs/.vitepress/cache

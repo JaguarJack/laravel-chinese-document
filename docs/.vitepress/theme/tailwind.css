@@ -1,0 +1,33 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.VPSidebar {
+  .items {
+    @apply border-l border-[#e2e2e3] dark:border-gray-900 grid gap-y-3;
+
+    .is-active {
+      @apply border-l-2 border-indigo-600;
+    }
+    .item {
+      @apply h-6 pl-4;
+    }
+  }
+}
+
+.dark {
+  .VPSidebar {
+    .items {
+      @apply grid border-l border-gray-800 gap-y-3;
+
+      .is-active {
+        @apply border-l-2 border-indigo-400;
+      }
+      .item {
+        @apply h-6 pl-4;
+      }
+    }
+  }
+}
