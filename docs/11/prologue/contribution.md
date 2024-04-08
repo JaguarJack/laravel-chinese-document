@@ -1,15 +1,6 @@
 # 贡献指南
 
-- [Bug 报告](#bug-reports)
-- [支持问题](#support-questions)
-- [核心开发讨论](#core-development-discussion)
-- [选择哪个分支？](#which-branch)
-- [编译后的资源](#compiled-assets)
-- [安全漏洞](#security-vulnerabilities)
-- [编码风格](#coding-style)
-  - [PHPDoc](#phpdoc)
-  - [StyleCI](#styleci)
-- [行为守则](#code-of-conduct)
+[[toc]]
 
 ## Bug 报告
 
