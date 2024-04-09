@@ -14,9 +14,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {
-        text: '版本',
+        text: '11.x',
         items: [
-          { text: '11', link: '/docs/11/prologue/release' }
+          { text: '11.x', link: '/docs/11/prologue/release' }
           // 添加其他版本链接...
         ]
       }
