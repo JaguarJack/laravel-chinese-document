@@ -554,7 +554,7 @@ class ServerCreated implements ShouldBroadcast, ShouldDispatchAfterCommit
 ```
 
 > [!NOTE]
-> 更多关于应对这些问题的方法，请查看有关[队列工作和数据库事务](/docs/{{version}}/queues#jobs-and-database-transactions)的文档。
+> 更多关于应对这些问题的方法，请查看有关[队列工作和数据库事务](/docs/11/digging-deeper/queues#jobs-and-database-transactions)的文档。
 
 ## 授权频道
 
@@ -586,7 +586,7 @@ php artisan channel:list
 
 #### 授权回调模型绑定
 
-就像 HTTP 路由一样，通道路由也可以利用隐式和显式[路由模型绑定](/docs/{{version}}/routing#route-model-binding)。例如，你可以请求一个实际的 `Order` 模型实例，而不是接收一个字符串或数字的订单 ID：
+就像 HTTP 路由一样，通道路由也可以利用隐式和显式[路由模型绑定](/docs/11/basics/routing#route-model-binding)。例如，你可以请求一个实际的 `Order` 模型实例，而不是接收一个字符串或数字的订单 ID：
 
 ```php
 use App\Models\Order;
@@ -598,7 +598,7 @@ Broadcast::channel('orders.{order}', function (User $user, Order $order) {
 ```
 
 > [!WARNING]  
-> 不同于 HTTP 路由模型绑定，通道模型绑定不支持自动[隐式模型绑定作用域](/docs/{{version}}/routing#implicit-model-binding-scoping)。然而，这通常不是问题，因为大多数通道可以基于单个模型的唯一主键进行作用域限定。
+> 不同于 HTTP 路由模型绑定，通道模型绑定不支持自动[隐式模型绑定作用域](/docs/11/basics/routing#implicit-model-binding-scoping)。然而，这通常不是问题，因为大多数通道可以基于单个模型的唯一主键进行作用域限定。
 
 #### 授权回调验证
 
@@ -657,7 +657,7 @@ class OrderChannel
 ```
 
 > [!NOTE]  
-> 像 Laravel 中的许多其他类一样，频道类会被 [服务容器](/docs/{{version}}/container)自动解析。所以，你可以在其构造函数中对频道所需的任何依赖进行类型提示。
+> 像 Laravel 中的许多其他类一样，频道类会被 [服务容器](/docs/11/architecture-concepts/container)自动解析。所以，你可以在其构造函数中对频道所需的任何依赖进行类型提示。
 
 ## 广播事件
 
@@ -886,7 +886,7 @@ Echo.join(`chat.${roomId}`)
 > [!WARNING]  
 > 在阅读以下关于模型广播的文档之前，我们建议您熟悉 Laravel 的模型广播服务的一般概念以及如何手动创建和监听广播事件。
 
-当您的应用程序的 [Eloquent models](/docs/{{version}}/eloquent) 创建、更新或删除时，广播事件是常见的。当然，这可以通过手动[为 Eloquent 模型状态变更定义自定义事件](/docs/{{version}}/eloquent#events)并标记这些事件以 `ShouldBroadcast` 接口来轻松实现。
+当您的应用程序的 [Eloquent models](/docs/11/database/eloquent) 创建、更新或删除时，广播事件是常见的。当然，这可以通过手动[为 Eloquent 模型状态变更定义自定义事件](/docs/11/database/eloquent#events)并标记这些事件以 `ShouldBroadcast` 接口来轻松实现。
 
 然而，如果您在应用程序中没有为了其他目的使用这些事件，那么为了仅仅广播它们而创建事件类可能会很麻烦。为了解决这个问题，Laravel 允许您表明一个 Eloquent 模型应自动广播其状态变更。
 
@@ -1088,7 +1088,7 @@ Echo.private(`chat.${roomId}`).listenForWhisper('typing', (e) => {
 
 ## 通知
 
-通过配对事件广播和[通知](/docs/{{version}}/notifications)，你的 JavaScript 应用在通知发生时可以收到新的通知，而无需刷新页面。在开始之前，请务必阅读了解如何使用[broadcast 通知频道](/docs/{{version}}/notifications#broadcast-notifications)。
+通过配对事件广播和[通知](/docs/11/digging-deeper/notifications)，你的 JavaScript 应用在通知发生时可以收到新的通知，而无需刷新页面。在开始之前，请务必阅读了解如何使用[broadcast 通知频道](/docs/11/digging-deeper/notifications#broadcast-notifications)。
 
 一旦你配置一个通知使用 broadcast 频道，你就可以使用 Echo 的 `notification` 方法来监听广播的事件了。请注意，频道名应该匹配接收通告的实体的类名：
 
