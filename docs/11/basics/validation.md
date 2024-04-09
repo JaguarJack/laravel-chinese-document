@@ -313,7 +313,7 @@ public function store(StorePostRequest $request): RedirectResponse
 如果验证失败，将生成一个重定向响应，将用户发送回他们之前的位置。错误也将闪存到会话中，以便展示。如果请求是 XHR 请求，将返回一个包括 [验证错误的 JSON 表示形式](#validation-error-response-format) 的 422 状态码的 HTTP 响应。
 
 > [!NOTE]
-> 需要为你的 Inertia 驱动的 Laravel 前端添加实时表单请求验证吗？查看 [Laravel Precognition](/docs/11/precognition)。
+> 需要为你的 Inertia 驱动的 Laravel 前端添加实时表单请求验证吗？查看 [Laravel Precognition](/docs/11/oackages/precognition)。
 
 #### 执行额外的验证
 

@@ -94,7 +94,7 @@ Laravel 插件还支持多个入口点和高级配置选项，例如 [SSR 入口
 
 如果你的本地开发 Web 服务器通过 HTTPS 提供应用程序，你可能会遇到连接到 Vite 开发服务器的问题。
 
-如果你正在使用 [Laravel Herd](https://herd.laravel.com) 并且已经对站点进行了加密，或者你正在使用 [Laravel Valet](/docs/11/packages//docs/11/valet) 并且已经对你的应用程序运行了 [secure 命令](/docs/11/packages//docs/11/valet#securing-sites)，Laravel Vite 插件会自动检测并使用为你生成的 TLS 证书。
+如果你正在使用 [Laravel Herd](https://herd.laravel.com) 并且已经对站点进行了加密，或者你正在使用 [Laravel Valet](/docs/11/packages/valet) 并且已经对你的应用程序运行了 [secure 命令](/docs/11/packages/valet#securing-sites)，Laravel Vite 插件会自动检测并使用为你生成的 TLS 证书。
 
 如果你使用不匹配应用程序目录名称的主机对站点进行了加密，你可以在应用程序的 `vite.config.js` 文件中手动指定主机：
 

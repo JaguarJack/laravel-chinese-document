@@ -59,7 +59,7 @@ cd example-app
 php artisan serve
 ```
 
-启动 Artisan 开发服务器后，您的应用程序将在 Web 浏览器中通过 http://localhost:8000 访问。接下来，您已准备好[开始进入 Laravel 生态系统的下一步](#next-steps)。当然，您可能还想要[配置数据库](#databases-and-migrations)。
+启动 Artisan 开发服务器后，您的应用程序将在 Web 浏览器中通过 `http://localhost:8000` 访问。接下来，您已准备好[开始进入 Laravel 生态系统的下一步](#next-steps)。当然，您可能还想要[配置数据库](#databases-and-migrations)。
 
 > [!NOTE]
 > 如果您希望在开发 Laravel 应用程序时获得一个良好的开端，可以考虑使用我们的[启动套件之一](/docs/11/getting-started/starter-kits)。Laravel 的启动套件为您的新 Laravel 应用程序提供了后端和前端认证脚手架。

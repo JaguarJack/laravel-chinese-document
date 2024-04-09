@@ -66,7 +66,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 `web.php` 文件包含 Laravel 放置在 `web` 中间件组中的路由，该组提供会话状态、CSRF 保护和 cookie 加密。如果您的应用程序不提供无状态的、RESTful API，则您的所有路由很可能都将在 `web.php` 文件中定义。
 
-`console.php` 文件是您可以定义所有基于闭包的控制台命令的地方。每个闭包都绑定到一个命令实例，允许简单地与每个命令的 IO 方法进行交互。尽管此文件不定义 HTTP 路由，它定义了基于控制台的应用程序入口点（路由）。您还可以在 `console.php` 文件中[安排](/docs/11/scheduling)任务。
+`console.php` 文件是您可以定义所有基于闭包的控制台命令的地方。每个闭包都绑定到一个命令实例，允许简单地与每个命令的 IO 方法进行交互。尽管此文件不定义 HTTP 路由，它定义了基于控制台的应用程序入口点（路由）。您还可以在 `console.php` 文件中[安排](/docs/11/digging-deeper/scheduling)任务。
 
 如果需要，您可以通过 `install:api` 和 `install:broadcasting` Artisan 命令安装额外的 API 路由（`api.php`）和广播频道（`channels.php`）文件。
 
