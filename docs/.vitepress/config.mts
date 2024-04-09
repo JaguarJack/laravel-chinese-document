@@ -9,6 +9,7 @@ export default defineConfig({
   rewrites: {
     '11/(.*)': 'docs/11/(.*)'
   },
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
