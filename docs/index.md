@@ -5,14 +5,17 @@ layout: home
 hero:
   name: 'Laravel 中文文档'
   text: 'Laravel 中文文档站点'
-  tagline: My great project tagline
+  tagline: The PHP Framework for Web Artisans
+  image:
+    src: /laravel.jpg
+    alt: Laravel 中文文档
   actions:
     - theme: brand
-      text: 介绍
-      link: /markdown-examples
+      text: 安装
+      link: /docs/11/getting-started/installation
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 发布说明
+      link: /docs/11/prologue/release
 
 features:
   - title: Feature A
