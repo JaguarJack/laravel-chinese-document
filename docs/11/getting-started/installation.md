@@ -263,7 +263,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 - [目录结构](/docs/11/structure)
 - [前端](/docs/11/frontend)
 - [服务容器](/docs/11/architecture-concepts/container)
-- [Facades](/docs/11/basics/facades)
+- [Facades](/docs/11/architecture-concepts/facades)
 
 您想要如何使用 Laravel 也将决定您旅程的下一步。Laravel 有多种使用方式，我们将探讨框架的两个主要用例。
 

@@ -508,7 +508,7 @@ Laravel 允许您在下一个请求期间保留一个请求的输入。当在检
 
 #### 将输入闪存到 Session
 
-`Illuminate\Http\Request` 类上的 `flash` 方法将当前输入闪存到 [session](/docs/11/basic/session) 中，以便它在用户下一次对应用程序的请求中可用：
+`Illuminate\Http\Request` 类上的 `flash` 方法将当前输入闪存到 [session](/docs/11/basics/session) 中，以便它在用户下一次对应用程序的请求中可用：
 
 ```php
 $request->flash();
@@ -538,7 +538,7 @@ return redirect('form')->withInput(
 
 #### 检索旧输入
 
-要从前一个请求中检索闪存的输入，可以在 `Illuminate\Http\Request` 实例上调用 `old` 方法。`old` 方法将从 [session](/docs/11/basic/session) 中拉取先前闪存的输入数据：
+要从前一个请求中检索闪存的输入，可以在 `Illuminate\Http\Request` 实例上调用 `old` 方法。`old` 方法将从 [session](/docs/11/basics/session) 中拉取先前闪存的输入数据：
 
 ```php
 $username = $request->old('username');

@@ -35,7 +35,7 @@ echo url()->full();
 echo url()->previous();
 ```
 
-这些方法也可以通过 `URL` [facade](/docs/11/basics/facades) 访问：
+这些方法也可以通过 `URL` [facade](/docs/11/architecture-concepts/facades) 访问：
 
 ```php
 use Illuminate\Support\Facades\URL;

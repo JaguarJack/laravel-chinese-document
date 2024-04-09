@@ -160,7 +160,7 @@ Route::get('/dashboard', function () {
 });
 ```
 
-有时你可能希望将用户重定向到他们之前的位置，例如当提交的表单无效时。你可以通过使用全局的 `back` 辅助函数来这样做。由于该功能利用了 [会话](/docs/11/basic/session)，请确保调用 `back` 函数的路由正在使用 `web` 中间件组：
+有时你可能希望将用户重定向到他们之前的位置，例如当提交的表单无效时。你可以通过使用全局的 `back` 辅助函数来这样做。由于该功能利用了 [会话](/docs/11/basics/session)，请确保调用 `back` 函数的路由正在使用 `web` 中间件组：
 
 ```php
 Route::post('/user/profile', function () {
@@ -236,7 +236,7 @@ return redirect()->away('https://www.google.com');
 
 ### 带闪存会话数据的重定向
 
-重定向到新 URL 并[将数据闪存到会话](/docs/11/basic/session#flash-data)通常是同时进行的。通常，这在成功执行操作后完成，当你将成功信息闪存到会话中。为了方便起见，你可以创建一个 `RedirectResponse` 实例并在单个流畅的方法链中将数据闪存到会话：
+重定向到新 URL 并[将数据闪存到会话](/docs/11/basics/session#flash-data)通常是同时进行的。通常，这在成功执行操作后完成，当你将成功信息闪存到会话中。为了方便起见，你可以创建一个 `RedirectResponse` 实例并在单个流畅的方法链中将数据闪存到会话：
 
 ```php
 Route::post('/user/profile', function () {
@@ -246,7 +246,7 @@ Route::post('/user/profile', function () {
 });
 ```
 
-用户被重定向后，你可以从 [会话](/docs/11/basic/session) 中显示闪存的消息。例如，使用 [Blade 语法](/docs/11/basics/blade)：
+用户被重定向后，你可以从 [会话](/docs/11/basics/session) 中显示闪存的消息。例如，使用 [Blade 语法](/docs/11/basics/blade)：
 
 ```php
 @if (session('status'))

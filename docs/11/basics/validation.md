@@ -143,7 +143,7 @@ $request->validate([
 
 ### 显示验证错误
 
-那么，如果传入的请求字段没有通过给定的验证规则会怎样呢？如前所述，Laravel 将自动将用户重定向回他们之前的位置。此外，验证错误和[请求输入](/docs/11/basics/requests#retrieving-old-input)将自动被[闪存到会话](/docs/11/basic/session#flash-data)中。
+那么，如果传入的请求字段没有通过给定的验证规则会怎样呢？如前所述，Laravel 将自动将用户重定向回他们之前的位置。此外，验证错误和[请求输入](/docs/11/basics/requests#retrieving-old-input)将自动被[闪存到会话](/docs/11/basics/session#flash-data)中。
 
 `Illuminate\View\Middleware\ShareErrorsFromSession` 中间件（由 `web` 中间件组提供）将一个 `$errors` 变量共享给你的应用程序的所有视图。当这个中间件被应用时，一个 `$errors` 变量将始终在你的视图中可用，允许你便捷地假设 `$errors` 变量总是被定义并且可以安全使用。`$errors` 变量将是 `Illuminate\Support\MessageBag` 的一个实例。有关使用这个对象的更多信息，[请查看它的文档](#working-with-error-messages)。
 
@@ -209,9 +209,9 @@ Laravel 内置的每个验证规则都有一个错误消息，位于你的应用
 
 ### 重新填充表单
 
-当 Laravel 因验证错误而生成重定向响应时，框架将自动 [将所有请求的输入数据闪存到会话中](/docs/11/basic/session#flash-data)。这样做是为了方便你在下一个请求期间访问输入数据，并重新填充用户尝试提交的表单。
+当 Laravel 因验证错误而生成重定向响应时，框架将自动 [将所有请求的输入数据闪存到会话中](/docs/11/basics/session#flash-data)。这样做是为了方便你在下一个请求期间访问输入数据，并重新填充用户尝试提交的表单。
 
-要从上一个请求中检索闪存的输入，调用 `Illuminate\Http\Request` 实例上的 `old` 方法。`old` 方法将从 [会话](/docs/11/basic/session) 中提取之前闪存的输入数据：
+要从上一个请求中检索闪存的输入，调用 `Illuminate\Http\Request` 实例上的 `old` 方法。`old` 方法将从 [会话](/docs/11/basics/session) 中提取之前闪存的输入数据：
 
 ```php
 $title = $request->old('title');
@@ -517,7 +517,7 @@ protected function passedValidation(): void
 
 ## 手动创建验证器
 
-如果你不想在请求上使用 `validate` 方法，你可以使用 `Validator` [facade](/docs/11/basics/facades) 手动创建一个验证器实例。facade 上的 `make` 方法生成一个新的验证器实例：
+如果你不想在请求上使用 `validate` 方法，你可以使用 `Validator` [facade](/docs/11/architecture-concepts/facades) 手动创建一个验证器实例。facade 上的 `make` 方法生成一个新的验证器实例：
 
 ```php
 <?php

@@ -84,7 +84,7 @@ APP_NAME="我的应用"
 
 ## 确定当前环境
 
-当前应用环境是通过 `.env` 文件中的 `APP_ENV` 变量确定的。您可以通过 `App` [facade](/docs/11/basics/facades) 上的 `environment` 方法访问此值：
+当前应用环境是通过 `.env` 文件中的 `APP_ENV` 变量确定的。您可以通过 `App` [facade](/docs/11/architecture-concepts/facades) 上的 `environment` 方法访问此值：
 
 ```php
 use Illuminate\Support\Facades\App;

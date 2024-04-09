@@ -253,7 +253,7 @@ Laravel 应用程序框架的最新版本包含了一个 `Js` facade，它在你
 
 #### 会话指令
 
-`@session` 指令可用于确定是否存在[会话](/docs/11/basic/session)值。如果会话值存在，`@session` 和 `@endsession` 指令内的模板内容将被执行。在 `@session` 指令的内容中，你可以回显 `$value` 变量来显示会话的值：
+`@session` 指令可用于确定是否存在[会话](/docs/11/basics/session)值。如果会话值存在，`@session` 和 `@endsession` 指令内的模板内容将被执行。在 `@session` 指令的内容中，你可以回显 `$value` 变量来显示会话的值：
 
 ```blade
 @session('status')

@@ -309,7 +309,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
 
 ### 注册驱动
 
-一旦你的驱动实现完成，你就可以注册它到 Laravel 了。要向 Laravel 的会话后端添加额外的驱动，你可以使用 `Session` [facade](/docs/11/basics/facades) 提供的 `extend` 方法。你应该在 [服务提供者](/docs/11/architecture-concepts/providers) 的 `boot` 方法中调用 `extend` 方法。你可以在现有的 `App\Providers\AppServiceProvider` 中做这个操作，或者创建一个全新的提供者：
+一旦你的驱动实现完成，你就可以注册它到 Laravel 了。要向 Laravel 的会话后端添加额外的驱动，你可以使用 `Session` [facade](/docs/11/architecture-concepts/facades) 提供的 `extend` 方法。你应该在 [服务提供者](/docs/11/architecture-concepts/providers) 的 `boot` 方法中调用 `extend` 方法。你可以在现有的 `App\Providers\AppServiceProvider` 中做这个操作，或者创建一个全新的提供者：
 
 ```php
 <?php

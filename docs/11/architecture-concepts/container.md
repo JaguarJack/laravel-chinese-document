@@ -76,7 +76,7 @@ Route::get('/', function (Request $request) {
 });
 ```
 
-在许多情况下，由于自动依赖注入和[门面](/docs/11/basics/facades)，您可以在**从未**手动绑定或从容器解析任何东西的情况下构建 Laravel 应用程序。**那么，您什么时候会手动与容器交互呢？** 让我们看看两种情况。
+在许多情况下，由于自动依赖注入和[门面](/docs/11/architecture-concepts/facades)，您可以在**从未**手动绑定或从容器解析任何东西的情况下构建 Laravel 应用程序。**那么，您什么时候会手动与容器交互呢？** 让我们看看两种情况。
 
 首先，如果您编写了一个实现接口的类，并且希望在路由或类构造函数中类型提示该接口，您必须[告诉容器如何解析该接口](#binding-interfaces-to-implementations)。其次，如果您[编写 Laravel 包](/docs/11/packages)并计划与其他 Laravel 开发者共享，您可能需要将包的服务绑定到容器中。
 
@@ -102,7 +102,7 @@ $this->app->bind(Transistor::class, function (Application $app) {
 
 请注意，我们接收到容器本身作为解析器的参数。然后我们可以使用容器来解析我们正在构建的对象的子依赖。
 
-如前所述，您通常会在服务提供者中与容器交互；然而，如果您希望在服务提供者之外的代码位置与容器交互，您可以通过 `App` [门面](/docs/11/basics/facades)进行：
+如前所述，您通常会在服务提供者中与容器交互；然而，如果您希望在服务提供者之外的代码位置与容器交互，您可以通过 `App` [门面](/docs/11/architecture-concepts/facades)进行：
 
 ```php
 use App\Services\Transistor;
@@ -355,7 +355,7 @@ if ($this->app->bound(Transistor::class)) {
 }
 ```
 
-如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/11/basics/facades) 或 `app` [助手](/docs/11/digging-deeper/reverb#method-app) 从容器中解析类实例：
+如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/11/architecture-concepts/facades) 或 `app` [助手](/docs/11/digging-deeper/reverb#method-app) 从容器中解析类实例：
 
 ```php
 use App\Services\Transistor;
