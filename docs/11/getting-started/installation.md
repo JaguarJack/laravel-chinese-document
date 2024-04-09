@@ -96,7 +96,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-如果您选择使用 SQLite 以外的数据库，您将需要创建数据库并运行应用程序的[数据库迁移](/docs/11/migrations)：
+如果您选择使用 SQLite 以外的数据库，您将需要创建数据库并运行应用程序的[数据库迁移](/docs/11/database/migrations)：
 
 ```shell
 php artisan migrate
@@ -140,7 +140,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/database/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -176,7 +176,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/database/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -221,7 +221,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/database/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -258,7 +258,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 
 现在您已经创建了您的 Laravel 项目，您可能想知道接下来学习什么。首先，我们强烈建议通过阅读以下文档来熟悉 Laravel 的工作方式：
 
-- [请求生命周期](/docs/11/lifecycle)
+- [请求生命周期](/docs/11/architecture-concepts/lifecycle)
 - [配置](/docs/11/configuration)
 - [目录结构](/docs/11/structure)
 - [前端](/docs/11/frontend)

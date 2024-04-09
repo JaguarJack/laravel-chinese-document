@@ -330,7 +330,7 @@ $name = $request->input('user.name');
 
 #### 检索 Stringable 输入值
 
-你可以使用 `string` 方法而不是将请求输入数据作为原始 `string` 来检索，以将请求数据作为 [`Illuminate\Support\Stringable`](/docs/11/digging-deeper/reverb#fluent-strings) 实例检索：
+你可以使用 `string` 方法而不是将请求输入数据作为原始 `string` 来检索，以将请求数据作为 [`Illuminate\Support\Stringable`](/docs/11/packages/reverb#fluent-strings) 实例检索：
 
 ```php
 $name = $request->string('name')->trim();

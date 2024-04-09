@@ -316,7 +316,7 @@ public function report(): bool
 ```
 
 > 注意：
-> 您可以为 `report` 方法的任何所需依赖类型提示，并且 Laravel 的[服务容器](/docs/{{version}}/container)将自动将它们注入到方法中。
+> 您可以为 `report` 方法的任何所需依赖类型提示，并且 Laravel 的[服务容器](/docs/11/architecture-concepts/container)将自动将它们注入到方法中。
 
 ### 节流报告的异常
 

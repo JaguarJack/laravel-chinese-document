@@ -151,7 +151,7 @@ Log::emergency('The system is down!');
 
 ## 写入日志消息
 
-您可以使用 `Log` [facade（门面）](/docs/{{version}}/facades) 将信息写入日志。如前所述，记录器提供了 [RFC 5424 规范](https://tools.ietf.org/html/rfc5424) 中定义的八个日志等级：**emergency（紧急）**、**alert（警告）**、**critical（关键）**、**error（错误）**、**warning（警告）**、**notice（通知）**、**info（信息）** 和 **debug（调试）**：
+您可以使用 `Log` [facade（门面）](/docs/11/architecture-concepts/facades) 将信息写入日志。如前所述，记录器提供了 [RFC 5424 规范](https://tools.ietf.org/html/rfc5424) 中定义的八个日志等级：**emergency（紧急）**、**alert（警告）**、**critical（关键）**、**error（错误）**、**warning（警告）**、**notice（通知）**、**info（信息）** 和 **debug（调试）**：
 
 ```php
 use Illuminate\Support\Facades\Log;
@@ -275,7 +275,7 @@ class AssignRequestId
 ```
 
 > 注意：
-> 如果您需要在处理队列作业时共享日志上下文，您可以使用[作业中间件](/docs/{{version}}/queues#job-middleware)。
+> 如果您需要在处理队列作业时共享日志上下文，您可以使用[作业中间件](/docs/11/queues#job-middleware)。
 
 ### 写入特定渠道
 
@@ -364,7 +364,7 @@ class CustomizeFormatter
 ```
 
 > 注意：
-> 您的所有 "tap" 类都是由[服务容器](/docs/{{version}}/container)解析的，因此它们所需的任何构造函数依赖关系都会自动被注入。
+> 您的所有 "tap" 类都是由[服务容器](/docs/11/architecture-concepts/container)解析的，因此它们所需的任何构造函数依赖关系都会自动被注入。
 
 ### 创建 Monolog 处理器渠道
 

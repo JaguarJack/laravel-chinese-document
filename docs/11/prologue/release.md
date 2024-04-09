@@ -287,7 +287,7 @@ random(); // 123 (cached result)
 random(); // 123 (cached result)
 ```
 
-有关 `once` 辅助函数的更多信息，请查看[帮助文档](/docs/11/digging-deeper/reverb#method-once)。
+有关 `once` 辅助函数的更多信息，请查看[帮助文档](/docs/11/packages/reverb#method-once)。
 
 ### 使用内存数据库进行测试的性能改进
 

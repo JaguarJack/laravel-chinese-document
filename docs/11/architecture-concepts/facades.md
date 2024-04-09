@@ -29,7 +29,7 @@ Route::get('/cache', function () {
 
 #### 助手函数
 
-为了补充门面，Laravel 提供了各种全局 "助手函数"，使与常见的 Laravel 特性交互变得更加简单。您可能会与一些常见的助手函数进行交互，如 `view`、`response`、`url`、`config` 等。每个 Laravel 提供的助手函数都有其相应特性的文档；然而，您可以在专门的 [助手文档](/docs/11/digging-deeper/reverb) 中找到完整的列表。
+为了补充门面，Laravel 提供了各种全局 "助手函数"，使与常见的 Laravel 特性交互变得更加简单。您可能会与一些常见的助手函数进行交互，如 `view`、`response`、`url`、`config` 等。每个 Laravel 提供的助手函数都有其相应特性的文档；然而，您可以在专门的 [助手文档](/docs/11/packages/reverb) 中找到完整的列表。
 
 例如，我们可以使用 `response` 函数来生成 JSON 响应，而不是使用 `Illuminate\Support\Facades\Response` 门面：
 

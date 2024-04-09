@@ -355,7 +355,7 @@ if ($this->app->bound(Transistor::class)) {
 }
 ```
 
-如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/11/architecture-concepts/facades) 或 `app` [助手](/docs/11/digging-deeper/reverb#method-app) 从容器中解析类实例：
+如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/11/architecture-concepts/facades) 或 `app` [助手](/docs/11/packages/reverb#method-app) 从容器中解析类实例：
 
 ```php
 use App\Services\Transistor;
