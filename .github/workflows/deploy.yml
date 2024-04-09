@@ -1,26 +1,38 @@
-name: Deploy Vitepress to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master # 修改为你的默认分支名称
+      - master # 更改为你的默认分支名
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Build Vitepress
-        run: yarn docs:build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Vitepress 生成的静态文件目录，如果与默认不同，请修改
+          node-version: '20'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2.1.6
+        with:
+          path: ~/.yarn # yarn 缓存文件路径
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          yarn docs:build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.2.2
+        with:
+          branch: gh-pages
+          folder: docs/.vitepress/dist
+          clean: true
