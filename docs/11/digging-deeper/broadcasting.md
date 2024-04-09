@@ -886,7 +886,7 @@ Echo.join(`chat.${roomId}`)
 > [!WARNING]  
 > 在阅读以下关于模型广播的文档之前，我们建议您熟悉 Laravel 的模型广播服务的一般概念以及如何手动创建和监听广播事件。
 
-当您的应用程序的 [Eloquent models](/docs/11/database/eloquent) 创建、更新或删除时，广播事件是常见的。当然，这可以通过手动[为 Eloquent 模型状态变更定义自定义事件](/docs/11/database/eloquent#events)并标记这些事件以 `ShouldBroadcast` 接口来轻松实现。
+当您的应用程序的 [Eloquent models](/docs/11/eloquent/eloquent) 创建、更新或删除时，广播事件是常见的。当然，这可以通过手动[为 Eloquent 模型状态变更定义自定义事件](/docs/11/eloquent/eloquent#events)并标记这些事件以 `ShouldBroadcast` 接口来轻松实现。
 
 然而，如果您在应用程序中没有为了其他目的使用这些事件，那么为了仅仅广播它们而创建事件类可能会很麻烦。为了解决这个问题，Laravel 允许您表明一个 Eloquent 模型应自动广播其状态变更。
 
