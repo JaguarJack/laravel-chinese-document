@@ -28,7 +28,7 @@
 
 ## 防止 CSRF 请求
 
-Laravel 会为由应用程序管理的每个活跃的[用户会话](/docs/{{version}}/session)自动生成一个 CSRF “token”。这个令牌用于验证认证的用户实际上是发出应用程序请求的人。由于这个令牌存储在用户的会话中，并且每次会话重新生成时都会更改，所以恶意应用程序无法访问它。
+Laravel 会为由应用程序管理的每个活跃的[用户会话](/docs/11/basic/session)自动生成一个 CSRF “token”。这个令牌用于验证认证的用户实际上是发出应用程序请求的人。由于这个令牌存储在用户的会话中，并且每次会话重新生成时都会更改，所以恶意应用程序无法访问它。
 
 可以通过请求的会话或通过 `csrf_token` 助手函数访问当前会话的 CSRF 令牌。
 
@@ -55,11 +55,11 @@ Route::get('/token', function (Request $request) {
 </form>
 ```
 
-默认情况下包含在 `web` 中间件组中的 `Illuminate\Foundation\Http\Middleware\ValidateCsrfToken` [中间件](/docs/{{version}}/middleware) 将自动验证请求输入中的令牌与会话中存储的令牌是否匹配。当这两个令牌匹配时，我们知道发起请求的是认证用户。
+默认情况下包含在 `web` 中间件组中的 `Illuminate\Foundation\Http\Middleware\ValidateCsrfToken` [中间件](/docs/11/basics/middleware) 将自动验证请求输入中的令牌与会话中存储的令牌是否匹配。当这两个令牌匹配时，我们知道发起请求的是认证用户。
 
 ### CSRF 令牌 & SPAs
 
-如果你正在构建一个使用 Laravel 作为 API 后端的 SPA，你应该查阅 [Laravel Sanctum 文档](/docs/{{version}}/sanctum)，了解如何与你的 API 进行认证以及防护 CSRF 漏洞的信息。
+如果你正在构建一个使用 Laravel 作为 API 后端的 SPA，你应该查阅 [Laravel Sanctum 文档](/docs/11/packages/sanctum)，了解如何与你的 API 进行认证以及防护 CSRF 漏洞的信息。
 
 ### 排除 CSRF 保护的 URIs
 
@@ -78,7 +78,7 @@ Route::get('/token', function (Request $request) {
 ```
 
 > [!NOTE]
-> 为方便起见，当[进行测试](/docs/{{version}}/testing)时，CSRF 中间件会自动为所有路由禁用。
+> 为方便起见，当[进行测试](/docs/11/testing/testing)时，CSRF 中间件会自动为所有路由禁用。
 
 ## X-CSRF-TOKEN
 

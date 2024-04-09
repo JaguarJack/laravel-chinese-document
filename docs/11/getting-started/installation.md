@@ -21,7 +21,7 @@ Laravel 力求在提供强大功能（如彻底的依赖注入、表达式数据
 
 我们喜欢称 Laravel 为“渐进式”框架。这意味着 Laravel 与您一同成长。如果您刚开始接触 Web 开发，Laravel 庞大的文档库、指南和[视频教程](https://laracasts.com)将帮助您在不感到压力的情况下学习基础知识。
 
-如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/{{version}}/container)、[单元测试](/docs/{{version}}/testing)、[队列](/docs/{{version}}/queues)、[实时事件](/docs/{{version}}/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
+如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/11/architecture-concepts/container)、[单元测试](/docs/11/testing/testing)、[队列](/docs/11/queues)、[实时事件](/docs/11/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
 
 #### 一个可扩展的框架
 
@@ -62,7 +62,7 @@ php artisan serve
 启动 Artisan 开发服务器后，您的应用程序将在 Web 浏览器中通过 [http://localhost:8000](http://localhost:8000) 访问。接下来，您已准备好[开始进入 Laravel 生态系统的下一步](#next-steps)。当然，您可能还想要[配置数据库](#databases-and-migrations)。
 
 > [!NOTE]
-> 如果您希望在开发 Laravel 应用程序时获得一个良好的开端，可以考虑使用我们的[启动套件之一](/docs/{{version}}/starter-kits)。Laravel 的启动套件为您的新 Laravel 应用程序提供了后端和前端认证脚手架。
+> 如果您希望在开发 Laravel 应用程序时获得一个良好的开端，可以考虑使用我们的[启动套件之一](/docs/11/getting-started/starter-kits)。Laravel 的启动套件为您的新 Laravel 应用程序提供了后端和前端认证脚手架。
 
 ## 初始配置
 
@@ -77,7 +77,7 @@ Laravel 出箱即用几乎不需要额外配置。您可以自由地开始开发
 您的 `.env` 文件不应该提交到应用程序的源代码控制中，因为使用您的应用程序的每个开发者/服务器可能需要不同的环境配置。此外，如果入侵者访问到您的源代码库，这将是一个安全风险，因为任何敏感凭据都会被暴露。
 
 > [!NOTE]
-> 有关 `.env` 文件和基于环境的配置的更多信息，请查看完整的[配置文档](/docs/{{version}}/configuration#environment-configuration)。
+> 有关 `.env` 文件和基于环境的配置的更多信息，请查看完整的[配置文档](/docs/11/configuration#environment-configuration)。
 
 ### 数据库和迁移
 
@@ -96,7 +96,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-如果您选择使用 SQLite 以外的数据库，您将需要创建数据库并运行应用程序的[数据库迁移](/docs/{{version}}/migrations)：
+如果您选择使用 SQLite 以外的数据库，您将需要创建数据库并运行应用程序的[数据库迁移](/docs/11/migrations)：
 
 ```shell
 php artisan migrate
@@ -111,7 +111,7 @@ Laravel 应该始终从为您的 Web 服务器配置的“Web 目录”的根目
 
 ## 使用 Sail 进行 Docker 安装
 
-我们希望尽可能轻松地开始使用 Laravel，无论您偏好哪种操作系统。因此，有多种选项可用于在本地机器上开发和运行 Laravel 项目。虽然您可能希望稍后探索这些选项，但 Laravel 提供了 [Sail](/docs/{{version}}/sail)，一个内置的解决方案，用于使用 [Docker](https://www.docker.com) 运行您的 Laravel 项目。
+我们希望尽可能轻松地开始使用 Laravel，无论您偏好哪种操作系统。因此，有多种选项可用于在本地机器上开发和运行 Laravel 项目。虽然您可能希望稍后探索这些选项，但 Laravel 提供了 [Sail](/docs/11/packages/sail)，一个内置的解决方案，用于使用 [Docker](https://www.docker.com) 运行您的 Laravel 项目。
 
 Docker 是一个在小型、轻量级“容器”中运行应用程序和服务的工具，这些容器不会干扰您的本地机器上安装的软件或配置。这意味着您不必担心在本地机器上配置或设置复杂的开发工具，如 Web 服务器和数据库。要开始，您只需要安装 [Docker Desktop](https://www.docker.com/products/docker-desktop)。
 
@@ -140,7 +140,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/{{version}}/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -149,7 +149,7 @@ cd example-app
 最后，您可以在 Web 浏览器中通过：http://localhost 访问应用程序。
 
 > [!NOTE]
-> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/{{version}}/sail)。
+> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/11/packages/sail)。
 
 ### Windows 上的 Sail
 
@@ -176,7 +176,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/{{version}}/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -185,7 +185,7 @@ cd example-app
 最后，您可以在 Web 浏览器中通过：http://localhost 访问应用程序。
 
 > [!NOTE]
-> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/{{version}}/sail)。
+> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/11/packages/sail)。
 
 #### 在 WSL2 中开发
 
@@ -221,7 +221,7 @@ cd example-app
 ./vendor/bin/sail up
 ```
 
-应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/{{version}}/migrations)：
+应用程序的 Docker 容器启动后，您应该运行应用程序的[数据库迁移](/docs/11/migrations)：
 
 ```shell
 ./vendor/bin/sail artisan migrate
@@ -230,7 +230,7 @@ cd example-app
 最后，您可以在 Web 浏览器中通过：http://localhost 访问应用程序。
 
 > [!NOTE]
-> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/{{version}}/sail)。
+> 要继续了解更多关于 Laravel Sail 的信息，请查看其[完整文档](/docs/11/packages/sail)。
 
 ### 选择你的 Sail 服务
 
@@ -242,7 +242,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis" | bash
 
 如果您没有指定希望配置哪些服务，将会配置默认的服务栈，包括 `mysql`、`redis`、`meilisearch`、`mailpit` 和 `selenium`。
 
-您可以通过在 URL 中添加 `devcontainer` 参数，指示 Sail 安装默认的 [Devcontainer](/docs/{{version}}/sail#using-devcontainers)：
+您可以通过在 URL 中添加 `devcontainer` 参数，指示 Sail 安装默认的 [Devcontainer](/docs/11/packages/sail#using-devcontainers)：
 
 ```shell
 curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
@@ -258,12 +258,12 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 
 现在您已经创建了您的 Laravel 项目，您可能想知道接下来学习什么。首先，我们强烈建议通过阅读以下文档来熟悉 Laravel 的工作方式：
 
-- [请求生命周期](/docs/{{version}}/lifecycle)
-- [配置](/docs/{{version}}/configuration)
-- [目录结构](/docs/{{version}}/structure)
-- [前端](/docs/{{version}}/frontend)
-- [服务容器](/docs/{{version}}/container)
-- [Facades](/docs/{{version}}/facades)
+- [请求生命周期](/docs/11/lifecycle)
+- [配置](/docs/11/configuration)
+- [目录结构](/docs/11/structure)
+- [前端](/docs/11/frontend)
+- [服务容器](/docs/11/architecture-concepts/container)
+- [Facades](/docs/11/basics/facades)
 
 您想要如何使用 Laravel 也将决定您旅程的下一步。Laravel 有多种使用方式，我们将探讨框架的两个主要用例。
 
@@ -272,20 +272,20 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 
 ### Laravel 全栈框架
 
-Laravel 可以作为全栈框架服务。所谓“全栈”框架，我们的意思是您将使用 Laravel 来路由请求到您的应用程序并通过 [Blade 模板](/docs/{{version}}/blade) 或类似 [Inertia](https://inertiajs.com) 的单页应用程序混合技术来渲染您的前端。这是使用 Laravel 框架最常见的方式，也是我们认为使用 Laravel 最高效的方式。
+Laravel 可以作为全栈框架服务。所谓“全栈”框架，我们的意思是您将使用 Laravel 来路由请求到您的应用程序并通过 [Blade 模板](/docs/11/basics/blade) 或类似 [Inertia](https://inertiajs.com) 的单页应用程序混合技术来渲染您的前端。这是使用 Laravel 框架最常见的方式，也是我们认为使用 Laravel 最高效的方式。
 
-如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[前端开发](/docs/{{version}}/frontend)、[路由](/docs/{{version}}/routing)、[视图](/docs/{{version}}/views)或 [Eloquent ORM](/docs/{{version}}/eloquent) 的文档。此外，您可能对学习社区包如 [Livewire](https://livewire.laravel.com) 和 [Inertia](https://inertiajs.com) 感兴趣。这些包允许您使用 Laravel 作为全栈框架，同时享受单页 JavaScript 应用程序提供的许多 UI 优势。
+如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[前端开发](/docs/11/frontend)、[路由](/docs/11/basics/routing)、[视图](/docs/11/basics/views)或 [Eloquent ORM](/docs/11/eloquent/eloquent) 的文档。此外，您可能对学习社区包如 [Livewire](https://livewire.laravel.com) 和 [Inertia](https://inertiajs.com) 感兴趣。这些包允许您使用 Laravel 作为全栈框架，同时享受单页 JavaScript 应用程序提供的许多 UI 优势。
 
-如果您使用 Laravel 作为全栈框架，我们还强烈建议您学习如何使用 [Vite](/docs/{{version}}/vite) 编译应用程序的 CSS 和 JavaScript。
+如果您使用 Laravel 作为全栈框架，我们还强烈建议您学习如何使用 [Vite](/docs/11/vite) 编译应用程序的 CSS 和 JavaScript。
 
 > [!NOTE]
-> 如果您希望在构建应用程序时获得一个良好的开端，请查看我们官方的[应用程序启动套件之一](/docs/{{version}}/starter-kits)。
+> 如果您希望在构建应用程序时获得一个良好的开端，请查看我们官方的[应用程序启动套件之一](/docs/11/getting-started/starter-kits)。
 
 ### Laravel API 后端
 
-Laravel 也可以作为 JavaScript 单页应用程序或移动应用程序的 API 后端服务。例如，您可能会将 Laravel 用作 [Next.js](https://nextjs.org) 应用程序的 API 后端。在这种情况下，您可以使用 Laravel 提供[认证](/docs/{{version}}/sanctum)和数据存储/检索，同时还可以利用 Laravel 的强大服务，如队列、电子邮件、通知等。
+Laravel 也可以作为 JavaScript 单页应用程序或移动应用程序的 API 后端服务。例如，您可能会将 Laravel 用作 [Next.js](https://nextjs.org) 应用程序的 API 后端。在这种情况下，您可以使用 Laravel 提供[认证](/docs/11/packages/sanctum)和数据存储/检索，同时还可以利用 Laravel 的强大服务，如队列、电子邮件、通知等。
 
-如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[路由](/docs/{{version}}/routing)、[Laravel Sanctum](/docs/{{version}}/sanctum) 和 [Eloquent ORM](/docs/{{version}}/eloquent) 的文档。
+如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[路由](/docs/11/basics/routing)、[Laravel Sanctum](/docs/11/packages/sanctum) 和 [Eloquent ORM](/docs/11/eloquent/eloquent) 的文档。
 
 > [!NOTE]
-> 需要为 Laravel 后端和 Next.js 前端快速搭建脚手架吗？Laravel Breeze 提供了 [API 栈](/docs/{{version}}/starter-kits#breeze-and-next) 以及 [Next.js 前端实现](https://github.com/laravel/breeze-next)，因此您可以在几分钟内开始。
+> 需要为 Laravel 后端和 Next.js 前端快速搭建脚手架吗？Laravel Breeze 提供了 [API 栈](/docs/11/getting-started/starter-kits#breeze-and-next) 以及 [Next.js 前端实现](https://github.com/laravel/breeze-next)，因此您可以在几分钟内开始。

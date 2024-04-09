@@ -41,7 +41,7 @@ export default [
       { text: '响应', link: '/docs/11/basics/responses' },
       { text: '视图', link: '/docs/11/basics/views' },
       { text: 'Blade 模板', link: '/docs/11/basics/blade' },
-      { text: '资源捆绑', link: '/docs/11/basics/vite' },
+      { text: '资源捆绑(Vite)', link: '/docs/11/basics/vite' },
       { text: 'URL 生成', link: '/docs/11/basics/urls' },
       { text: '会话', link: '/docs/11/basics/session' },
       { text: '验证', link: '/docs/11/basics/validation' },

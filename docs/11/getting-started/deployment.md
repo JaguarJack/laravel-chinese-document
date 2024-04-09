@@ -146,7 +146,7 @@ Laravel 包括一个内置的健康检查路由，可用于监控您的应用程
 )
 ```
 
-当对此路由发出 HTTP 请求时，Laravel 还将分派 `Illuminate\Foundation\Events\DiagnosingHealth` 事件，允许您执行与您的应用程序相关的其他健康检查。在此事件的[监听器](/docs/{{version}}/events)中，您可以检查应用程序的数据库或缓存状态。如果您检测到应用程序存在问题，您可以简单地从监听器中抛出异常。
+当对此路由发出 HTTP 请求时，Laravel 还将分派 `Illuminate\Foundation\Events\DiagnosingHealth` 事件，允许您执行与您的应用程序相关的其他健康检查。在此事件的[监听器](/docs/11/events)中，您可以检查应用程序的数据库或缓存状态。如果您检测到应用程序存在问题，您可以简单地从监听器中抛出异常。
 
 ## 使用 Forge / Vapor 轻松部署
 

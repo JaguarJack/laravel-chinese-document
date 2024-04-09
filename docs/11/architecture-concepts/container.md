@@ -39,7 +39,7 @@ class UserController extends Controller
 }
 ```
 
-在这个例子中，`UserController` 需要从数据源检索用户。因此，我们将**注入**能够检索用户的服务。在这个上下文中，我们的 `UserRepository` 很可能使用 [Eloquent](/docs/{{version}}/eloquent) 从数据库检索用户信息。然而，由于存储库是注入的，我们可以轻松地将其替换为另一个实现。当测试我们的应用程序时，我们也可以轻松地“模拟”或创建 `UserRepository` 的虚拟实现。
+在这个例子中，`UserController` 需要从数据源检索用户。因此，我们将**注入**能够检索用户的服务。在这个上下文中，我们的 `UserRepository` 很可能使用 [Eloquent](/docs/11/eloquent/eloquent) 从数据库检索用户信息。然而，由于存储库是注入的，我们可以轻松地将其替换为另一个实现。当测试我们的应用程序时，我们也可以轻松地“模拟”或创建 `UserRepository` 的虚拟实现。
 
 深入了解 Laravel 服务容器对于构建强大的大型应用程序以及为 Laravel 核心本身做出贡献至关重要。
 
@@ -62,7 +62,7 @@ Route::get('/', function (Service $service) {
 
 在这个例子中，访问应用程序的 `/` 路由将自动解析 `Service` 类并将其注入到路由的处理程序中。这是改变游戏规则的。这意味着您可以在不担心臃肿配置文件的情况下开发应用程序并利用依赖注入。
 
-幸运的是，当构建 Laravel 应用程序时，许多您将编写的类会自动通过容器接收它们的依赖，包括[控制器](/docs/{{version}}/controllers)、[事件监听器](/docs/{{version}}/events)、[中间件](/docs/{{version}}/middleware)等。此外，您可以在[队列作业](/docs/{{version}}/queues)的 `handle` 方法中类型提示依赖。一旦您体验到自动和零配置依赖注入的力量，就感觉没有它无法开发。
+幸运的是，当构建 Laravel 应用程序时，许多您将编写的类会自动通过容器接收它们的依赖，包括[控制器](/docs/11/controllers)、[事件监听器](/docs/11/events)、[中间件](/docs/11/basics/middleware)等。此外，您可以在[队列作业](/docs/11/queues)的 `handle` 方法中类型提示依赖。一旦您体验到自动和零配置依赖注入的力量，就感觉没有它无法开发。
 
 ### 何时使用容器
 
@@ -76,9 +76,9 @@ Route::get('/', function (Request $request) {
 });
 ```
 
-在许多情况下，由于自动依赖注入和[门面](/docs/{{version}}/facades)，您可以在**从未**手动绑定或从容器解析任何东西的情况下构建 Laravel 应用程序。**那么，您什么时候会手动与容器交互呢？** 让我们看看两种情况。
+在许多情况下，由于自动依赖注入和[门面](/docs/11/basics/facades)，您可以在**从未**手动绑定或从容器解析任何东西的情况下构建 Laravel 应用程序。**那么，您什么时候会手动与容器交互呢？** 让我们看看两种情况。
 
-首先，如果您编写了一个实现接口的类，并且希望在路由或类构造函数中类型提示该接口，您必须[告诉容器如何解析该接口](#binding-interfaces-to-implementations)。其次，如果您[编写 Laravel 包](/docs/{{version}}/packages)并计划与其他 Laravel 开发者共享，您可能需要将包的服务绑定到容器中。
+首先，如果您编写了一个实现接口的类，并且希望在路由或类构造函数中类型提示该接口，您必须[告诉容器如何解析该接口](#binding-interfaces-to-implementations)。其次，如果您[编写 Laravel 包](/docs/11/packages)并计划与其他 Laravel 开发者共享，您可能需要将包的服务绑定到容器中。
 
 ## 绑定
 
@@ -86,7 +86,7 @@ Route::get('/', function (Request $request) {
 
 #### 简单绑定
 
-几乎所有的服务容器绑定都将在[服务提供者](/docs/{{version}}/providers)中注册，因此这些示例大多将展示在该上下文中使用容器。
+几乎所有的服务容器绑定都将在[服务提供者](/docs/11/architecture-concepts/providers)中注册，因此这些示例大多将展示在该上下文中使用容器。
 
 在服务提供者中，您总是可以通过 `$this->app` 属性访问容器。我们可以使用 `bind` 方法注册一个绑定，传递我们希望注册的类或接口名称以及返回类实例的闭包：
 
@@ -102,7 +102,7 @@ $this->app->bind(Transistor::class, function (Application $app) {
 
 请注意，我们接收到容器本身作为解析器的参数。然后我们可以使用容器来解析我们正在构建的对象的子依赖。
 
-如前所述，您通常会在服务提供者中与容器交互；然而，如果您希望在服务提供者之外的代码位置与容器交互，您可以通过 `App` [门面](/docs/{{version}}/facades)进行：
+如前所述，您通常会在服务提供者中与容器交互；然而，如果您希望在服务提供者之外的代码位置与容器交互，您可以通过 `App` [门面](/docs/11/basics/facades)进行：
 
 ```php
 use App\Services\Transistor;
@@ -186,7 +186,7 @@ public function __construct(
 
 ### 上下文绑定
 
-有时您可能有两个类使用相同的接口，但您希望向每个类注入不同的实现。例如，两个控制器可能依赖于 `Illuminate\Contracts\Filesystem\Filesystem` [契约](/docs/{{version}}/contracts) 的不同实现。Laravel 提供了一个简单、流畅的接口来定义这种行为：
+有时您可能有两个类使用相同的接口，但您希望向每个类注入不同的实现。例如，两个控制器可能依赖于 `Illuminate\Contracts\Filesystem\Filesystem` [契约](/docs/11/digging-deeper/contracts) 的不同实现。Laravel 提供了一个简单、流畅的接口来定义这种行为：
 
 ```php
 use App\Http\Controllers\PhotoController;
@@ -355,7 +355,7 @@ if ($this->app->bound(Transistor::class)) {
 }
 ```
 
-如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/{{version}}/facades) 或 `app` [助手](/docs/{{version}}/helpers#method-app) 从容器中解析类实例：
+如果您在服务提供者之外的代码位置没有访问 `$app` 变量，您可以使用 `App` [门面](/docs/11/basics/facades) 或 `app` [助手](/docs/11/digging-deeper/reverb#method-app) 从容器中解析类实例：
 
 ```php
 use App\Services\Transistor;
@@ -381,7 +381,7 @@ public function __construct(
 
 ### 自动注入
 
-或者，您可以在容器解析的类的构造函数中类型提示依赖，包括[控制器](/docs/{{version}}/controllers)、[事件监听器](/docs/{{version}}/events)、[中间件](/docs/{{version}}/middleware) 等。此外，您还可以在 [队列作业](/docs/{{version}}/queues) 的 `handle` 方法中类型提示依赖。实际上，这是大多数情况下您的对象应该被容器解析的方式。
+或者，您可以在容器解析的类的构造函数中类型提示依赖，包括[控制器](/docs/11/controllers)、[事件监听器](/docs/11/events)、[中间件](/docs/11/basics/middleware) 等。此外，您还可以在 [队列作业](/docs/11/queues) 的 `handle` 方法中类型提示依赖。实际上，这是大多数情况下您的对象应该被容器解析的方式。
 
 例如，您可能在控制器的构造函数中类型提示您的应用程序定义的存储库。存储库将自动被解析并注入到类中：
 

@@ -149,7 +149,7 @@ php artisan reverb:start
 
 此外，Reverb 还支持通过 Redis 的发布/订阅功能进行水平扩展，允许您在多个后端 Reverb 服务器之间分发您的 WebSocket 流量，以支持单个、高需求的应用程序。
 
-有关 Laravel Reverb 的更多信息，请查阅完整的[Reverb 文档](/docs/{{version}}/reverb)。
+有关 Laravel Reverb 的更多信息，请查阅完整的[Reverb 文档](/docs/11/packages/reverb)。
 
 ### 每秒速率限制
 
@@ -161,7 +161,7 @@ RateLimiter::for('invoices', function (Request $request) {
 });
 ```
 
-有关 Laravel 中速率限制的更多信息，请查看[速率限制文档](/docs/{{version}}/routing#rate-limiting)。
+有关 Laravel 中速率限制的更多信息，请查看[速率限制文档](/docs/11/basics/routing#rate-limiting)。
 
 ### 健康路由
 
@@ -187,7 +187,7 @@ Laravel 11 允许您将应用程序的以前的加密密钥定义为逗号分隔
 
 这种优雅的解密方式允许用户在加密密钥轮换后继续无缝使用您的应用程序。
 
-有关 Laravel 中加密的更多信息，请查看[加密文档](/docs/{{version}}/encryption)。
+有关 Laravel 中加密的更多信息，请查看[加密文档](/docs/11/encryption)。
 
 ### 自动密码重新散列
 
@@ -195,7 +195,7 @@ Laravel 的默认密码哈希算法是 bcrypt。随着 CPU / GPU 处理能力的
 
 ### 提示验证
 
-[Laravel Prompts](/docs/{{version}}/prompts) 是一个用于向命令行应用程序添加漂亮
+[Laravel Prompts](/docs/11/packages/prompts) 是一个用于向命令行应用程序添加漂亮
 
 且用户友好的表单的 PHP 包，具有类似于浏览器的特性，包括占位符文本和验证。
 
@@ -234,7 +234,7 @@ $job->handle();
 $job->assertReleased(delay: 30);
 ```
 
-有关测试排队作业的更多信息，请查看[队列文档](/docs/{{version}}/queues#testing)。
+有关测试排队作业的更多信息，请查看[队列文档](/docs/11/queues#testing)。
 
 ### 新的 Artisan 命令
 
@@ -268,7 +268,7 @@ protected function casts(): array
 }
 ```
 
-有关属性转换的更多信息，请查看[Eloquent 文档](/docs/{{version}}/eloquent-mutators#attribute-casting)。
+有关属性转换的更多信息，请查看[Eloquent 文档](/docs/11/eloquent/eloquent-mutators#attribute-casting)。
 
 ### `once` 函数
 
@@ -287,7 +287,7 @@ random(); // 123 (cached result)
 random(); // 123 (cached result)
 ```
 
-有关 `once` 辅助函数的更多信息，请查看[帮助文档](/docs/{{version}}/helpers#method-once)。
+有关 `once` 辅助函数的更多信息，请查看[帮助文档](/docs/11/digging-deeper/reverb#method-once)。
 
 ### 使用内存数据库进行测试的性能改进
 
@@ -297,7 +297,7 @@ random(); // 123 (cached result)
 
 Laravel 11 包含了对 MariaDB 的改进支持。在以前的 Laravel 版本中，您可以通过 Laravel 的 MySQL 驱动程序使用 MariaDB。然而，在 Laravel 11 中，现在包含了专门的 MariaDB 驱动程序，为此数据库系统提供了更好的默认值。
 
-有关 Laravel 数据库驱动程序的更多信息，请查看[数据库文档](/docs/{{version}}/database)。
+有关 Laravel 数据库驱动程序的更多信息，请查看[数据库文档](/docs/11/database/database)。
 
 ### 数据库检查和改进模式操作
 

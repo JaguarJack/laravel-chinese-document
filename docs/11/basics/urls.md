@@ -35,7 +35,7 @@ echo url()->full();
 echo url()->previous();
 ```
 
-这些方法也可以通过 `URL` [facade](/docs/{{version}}/facades) 访问：
+这些方法也可以通过 `URL` [facade](/docs/11/basics/facades) 访问：
 
 ```php
 use Illuminate\Support\Facades\URL;
@@ -45,7 +45,7 @@ echo URL::current();
 
 ## 命名路由 URL
 
-可以使用 `route` 助手生成 [命名路由](/docs/{{version}}/routing#named-routes) 的 URL。命名路由允许你在不依赖于路由上实际定义的 URL 的情况下生成 URL。因此，如果路由的 URL 发生变化，不需要对 `route` 函数的调用进行任何更改。例如，假设你的应用程序包含如下定义的路由：
+可以使用 `route` 助手生成 [命名路由](/docs/11/basics/routing#named-routes) 的 URL。命名路由允许你在不依赖于路由上实际定义的 URL 的情况下生成 URL。因此，如果路由的 URL 发生变化，不需要对 `route` 函数的调用进行任何更改。例如，假设你的应用程序包含如下定义的路由：
 
 ```php
 Route::get('/post/{post}', function (Post $post) {
@@ -83,7 +83,7 @@ echo route('post.show', ['post' => 1, 'search' => 'rocket']);
 
 #### Eloquent 模型
 
-你经常会使用 [Eloquent 模型](/docs/{{version}}/eloquent) 的路由键（通常是主键）生成 URL。因此，你可以将 Eloquent 模型作为参数值传递。`route` 助手会自动提取模型的路由键：
+你经常会使用 [Eloquent 模型](/docs/11/eloquent/eloquent) 的路由键（通常是主键）生成 URL。因此，你可以将 Eloquent 模型作为参数值传递。`route` 助手会自动提取模型的路由键：
 
 ```php
 echo route('post.show', ['post' => $post]);
@@ -141,7 +141,7 @@ if (! $request->hasValidSignatureWhileIgnoring(['page', 'order'])) {
 }
 ```
 
-你可以将 `signed`（`Illuminate\Routing\Middleware\ValidateSignature`）[中间件](/docs/{{version}}/middleware) 分配给路由，而不是使用传入请求实例验证签名 URL。如果传入请求没有有效的签名，中间件将自动返回 `403` HTTP 响应：
+你可以将 `signed`（`Illuminate\Routing\Middleware\ValidateSignature`）[中间件](/docs/11/basics/middleware) 分配给路由，而不是使用传入请求实例验证签名 URL。如果传入请求没有有效的签名，中间件将自动返回 `403` HTTP 响应：
 
 ```php
 Route::post('/unsubscribe/{user}', function (Request $request) {
@@ -197,7 +197,7 @@ Route::get('/{locale}/posts', function () {
 })->name('post.index');
 ```
 
-每次调用 `route` 助手时总是传递 `locale` 是很麻烦的。因此，你可以使用 `URL::defaults` 方法为此参数定义一个默认值，这个值将在当前请求期间始终应用。你可能希望从[路由中间件](/docs/{{version}}/middleware#assigning-middleware-to-routes)中调用此方法，这样你就可以访问当前请求：
+每次调用 `route` 助手时总是传递 `locale` 是很麻烦的。因此，你可以使用 `URL::defaults` 方法为此参数定义一个默认值，这个值将在当前请求期间始终应用。你可能希望从[路由中间件](/docs/11/basics/middleware#assigning-middleware-to-routes)中调用此方法，这样你就可以访问当前请求：
 
 ```php
 <?php
@@ -229,7 +229,7 @@ class SetDefaultLocaleForUrls
 
 #### URL 默认值和中间件优先级
 
-设置 URL 默认值可能会干扰 Laravel 的隐式模型绑定处理。因此，你应该[优先执行](/docs/{{version}}/middleware#sorting-middleware)设置 URL 默认值的中间件，确保它们在 Laravel 自己的 `SubstituteBindings` 中间件之前被执行。你可以使用应用程序 `bootstrap/app.php` 文件中的 `priority` 中间件方法来完成这一点：
+设置 URL 默认值可能会干扰 Laravel 的隐式模型绑定处理。因此，你应该[优先执行](/docs/11/basics/middleware#sorting-middleware)设置 URL 默认值的中间件，确保它们在 Laravel 自己的 `SubstituteBindings` 中间件之前被执行。你可以使用应用程序 `bootstrap/app.php` 文件中的 `priority` 中间件方法来完成这一点：
 
 ```php
 ->withMiddleware(function (Middleware $middleware) {

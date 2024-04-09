@@ -4,7 +4,7 @@
 
 ## 简介
 
-Laravel 是一个后端框架，提供了构建现代 Web 应用所需的所有功能，如[路由](/docs/{{version}}/routing)、[验证](/docs/{{version}}/validation)、[缓存](/docs/{{version}}/cache)、[队列](/docs/{{version}}/queues)、[文件存储](/docs/{{version}}/filesystem)等。然而，我们认为为开发者提供一个包括构建应用前端的强大全栈体验是很重要的。
+Laravel 是一个后端框架，提供了构建现代 Web 应用所需的所有功能，如[路由](/docs/11/basics/routing)、[验证](/docs/11/basic/validation)、[缓存](/docs/11/cache)、[队列](/docs/11/queues)、[文件存储](/docs/11/digging-deeper/filesystem)等。然而，我们认为为开发者提供一个包括构建应用前端的强大全栈体验是很重要的。
 
 在使用 Laravel 构建应用时，有两种主要的方法来处理前端开发，您选择哪种方法取决于您是想通过利用 PHP 来构建前端，还是使用 Vue 和 React 这样的 JavaScript 框架。我们将在下面讨论这两种选项，以便您可以就应用程序的最佳前端开发方法做出明智的决定。
 
@@ -22,7 +22,7 @@ Laravel 是一个后端框架，提供了构建现代 Web 应用所需的所有�
 </div>
 ```
 
-在 Laravel 中，这种方法可以通过使用[视图](/docs/{{version}}/views)和 [Blade](/docs/{{version}}/blade) 来实现。Blade 是一种极其轻量级的模板语言，为显示数据、迭代数据等提供了便利、简短的语法：
+在 Laravel 中，这种方法可以通过使用[视图](/docs/11/basics/views)和 [Blade](/docs/11/basics/blade) 来实现。Blade 是一种极其轻量级的模板语言，为显示数据、迭代数据等提供了便利、简短的语法：
 
 ```blade
 <div>
@@ -84,11 +84,11 @@ class Counter extends Component
 
 对许多人来说，Livewire 彻底改变了使用 Laravel 的前端开发，使他们能够在 Laravel 的舒适环境中构建现代、动态的 Web 应用。通常，使用 Livewire 的开发者还会使用 [Alpine.js](https://alpinejs.dev/) 来在前端“撒上”所需的 JavaScript，例如为了渲染对话窗口。
 
-如果您是 Laravel 的新手，我们建议您先熟悉 [视图](/docs/{{version}}/views) 和 [Blade](/docs/{{version}}/blade) 的基本用法。然后，查阅官方 [Laravel Livewire 文档](https://livewire.laravel.com/docs)，了解如何通过交互式 Livewire 组件将您的应用提升到一个新的水平。
+如果您是 Laravel 的新手，我们建议您先熟悉 [视图](/docs/11/basics/views) 和 [Blade](/docs/11/basics/blade) 的基本用法。然后，查阅官方 [Laravel Livewire 文档](https://livewire.laravel.com/docs)，了解如何通过交互式 Livewire 组件将您的应用提升到一个新的水平。
 
 ### 入门套件
 
-如果您希望使用 PHP 和 Livewire 构建前端，您可以利用我们的 Breeze 或 Jetstream [入门套件](/docs/{{version}}/starter-kits) 来加速应用程序的开发。这些入门套件使用 [Blade](/docs/{{version}}/blade) 和 [Tailwind](https://tailwindcss.com) 为您的应用程序提供后端和前端认证脚手架，以便您可以简单地开始构建下一个伟大的想法。
+如果您希望使用 PHP 和 Livewire 构建前端，您可以利用我们的 Breeze 或 Jetstream [入门套件](/docs/11/getting-started/starter-kits) 来加速应用程序的开发。这些入门套件使用 [Blade](/docs/11/basics/blade) 和 [Tailwind](https://tailwindcss.com) 为您的应用程序提供后端和前端认证脚手架，以便您可以简单地开始构建下一个伟大的想法。
 
 ## 使用 Vue / React
 
@@ -159,15 +159,15 @@ const props = defineProps(['user'])
 
 ### 入门套件
 
-如果您希望使用 Inertia 和 Vue / React 构建前端，您可以利用我们的 Breeze 或 Jetstream [入门套件](/docs/{{version}}/starter-kits#breeze-and-inertia) 来加速应用程序的开发。这些入门套件使用 Inertia、Vue / React、[Tailwind](https://tailwindcss.com) 和 [Vite](https://vitejs.dev) 为您的应用程序提供后端和前端认证脚手架，以便您可以开始构建下一个伟大的想法。
+如果您希望使用 Inertia 和 Vue / React 构建前端，您可以利用我们的 Breeze 或 Jetstream [入门套件](/docs/11/getting-started/starter-kits#breeze-and-inertia) 来加速应用程序的开发。这些入门套件使用 Inertia、Vue / React、[Tailwind](https://tailwindcss.com) 和 [Vite](https://vitejs.dev) 为您的应用程序提供后端和前端认证脚手架，以便您可以开始构建下一个伟大的想法。
 
 ## 打包资源
 
 无论您选择使用 Blade 和 Livewire 还是 Vue / React 和 Inertia 开发前端，您可能都需要将应用程序的 CSS 打包成生产就绪的资源。当然，如果您选择使用 Vue 或 React 构建应用程序的前端，您还需要将组件打包成浏览器就绪的 JavaScript 资源。
 
-默认情况下，Laravel 使用 [Vite](https://vitejs.dev) 来打包您的资源。Vite 提供了极快的构建时间和几乎瞬时的热模块替换（HMR）在本地开发期间。在所有新的 Laravel 应用程序中，包括那些使用我们的[入门套件](/docs/{{version}}/starter-kits)，您将找到一个 `vite.config.js` 文件，该文件加载了我们的轻量级 Laravel Vite 插件，使 Vite 在 Laravel 应用程序中使用成为一种乐趣。
+默认情况下，Laravel 使用 [Vite](https://vitejs.dev) 来打包您的资源。Vite 提供了极快的构建时间和几乎瞬时的热模块替换（HMR）在本地开发期间。在所有新的 Laravel 应用程序中，包括那些使用我们的[入门套件](/docs/11/getting-started/starter-kits)，您将找到一个 `vite.config.js` 文件，该文件加载了我们的轻量级 Laravel Vite 插件，使 Vite 在 Laravel 应用程序中使用成为一种乐趣。
 
-通过使用 [Laravel Breeze](/docs/{{version}}/starter-kits#laravel-breeze) 开始您的应用程序开发是开始使用 Laravel 和 Vite 的最快方式，我们最简单的入门套件通过提供前端和后端认证脚手架来加速您的应用程序开发。
+通过使用 [Laravel Breeze](/docs/11/getting-started/starter-kits#laravel-breeze) 开始您的应用程序开发是开始使用 Laravel 和 Vite 的最快方式，我们最简单的入门套件通过提供前端和后端认证脚手架来加速您的应用程序开发。
 
 > [!NOTE]
-> 有关使用 Laravel 和 Vite 的更详细文档，请参阅我们[专门的文档，了解如何打包和编译您的资源](/docs/{{version}}/vite)。
+> 有关使用 Laravel 和 Vite 的更详细文档，请参阅我们[专门的文档，了解如何打包和编译您的资源](/docs/11/vite)。

@@ -6,7 +6,7 @@
 
 当然，直接从你的路由和控制器返回整个 HTML 文档字符串是不实际的。幸好，视图提供了一种方便的方式，可以将所有的 HTML 放在单独的文件中。
 
-视图将你的控制器/应用程序逻辑与你的展示逻辑分离，并存储在 `resources/views` 目录中。在使用 Laravel 时，视图模板通常使用 [Blade 模板语言](/docs/{{version}}/blade) 编写。一个简单的视图可能看起来像这样：
+视图将你的控制器/应用程序逻辑与你的展示逻辑分离，并存储在 `resources/views` 目录中。在使用 Laravel 时，视图模板通常使用 [Blade 模板语言](/docs/11/basics/blade) 编写。一个简单的视图可能看起来像这样：
 
 ```blade
 <!-- View stored in resources/views/greeting.blade.php -->
@@ -27,13 +27,13 @@ Route::get('/', function () {
 ```
 
 > [!NOTE]
-> 想要获取更多关于如何编写 Blade 模板的信息吗？查看完整的 [Blade 文档](/docs/{{version}}/blade) 来开始。
+> 想要获取更多关于如何编写 Blade 模板的信息吗？查看完整的 [Blade 文档](/docs/11/basics/blade) 来开始。
 
 ### 用 React/Vue 编写视图
 
 与其通过 Blade 使用 PHP 编写前端模板，许多开发者更愿意使用 React 或 Vue 来编写模板。Laravel 使这变得轻而易举，感谢 [Inertia](https://inertiajs.com/)，一个能轻松将你的 React/Vue 前端与 Laravel 后端绑定起来的库，而无需构建 SPA 的典型复杂性。
 
-我们的 Breeze 和 Jetstream [起始套件](/docs/{{version}}/starter-kits) 为你的下一个使用 Inertia 驱动的 Laravel 应用程序提供了一个很好的起点。此外，[Laravel Bootcamp](https://bootcamp.laravel.com) 提供了使用 Inertia 构建 Laravel 应用程序的完整演示，包括 Vue 和 React 中的示例。
+我们的 Breeze 和 Jetstream [起始套件](/docs/11/getting-started/starter-kits) 为你的下一个使用 Inertia 驱动的 Laravel 应用程序提供了一个很好的起点。此外，[Laravel Bootcamp](https://bootcamp.laravel.com) 提供了使用 Inertia 构建 Laravel 应用程序的完整演示，包括 Vue 和 React 中的示例。
 
 ## 创建和渲染视图
 
@@ -43,7 +43,7 @@ Route::get('/', function () {
 php artisan make:view greeting
 ```
 
-`.blade.php` 扩展名告诉框架该文件包含 [Blade 模板](/docs/{{version}}/blade)。Blade 模板包含 HTML 和 Blade 指令，可以让你轻松输出值、创建 "if" 语句、遍历数据等。
+`.blade.php` 扩展名告诉框架该文件包含 [Blade 模板](/docs/11/basics/blade)。Blade 模板包含 HTML 和 Blade 指令，可以让你轻松输出值、创建 "if" 语句、遍历数据等。
 
 一旦你创建了视图，你可以使用全局 `view` 辅助函数从你的应用程序的路由或控制器返回它：
 
@@ -61,7 +61,7 @@ use Illuminate\Support\Facades\View;
 return View::make('greeting', ['name' => 'James']);
 ```
 
-正如你所看到的，传递给 `view` 辅助函数的第一个参数对应于 `resources/views` 目录中的视图文件的名称。第二个参数是一个数据数组，该数据应当提供给视图。在本例中，我们正在传递 `name` 变量，它使用 [Blade 语法](/docs/{{version}}/blade) 在视图中显示。
+正如你所看到的，传递给 `view` 辅助函数的第一个参数对应于 `resources/views` 目录中的视图文件的名称。第二个参数是一个数据数组，该数据应当提供给视图。在本例中，我们正在传递 `name` 变量，它使用 [Blade 语法](/docs/11/basics/blade) 在视图中显示。
 
 ### 嵌套视图目录
 
@@ -149,7 +149,7 @@ class AppServiceProvider extends ServiceProvider
 
 视图合成器是在渲染视图时调用的回调或类方法。如果你有数据希望每次渲染视图时都绑定到视图上，视图合成器可以帮助你将该逻辑组织到一个位置。视图合成器在一些由应用程序内多个路由或控制器返回的相同视图并且始终需要特定数据的情况下尤其有用。
 
-通常，视图合成器会在应用程序的[服务提供者](/docs/{{version}}/providers)中注册。在这个示例中，我们将假设 `App\Providers\AppServiceProvider` 将包含这个逻辑。
+通常，视图合成器会在应用程序的[服务提供者](/docs/11/architecture-concepts/providers)中注册。在这个示例中，我们将假设 `App\Providers\AppServiceProvider` 将包含这个逻辑。
 
 我们将使用 `View` facade 的 `composer` 方法注册视图合成器。Laravel 没有为基于类的视图合成器包括默认目录，因此你可以自由地按照你的愿望来组织它们。例如，你可以创建一个 `app/View/Composers` 目录来容纳你应用程序的所有视图合成器：
 
@@ -222,7 +222,7 @@ class ProfileComposer
 }
 ```
 
-如你所见，所有视图合成器都通过[服务容器](/docs/{{version}}/container)解析，因此你可以在合成器的构造函数中键入提示你所需要的任何依赖。
+如你所见，所有视图合成器都通过[服务容器](/docs/11/architecture-concepts/container)解析，因此你可以在合成器的构造函数中键入提示你所需要的任何依赖。
 
 #### 将合成器附加到多个视图
 

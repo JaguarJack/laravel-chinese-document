@@ -24,7 +24,7 @@ Vite 也适用于传统的服务器端渲染应用程序，并适用于 JavaScri
 ### 安装与设置
 
 > [!NOTE]
-> 下面的文档讨论了如何手动安装和配置 Laravel Vite 插件。然而，Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了所有这些脚手架，并且是使用 Laravel 和 Vite 开始的最快方法。
+> 下面的文档讨论了如何手动安装和配置 Laravel Vite 插件。然而，Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了所有这些脚手架，并且是使用 Laravel 和 Vite 开始的最快方法。
 
 ### 安装 Node
 
@@ -35,7 +35,7 @@ node -v
 npm -v
 ```
 
-你可以从 [官方 Node 网站](https://nodejs.org/en/download/) 使用简单的图形安装器轻松安装 Node 和 NPM 的最新版本。或者，如果你正在使用 [Laravel Sail](https://laravel.com/docs/{{version}}/sail)，你可以通过 Sail 调用 Node 和 NPM：
+你可以从 [官方 Node 网站](https://nodejs.org/en/download/) 使用简单的图形安装器轻松安装 Node 和 NPM 的最新版本。或者，如果你正在使用 [Laravel Sail](https://laravel.com/docs/11/packages/sail)，你可以通过 Sail 调用 Node 和 NPM：
 
 ```sh
 ./vendor/bin/sail node -v
@@ -94,7 +94,7 @@ Laravel 插件还支持多个入口点和高级配置选项，例如 [SSR 入口
 
 如果你的本地开发 Web 服务器通过 HTTPS 提供应用程序，你可能会遇到连接到 Vite 开发服务器的问题。
 
-如果你正在使用 [Laravel Herd](https://herd.laravel.com) 并且已经对站点进行了加密，或者你正在使用 [Laravel Valet](/docs/{{version}}/valet) 并且已经对你的应用程序运行了 [secure 命令](/docs/{{version}}/valet#securing-sites)，Laravel Vite 插件会自动检测并使用为你生成的 TLS 证书。
+如果你正在使用 [Laravel Herd](https://herd.laravel.com) 并且已经对站点进行了加密，或者你正在使用 [Laravel Valet](/docs/11/valet) 并且已经对你的应用程序运行了 [secure 命令](/docs/11/valet#securing-sites)，Laravel Vite 插件会自动检测并使用为你生成的 TLS 证书。
 
 如果你使用不匹配应用程序目录名称的主机对站点进行了加密，你可以在应用程序的 `vite.config.js` 文件中手动指定主机：
 
@@ -139,7 +139,7 @@ export default defineConfig({
 
 ### 在 Sail 上的 WSL2 中运行开发服务器
 
-当在 Windows Subsystem for Linux 2 (WSL2) 上的 [Laravel Sail](/docs/{{version}}/sail) 中运行 Vite 开发服务器时，你应该在你的 `vite.config.js` 文件中添加以下配置，以确保浏览器可以与开发服务器通信：
+当在 Windows Subsystem for Linux 2 (WSL2) 上的 [Laravel Sail](/docs/11/packages/sail) 中运行 Vite 开发服务器时，你应该在你的 `vite.config.js` 文件中添加以下配置，以确保浏览器可以与开发服务器通信：
 
 ```js
 // ...
@@ -230,7 +230,7 @@ npm run dev
 npm run build
 ```
 
-如果你在 WSL2 上的 [Sail](/docs/{{version}}/sail) 中运行开发服务器，可能需要一些[额外的配置](#configuring-hmr-in-sail-on-wsl2)选项。
+如果你在 WSL2 上的 [Sail](/docs/11/packages/sail) 中运行开发服务器，可能需要一些[额外的配置](#configuring-hmr-in-sail-on-wsl2)选项。
 
 ## 使用 JavaScript
 
@@ -298,7 +298,7 @@ export default defineConfig({
 ```
 
 > [!NOTE]
-> Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了正确的 Laravel、Vue 和 Vite 配置。查看 [Laravel Breeze](/docs/{{version}}/starter-kits#breeze-and-inertia)，它是开始使用 Laravel、Vue 和 Vite 的最快途径。
+> Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了正确的 Laravel、Vue 和 Vite 配置。查看 [Laravel Breeze](/docs/11/getting-started/starter-kits#breeze-and-inertia)，它是开始使用 Laravel、Vue 和 Vite 的最快途径。
 
 ### React
 
@@ -332,7 +332,7 @@ export default defineConfig({
 `@viteReactRefresh` 指令必须在 `@vite` 指令之前调用。
 
 > [!NOTE]
-> Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了正确的 Laravel、React 和 Vite 配置。查看 [Laravel Breeze](/docs/{{version}}/starter-kits#breeze-and-inertia)，它是开始使用 Laravel、React 和 Vite 的最快途径。
+> Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了正确的 Laravel、React 和 Vite 配置。查看 [Laravel Breeze](/docs/11/getting-started/starter-kits#breeze-and-inertia)，它是开始使用 Laravel、React 和 Vite 的最快途径。
 
 ### Inertia
 
@@ -354,7 +354,7 @@ createInertiaApp({
 ```
 
 > [!NOTE]
-> Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了正确的 Laravel、Inertia 和 Vite 配置。查看 [Laravel Breeze](/docs/{{version}}/starter-kits#breeze-and-inertia)，这是开始使用 Laravel、Inertia 和 Vite 的最快途径。
+> Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了正确的 Laravel、Inertia 和 Vite 配置。查看 [Laravel Breeze](/docs/11/getting-started/starter-kits#breeze-and-inertia)，这是开始使用 Laravel、Inertia 和 Vite 的最快途径。
 
 ### URL 处理
 
@@ -364,7 +364,7 @@ createInertiaApp({
 
 考虑以下项目结构：
 
-```nothing
+```shell
 public/
   taylor.png
 resources/
@@ -399,7 +399,7 @@ export default {
 ```
 
 > [!NOTE]
-> Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了正确的 Tailwind、PostCSS 和 Vite 配置。或者，如果你想在不使用我们的入门套件的情况下使用 Tailwind 和 Laravel，请查看 [Laravel 的 Tailwind 安装指南](https://tailwindcss.com/docs/guides/laravel)。
+> Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了正确的 Tailwind、PostCSS 和 Vite 配置。或者，如果你想在不使用我们的入门套件的情况下使用 Tailwind 和 Laravel，请查看 [Laravel 的 Tailwind 安装指南](https://tailwindcss.com/docs/guides/laravel)。
 
 ## 使用 Blade 和路由
 
@@ -486,7 +486,7 @@ export default defineConfig({
 
 ### 别名
 
-在 JavaScript 应用程序中[创建别名](#aliases)到经常引用的目录是很常见的。但是，你也可以使用 `Illuminate\Support\Facades\Vite` 类的 `macro` 方法在 Blade 中创建别名。通常，“宏”应该在[服务提供者](/docs/{{version}}/providers)的 `boot` 方法内定义：
+在 JavaScript 应用程序中[创建别名](#aliases)到经常引用的目录是很常见的。但是，你也可以使用 `Illuminate\Support\Facades\Vite` 类的 `macro` 方法在 Blade 中创建别名。通常，“宏”应该在[服务提供者](/docs/11/architecture-concepts/providers)的 `boot` 方法内定义：
 
 ```php
 /**
@@ -508,13 +508,13 @@ public function boot(): void
 
 如果你的 Vite 编译资产部署到与你的应用程序不同的域，例如通过 CDN，你必须在应用程序的 `.env` 文件中指定 `ASSET_URL` 环境变量：
 
-```env
+```php
 ASSET_URL=https://cdn.example.com
 ```
 
 配置资产 URL 之后，所有重写的资产 URL 都将被配置的值作为前缀：
 
-```nothing
+```shell
 https://cdn.example.com/build/assets/app.9dce8d17.js
 ```
 
@@ -524,7 +524,7 @@ https://cdn.example.com/build/assets/app.9dce8d17.js
 
 你可以通过在应用程序的 `.env` 文件中使用 `VITE_` 前缀，将环境变量注入到你的 JavaScript 中：
 
-```env
+```php
 VITE_SENTRY_DSN_PUBLIC=http://example.com
 ```
 
@@ -624,13 +624,13 @@ php artisan inertia:start-ssr
 ```
 
 > [!NOTE]
-> Laravel 的 [入门套件](/docs/{{version}}/starter-kits) 已经包含了正确的 Laravel、Inertia SSR 和 Vite 配置。查看 [Laravel Breeze](/docs/{{version}}/starter-kits#breeze-and-inertia) 了解如何快速开始使用 Laravel、Inertia SSR 和 Vite。
+> Laravel 的 [入门套件](/docs/11/getting-started/starter-kits) 已经包含了正确的 Laravel、Inertia SSR 和 Vite 配置。查看 [Laravel Breeze](/docs/11/getting-started/starter-kits#breeze-and-inertia) 了解如何快速开始使用 Laravel、Inertia SSR 和 Vite。
 
 ## 脚本和样式标签属性
 
 ### 内容安全政策 (CSP) Nonce
 
-如果你希望在脚本和样式标签上包含 [`nonce` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) 作为你的[内容安全政策](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)的一部分，你可以使用 `useCspNonce` 方法在自定义 [中间件](/docs/{{version}}/middleware) 中生成或指定一个 nonce：
+如果你希望在脚本和样式标签上包含 [`nonce` 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/nonce) 作为你的[内容安全政策](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)的一部分，你可以使用 `useCspNonce` 方法在自定义 [中间件](/docs/11/basics/middleware) 中生成或指定一个 nonce：
 
 ```php
 <?php
@@ -662,7 +662,7 @@ class AddContentSecurityPolicyHeaders
 
 调用 `useCspNonce` 方法后，Laravel 将自动在所有生成的脚本和样式标签上包含 `nonce` 属性。
 
-如果你需要在其他地方指定 nonce，包括 Laravel 的[入门套件](/docs/{{version}}/starter-kits)中包含的 [Ziggy `@route` 指令](https://github.com/tighten/ziggy#using-routes-with-a-content-security-policy)，你可以使用 `cspNonce` 方法来检索它：
+如果你需要在其他地方指定 nonce，包括 Laravel 的[入门套件](/docs/11/getting-started/starter-kits)中包含的 [Ziggy `@route` 指令](https://github.com/tighten/ziggy#using-routes-with-a-content-security-policy)，你可以使用 `cspNonce` 方法来检索它：
 
 ```blade
 @routes(nonce: Vite::cspNonce())
@@ -715,7 +715,7 @@ Vite::useIntegrityKey(false);
 
 ### 任意属性
 
-如果你需要在脚本和样式标签上包含额外的属性，比如 [`data-turbo-track`](https://turbo.hotwired.dev/handbook/drive#reloading-when-assets-change) 属性，你可以通过 `useScriptTagAttributes` 和 `useStyleTagAttributes` 方法指定它们。通常，这些方法应该在[服务提供者](/docs/{{version}}/providers)中调用：
+如果你需要在脚本和样式标签上包含额外的属性，比如 [`data-turbo-track`](https://turbo.hotwired.dev/handbook/drive#reloading-when-assets-change) 属性，你可以通过 `useScriptTagAttributes` 和 `useStyleTagAttributes` 方法指定它们。通常，这些方法应该在[服务提供者](/docs/11/architecture-concepts/providers)中调用：
 
 ```php
 use Illuminate\Support\Facades\Vite;

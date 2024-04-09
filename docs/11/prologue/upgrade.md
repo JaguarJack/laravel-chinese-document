@@ -227,7 +227,7 @@ $table->bigIncrements('id')->primary()->change();
 $table->char('postal_code', 10)->unique(false)->change();
 ```
 
-如果您不希望更新应用程序中所有现有的“更改”迁移以保留列的现有属性，您可以简单地[压缩您的迁移](/docs/{{version}}/migrations#squashing-migrations)：
+如果您不希望更新应用程序中所有现有的“更改”迁移以保留列的现有属性，您可以简单地[压缩您的迁移](/docs/11/migrations#squashing-migrations)：
 
 ```bash
 php artisan schema:dump
@@ -544,7 +544,7 @@ php artisan vendor:publish --tag=telescope-migrations
 
 **影响可能性：中等**
 
-Laravel 11 现在提供了自己的 [`once` 函数](/docs/{{version}}/helpers#method-once) 以确保给定的闭包只执行一次。因此，如果您的应用程序依赖于 `spatie/once` 包，您应该从您的应用程序的 `composer.json` 文件中移除它，以避免冲突。
+Laravel 11 现在提供了自己的 [`once` 函数](/docs/11/digging-deeper/reverb#method-once) 以确保给定的闭包只执行一次。因此，如果您的应用程序依赖于 `spatie/once` 包，您应该从您的应用程序的 `composer.json` 文件中移除它，以避免冲突。
 
 ### 杂项
 

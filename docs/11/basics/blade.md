@@ -6,7 +6,7 @@
 
 Blade 是 Laravel 提供的简单而功能强大的模板引擎。与一些 PHP 模板引擎不同，Blade 不限制在模板中使用纯 PHP 代码。实际上，所有 Blade 模板都会被编译成纯 PHP 代码并缓存，直到它们被修改，这意味着 Blade 对应用程序基本上没有任何开销。Blade 模板文件使用 `.blade.php` 文件扩展名，并通常存储在 `resources/views` 目录中。
 
-可以使用全局 `view` 辅助函数从路由或控制器返回 Blade 视图。当然，正如[视图](/docs/{{version}}/views)文档中提到的，可以使用 `view` 辅助函数的第二个参数将数据传递给 Blade 视图：
+可以使用全局 `view` 辅助函数从路由或控制器返回 Blade 视图。当然，正如[视图](/docs/11/basics/views)文档中提到的，可以使用 `view` 辅助函数的第二个参数将数据传递给 Blade 视图：
 
 ```php
 Route::get('/', function () {
@@ -181,7 +181,7 @@ Laravel 应用程序框架的最新版本包含了一个 `Js` facade，它在你
 
 #### 身份验证指令
 
-`@auth` 和 `@guest` 指令可用于快速确定当前用户是否[认证](/docs/{{version}}/authentication)或者是游客：
+`@auth` 和 `@guest` 指令可用于快速确定当前用户是否[认证](/docs/11/security/authentication)或者是游客：
 
 ```blade
 @auth
@@ -253,7 +253,7 @@ Laravel 应用程序框架的最新版本包含了一个 `Js` facade，它在你
 
 #### 会话指令
 
-`@session` 指令可用于确定是否存在[会话](/docs/{{version}}/session)值。如果会话值存在，`@session` 和 `@endsession` 指令内的模板内容将被执行。在 `@session` 指令的内容中，你可以回显 `$value` 变量来显示会话的值：
+`@session` 指令可用于确定是否存在[会话](/docs/11/basic/session)值。如果会话值存在，`@session` 和 `@endsession` 指令内的模板内容将被执行。在 `@session` 指令的内容中，你可以回显 `$value` 变量来显示会话的值：
 
 ```blade
 @session('status')
@@ -833,7 +833,7 @@ public function render(): Closure
 
 #### 额外的依赖项
 
-如果你的组件需要来自 Laravel [服务容器](/docs/{{version}}/container)的依赖项，你可以在组件的数据属性之前列出它们，它们将自动被容器注入：
+如果你的组件需要来自 Laravel [服务容器](/docs/11/architecture-concepts/container)的依赖项，你可以在组件的数据属性之前列出它们，它们将自动被容器注入：
 
 ```php
 use App\Services\AlertCreator;
@@ -1269,7 +1269,7 @@ Blade 会自动检测与此组件相关联的类名，通过 `pascal casing` 组
 
 有时，当一个组件由许多 Blade 模板组成时，你可能希望将给定组件的模板组合在一个目录内。例如，设想一个具有以下目录结构的 "accordion" 组件：
 
-```none
+```php
 /resources/views/components/accordion.blade.php
 /resources/views/components/accordion/item.blade.php
 ```
@@ -1288,7 +1288,7 @@ Blade 会自动检测与此组件相关联的类名，通过 `pascal casing` 组
 
 幸运的是，Blade 允许你在组件的模板目录中放置一个 `index.blade.php` 文件。当组件存在 `index.blade.php` 模板时，它将作为组件的 "root" 节点渲染。所以，我们可以继续使用上面示例中的相同 Blade 语法；但是，我们将调整我们的目录结构如下：
 
-```none
+```php
 /resources/views/components/accordion/index.blade.php
 /resources/views/components/accordion/item.blade.php
 ```
@@ -1357,7 +1357,7 @@ Blade 会自动检测与此组件相关联的类名，通过 `pascal casing` 组
 
 如前所述，匿名组件通常通过在 `resources/views/components` 目录中放置一个 Blade 模板来定义。然而，除了默认路径，你可能偶尔想向 Laravel 注册其他匿名组件路径。
 
-`anonymousComponentPath` 方法接受匿名组件位置的“路径”作为其第一个参数，以及可选的“命名空间”，组件应该放在其第二个参数下。通常，此方法应该从应用程序的 [服务提供者](/docs/{{version}}/providers) 之一的 `boot` 方法中调用：
+`anonymousComponentPath` 方法接受匿名组件位置的“路径”作为其第一个参数，以及可选的“命名空间”，组件应该放在其第二个参数下。通常，此方法应该从应用程序的 [服务提供者](/docs/11/architecture-concepts/providers) 之一的 `boot` 方法中调用：
 
 ```php
 /**
@@ -1518,7 +1518,7 @@ Route::get('/tasks', function () {
 
 ### CSRF 字段
 
-无论何时在应用程序中定义 HTML 表单，你都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便[CSRF 保护](/docs/{{version}}/csrf)中间件可以验证请求。你可以使用 `@csrf` Blade 指令来生成令牌字段：
+无论何时在应用程序中定义 HTML 表单，你都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便[CSRF 保护](/docs/11/csrf)中间件可以验证请求。你可以使用 `@csrf` Blade 指令来生成令牌字段：
 
 ```blade
 <form method="POST" action="/profile">
@@ -1542,7 +1542,7 @@ Route::get('/tasks', function () {
 
 ### 验证错误
 
-`@error` 指令可用于快速检查给定属性是否存在[验证错误信息](/docs/{{version}}/validation#quick-displaying-the-validation-errors)。在 `@error` 指令内部，你可以回显 `$message` 变量来显示错误消息：
+`@error` 指令可用于快速检查给定属性是否存在[验证错误信息](/docs/11/basic/validation#quick-displaying-the-validation-errors)。在 `@error` 指令内部，你可以回显 `$message` 变量来显示错误消息：
 
 ```blade
 <!-- /resources/views/post/create.blade.php -->
@@ -1570,7 +1570,7 @@ Route::get('/tasks', function () {
     class="@error('email') is-invalid @else is-valid @enderror">
 ```
 
-你可以将[特定错误包的名称](/docs/{{version}}/validation#named-error-bags)作为第二个参数传递给 `@error` 指令，以在包含多个表单的页面上检索验证错误信息：
+你可以将[特定错误包的名称](/docs/11/basic/validation#named-error-bags)作为第二个参数传递给 `@error` 指令，以在包含多个表单的页面上检索验证错误信息：
 
 ```blade
 <!-- /resources/views/auth.blade.php -->
@@ -1630,7 +1630,7 @@ Blade 允许你推送到命名堆栈，这些命名堆栈可以在其他视图�
 
 ## 服务注入
 
-`@inject` 指令可用于从 Laravel [服务容器](/docs/{{version}}/container)中检索服务。传递给 `@inject` 的第一个参数是服务将被放入的变量的名称，第二个参数是你希望解析的服务的类或接口名称：
+`@inject` 指令可用于从 Laravel [服务容器](/docs/11/architecture-concepts/container)中检索服务。传递给 `@inject` 的第一个参数是服务将被放入的变量的名称，第二个参数是你希望解析的服务的类或接口名称：
 
 ```blade
 @inject('metrics', 'App\Services\MetricsService')

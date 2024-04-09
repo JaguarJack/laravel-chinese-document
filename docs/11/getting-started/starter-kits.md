@@ -10,9 +10,9 @@
 
 ## Laravel Breeze
 
-[Laravel Breeze](https://github.com/laravel/breeze) 是 Laravel 所有[认证功能](/docs/{{version}}/authentication)的最小、简单实现，包括登录、注册、密码重置、电子邮件验证和密码确认。此外，Breeze 还包括一个简单的“个人资料”页面，用户可以在其中更新他们的姓名、电子邮件地址和密码。
+[Laravel Breeze](https://github.com/laravel/breeze) 是 Laravel 所有[认证功能](/docs/11/security/authentication)的最小、简单实现，包括登录、注册、密码重置、电子邮件验证和密码确认。此外，Breeze 还包括一个简单的“个人资料”页面，用户可以在其中更新他们的姓名、电子邮件地址和密码。
 
-Laravel Breeze 的默认视图层由简单的 [Blade 模板](/docs/{{version}}/blade) 组成，使用 [Tailwind CSS](https://tailwindcss.com) 进行样式设计。此外，Breeze 提供了基于 [Livewire](https://livewire.laravel.com) 或 [Inertia](https://inertiajs.com) 的脚手架选项，可选择使用 Vue 或 React 进行 Inertia 基础脚手架。
+Laravel Breeze 的默认视图层由简单的 [Blade 模板](/docs/11/basics/blade) 组成，使用 [Tailwind CSS](https://tailwindcss.com) 进行样式设计。此外，Breeze 提供了基于 [Livewire](https://livewire.laravel.com) 或 [Inertia](https://inertiajs.com) 的脚手架选项，可选择使用 Vue 或 React 进行 Inertia 基础脚手架。
 
 ![Breeze 注册页面](https://laravel.com/img/docs/breeze-register.png)
 
@@ -22,7 +22,7 @@ Laravel Breeze 的默认视图层由简单的 [Blade 模板](/docs/{{version}}/b
 
 ### 安装
 
-首先，您应该[创建一个新的 Laravel 应用程序](/docs/{{version}}/installation)。如果您使用 [Laravel 安装器](/docs/{{version}}/installation#creating-a-laravel-project) 创建应用程序，将在安装过程中提示您安装 Laravel Breeze。否则，您将需要按照下面的手动安装说明进行操作。
+首先，您应该[创建一个新的 Laravel 应用程序](/docs/11/installation)。如果您使用 [Laravel 安装器](/docs/11/installation#creating-a-laravel-project) 创建应用程序，将在安装过程中提示您安装 Laravel Breeze。否则，您将需要按照下面的手动安装说明进行操作。
 
 如果您已经创建了一个没有入门套件的新 Laravel 应用程序，您可以使用 Composer 手动安装 Laravel Breeze：
 
@@ -44,7 +44,7 @@ npm run dev
 
 ### Breeze 和 Blade
 
-Breeze 的默认“堆栈”是 Blade 堆栈，它使用简单的 [Blade 模板](/docs/{{version}}/blade) 来渲染应用程序的前端。可以通过调用 `breeze:install` 命令并选择 Blade 前端堆栈来安装 Blade 堆栈。在安装 Breeze 的脚手架之后，您还应该编译应用程序的前端资产：
+Breeze 的默认“堆栈”是 Blade 堆栈，它使用简单的 [Blade 模板](/docs/11/basics/blade) 来渲染应用程序的前端。可以通过调用 `breeze:install` 命令并选择 Blade 前端堆栈来安装 Blade 堆栈。在安装 Breeze 的脚手架之后，您还应该编译应用程序的前端资产：
 
 ```shell
 php artisan breeze:install
@@ -57,7 +57,7 @@ npm run dev
 接下来，您可以在 Web 浏览器中导航到应用程序的 `/login` 或 `/register` URL。Breeze 的所有路由都定义在 `routes/auth.php` 文件中。
 
 > [!NOTE]
-> 要了解有关编译应用程序 CSS 和 JavaScript 的更多信息，请查看 Laravel 的 [Vite 文档](/docs/{{version}}/vite#running-vite)。
+> 要了解有关编译应用程序 CSS 和 JavaScript 的更多信息，请查看 Laravel 的 [Vite 文档](/docs/11/vite#running-vite)。
 
 ### Breeze 和 Livewire
 

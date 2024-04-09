@@ -23,11 +23,11 @@ Route::get('/', function () {
 ```
 
 > [!NOTE]
-> 你知道你也可以从路由或控制器返回 [Eloquent 集合](/docs/{{version}}/eloquent-collections) 吗？它们将自动被转换为 JSON。试一试吧！
+> 你知道你也可以从路由或控制器返回 [Eloquent 集合](/docs/11/eloquent/eloquent-collections) 吗？它们将自动被转换为 JSON。试一试吧！
 
 #### 响应对象
 
-通常情况下，你不只是从路由动作返回简单的字符串或数组。相反，你将返回完整的 `Illuminate\Http\Response` 实例或 [视图](/docs/{{version}}/views)。
+通常情况下，你不只是从路由动作返回简单的字符串或数组。相反，你将返回完整的 `Illuminate\Http\Response` 实例或 [视图](/docs/11/basics/views)。
 
 返回完整的 `Response` 实例允许你自定义响应的 HTTP 状态码和头信息。`Response` 实例继承自 `Symfony\Component\HttpFoundation\Response` 类，该类提供了各种方法来构建 HTTP 响应：
 
@@ -40,7 +40,7 @@ Route::get('/home', function () {
 
 #### Eloquent 模型和集合
 
-你也可以直接从路由和控制器返回 [Eloquent ORM](/docs/{{version}}/eloquent) 模型和集合。当你这样做时，Laravel 会自动将模型和集合转换为 JSON 响应，同时尊重模型的 [隐藏属性](/docs/{{version}}/eloquent-serialization#hiding-attributes-from-json)：
+你也可以直接从路由和控制器返回 [Eloquent ORM](/docs/11/eloquent/eloquent) 模型和集合。当你这样做时，Laravel 会自动将模型和集合转换为 JSON 响应，同时尊重模型的 [隐藏属性](/docs/11/eloquent/eloquent-serialization#hiding-attributes-from-json)：
 
 ```php
 use App\Models\User;
@@ -160,7 +160,7 @@ Route::get('/dashboard', function () {
 });
 ```
 
-有时你可能希望将用户重定向到他们之前的位置，例如当提交的表单无效时。你可以通过使用全局的 `back` 辅助函数来这样做。由于该功能利用了 [会话](/docs/{{version}}/session)，请确保调用 `back` 函数的路由正在使用 `web` 中间件组：
+有时你可能希望将用户重定向到他们之前的位置，例如当提交的表单无效时。你可以通过使用全局的 `back` 辅助函数来这样做。由于该功能利用了 [会话](/docs/11/basic/session)，请确保调用 `back` 函数的路由正在使用 `web` 中间件组：
 
 ```php
 Route::post('/user/profile', function () {
@@ -210,7 +210,7 @@ public function getRouteKey(): mixed
 
 ### 重定向到控制器动作
 
-你也可以生成重定向到 [控制器动作](/docs/{{version}}/controllers) 的重定向。为此，将控制器和动作名称传递给 `action` 方法：
+你也可以生成重定向到 [控制器动作](/docs/11/controllers) 的重定向。为此，将控制器和动作名称传递给 `action` 方法：
 
 ```php
 use App\Http\Controllers\UserController;
@@ -236,7 +236,7 @@ return redirect()->away('https://www.google.com');
 
 ### 带闪存会话数据的重定向
 
-重定向到新 URL 并[将数据闪存到会话](/docs/{{version}}/session#flash-data)通常是同时进行的。通常，这在成功执行操作后完成，当你将成功信息闪存到会话中。为了方便起见，你可以创建一个 `RedirectResponse` 实例并在单个流畅的方法链中将数据闪存到会话：
+重定向到新 URL 并[将数据闪存到会话](/docs/11/basic/session#flash-data)通常是同时进行的。通常，这在成功执行操作后完成，当你将成功信息闪存到会话中。为了方便起见，你可以创建一个 `RedirectResponse` 实例并在单个流畅的方法链中将数据闪存到会话：
 
 ```php
 Route::post('/user/profile', function () {
@@ -246,7 +246,7 @@ Route::post('/user/profile', function () {
 });
 ```
 
-用户被重定向后，你可以从 [会话](/docs/{{version}}/session) 中显示闪存的消息。例如，使用 [Blade 语法](/docs/{{version}}/blade)：
+用户被重定向后，你可以从 [会话](/docs/11/basic/session) 中显示闪存的消息。例如，使用 [Blade 语法](/docs/11/basics/blade)：
 
 ```php
 @if (session('status'))
@@ -258,7 +258,7 @@ Route::post('/user/profile', function () {
 
 #### 带输入的重定向
 
-你可以使用 `RedirectResponse` 实例提供的 `withInput` 方法，在将用户重定向到新位置之前将当前请求的输入数据闪存到会话中。这通常是在用户遇到验证错误时进行的。一旦输入被闪存到会话中，你可以在下一次请求中轻易地[检索它](/docs/{{version}}/requests#retrieving-old-input)以重新填充表单：
+你可以使用 `RedirectResponse` 实例提供的 `withInput` 方法，在将用户重定向到新位置之前将当前请求的输入数据闪存到会话中。这通常是在用户遇到验证错误时进行的。一旦输入被闪存到会话中，你可以在下一次请求中轻易地[检索它](/docs/11/basics/requests#retrieving-old-input)以重新填充表单：
 
 ```php
 return back()->withInput();
@@ -266,11 +266,11 @@ return back()->withInput();
 
 ## 其他响应类型
 
-`response` 帮助函数可以用于生成其他类型的响应实例。当没有参数调用 `response` 帮助函数时，会返回 [合同](/docs/{{version}}/contracts) 中的 `Illuminate\Contracts\Routing\ResponseFactory` 实现。这个合同提供了几个用于生成响应的有用方法。
+`response` 帮助函数可以用于生成其他类型的响应实例。当没有参数调用 `response` 帮助函数时，会返回 [合同](/docs/11/digging-deeper/contracts) 中的 `Illuminate\Contracts\Routing\ResponseFactory` 实现。这个合同提供了几个用于生成响应的有用方法。
 
 ### 视图响应
 
-如果你需要控制响应的状态和头信息，但也需要将 [视图](/docs/{{version}}/views) 返回为响应的内容，你应该使用 `view` 方法：
+如果你需要控制响应的状态和头信息，但也需要将 [视图](/docs/11/basics/views) 返回为响应的内容，你应该使用 `view` 方法：
 
 ```php
 return response()
@@ -338,7 +338,7 @@ return response()->file($pathToFile, $headers);
 
 ## 响应宏
 
-如果你想定义一个自定义响应，而且你可以在你的路由和控制器中重复使用，你可以在 `Response` facade 上使用 `macro` 方法。通常，你应该在你的应用程序的[服务提供者](/docs/{{version}}/providers)之一的 `boot` 方法中调用这个方法，比如 `App\Providers\AppServiceProvider` 服务提供者：
+如果你想定义一个自定义响应，而且你可以在你的路由和控制器中重复使用，你可以在 `Response` facade 上使用 `macro` 方法。通常，你应该在你的应用程序的[服务提供者](/docs/11/architecture-concepts/providers)之一的 `boot` 方法中调用这个方法，比如 `App\Providers\AppServiceProvider` 服务提供者：
 
 ```php
 <?php

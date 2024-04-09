@@ -10,7 +10,7 @@ Laravel 的 `Illuminate\Http\Request` 类提供了一种面向对象的方式来
 
 ### 访问请求
 
-要通过依赖注入获得当前 HTTP 请求的实例，您应该在路由闭包或控制器方法中类型提示 `Illuminate\Http\Request` 类。来访请求实例将由 Laravel [服务容器](/docs/{{version}}/container)自动注入：
+要通过依赖注入获得当前 HTTP 请求的实例，您应该在路由闭包或控制器方法中类型提示 `Illuminate\Http\Request` 类。来访请求实例将由 Laravel [服务容器](/docs/11/architecture-concepts/container)自动注入：
 
 ```php
 <?php
@@ -102,7 +102,7 @@ if ($request->is('admin/*')) {
 }
 ```
 
-使用 `routeIs` 方法，您可以确定传入的请求是否匹配了一个[命名路由](/docs/{{version}}/routing#named-routes)：
+使用 `routeIs` 方法，您可以确定传入的请求是否匹配了一个[命名路由](/docs/11/basics/routing#named-routes)：
 
 ```php
 if ($request->routeIs('admin.*')) {
@@ -258,7 +258,7 @@ Route::get('/', function (ServerRequestInterface $request) {
 $input = $request->all();
 ```
 
-使用 `collect` 方法，你可以将传入请求的所有输入数据检索为 [集合](/docs/{{version}}/collections)：
+使用 `collect` 方法，你可以将传入请求的所有输入数据检索为 [集合](/docs/11/digging-deeper/collections)：
 
 ```php
 $input = $request->collect();
@@ -330,7 +330,7 @@ $name = $request->input('user.name');
 
 #### 检索 Stringable 输入值
 
-你可以使用 `string` 方法而不是将请求输入数据作为原始 `string` 来检索，以将请求数据作为 [`Illuminate\Support\Stringable`](/docs/{{version}}/helpers#fluent-strings) 实例检索：
+你可以使用 `string` 方法而不是将请求输入数据作为原始 `string` 来检索，以将请求数据作为 [`Illuminate\Support\Stringable`](/docs/11/digging-deeper/reverb#fluent-strings) 实例检索：
 
 ```php
 $name = $request->string('name')->trim();
@@ -504,11 +504,11 @@ $request->mergeIfMissing(['votes' => 0]);
 
 ### 旧输入
 
-Laravel 允许您在下一个请求期间保留一个请求的输入。当在检测到验证错误后重新填充表单时，此功能特别有用。然而，如果您使用 Laravel 内置的[验证功能](/docs/{{version}}/validation)，您可能不需要直接手动使用这些 session 输入闪存方法，因为 Laravel 的一些内置验证工具会自动调用它们。
+Laravel 允许您在下一个请求期间保留一个请求的输入。当在检测到验证错误后重新填充表单时，此功能特别有用。然而，如果您使用 Laravel 内置的[验证功能](/docs/11/basic/validation)，您可能不需要直接手动使用这些 session 输入闪存方法，因为 Laravel 的一些内置验证工具会自动调用它们。
 
 #### 将输入闪存到 Session
 
-`Illuminate\Http\Request` 类上的 `flash` 方法将当前输入闪存到 [session](/docs/{{version}}/session) 中，以便它在用户下一次对应用程序的请求中可用：
+`Illuminate\Http\Request` 类上的 `flash` 方法将当前输入闪存到 [session](/docs/11/basic/session) 中，以便它在用户下一次对应用程序的请求中可用：
 
 ```php
 $request->flash();
@@ -538,13 +538,13 @@ return redirect('form')->withInput(
 
 #### 检索旧输入
 
-要从前一个请求中检索闪存的输入，可以在 `Illuminate\Http\Request` 实例上调用 `old` 方法。`old` 方法将从 [session](/docs/{{version}}/session) 中拉取先前闪存的输入数据：
+要从前一个请求中检索闪存的输入，可以在 `Illuminate\Http\Request` 实例上调用 `old` 方法。`old` 方法将从 [session](/docs/11/basic/session) 中拉取先前闪存的输入数据：
 
 ```php
 $username = $request->old('username');
 ```
 
-Laravel 也提供了一个全局的 `old` 辅助函数。如果您在 [Blade 模板](/docs/{{version}}/blade) 中显示旧输入，使用 `old` 辅助函数重新填充表单会更加方便。如果给定字段没有旧输入，则会返回 `null`：
+Laravel 也提供了一个全局的 `old` 辅助函数。如果您在 [Blade 模板](/docs/11/basics/blade) 中显示旧输入，使用 `old` 辅助函数重新填充表单会更加方便。如果给定字段没有旧输入，则会返回 `null`：
 
 ```html
 <input type="text" name="username" value="{{ old('username') }}" />
@@ -640,7 +640,7 @@ $extension = $request->photo->extension();
 
 ### 存储上传文件
 
-要存储上传的文件，您通常会使用配置好的[文件系统](/docs/{{version}}/filesystem)之一。`UploadedFile` 类拥有一个 `store` 方法，该方法会将上传的文件移动到您的磁盘之一，这可以是您本地文件系统上的位置，或者是亚马逊 S3 等云存储位置。
+要存储上传的文件，您通常会使用配置好的[文件系统](/docs/11/digging-deeper/filesystem)之一。`UploadedFile` 类拥有一个 `store` 方法，该方法会将上传的文件移动到您的磁盘之一，这可以是您本地文件系统上的位置，或者是亚马逊 S3 等云存储位置。
 
 `store` 方法接受相对于文件系统配置的根目录的路径，用于存储文件。此路径不应包含文件名，因为系统会自动生成一个独特的 ID 来作为文件名。
 
@@ -661,7 +661,7 @@ $path = $request->photo->storeAs('images', 'filename.jpg', 's3');
 ```
 
 > [!NOTE]  
-> 有关 Laravel 中文件存储的更多信息，请查看完整的[文件存储文档](/docs/{{version}}/filesystem)。
+> 有关 Laravel 中文件存储的更多信息，请查看完整的[文件存储文档](/docs/11/digging-deeper/filesystem)。
 
 ## 配置可信代理
 

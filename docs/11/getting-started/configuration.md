@@ -84,7 +84,7 @@ APP_NAME="我的应用"
 
 ## 确定当前环境
 
-当前应用环境是通过 `.env` 文件中的 `APP_ENV` 变量确定的。您可以通过 `App` [facade](/docs/{{version}}/facades) 上的 `environment` 方法访问此值：
+当前应用环境是通过 `.env` 文件中的 `APP_ENV` 变量确定的。您可以通过 `App` [facade](/docs/11/basics/facades) 上的 `environment` 方法访问此值：
 
 ```php
 use Illuminate\Support\Facades\App;
@@ -312,7 +312,7 @@ php artisan up
 
 #### 维护模式和队列
 
-当您的应用程序处于维护模式时，不会处理任何[队列作业](/docs/{{version}}/queues)。一旦应用程序退出维护模式，作业将继续正常处理。
+当您的应用程序处于维护模式时，不会处理任何[队列作业](/docs/11/queues)。一旦应用程序退出维护模式，作业将继续正常处理。
 
 #### 维护模式的替代方案
 

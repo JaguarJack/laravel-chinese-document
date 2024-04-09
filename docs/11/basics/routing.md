@@ -34,7 +34,7 @@ Route::get('/user', [UserController::class, 'index']);
 php artisan install:api
 ```
 
-`install:api` 命令安装了 [Laravel Sanctum](/docs/{{version}}/sanctum)，它为认证第三方 API 消费者、SPA 或移动应用程序提供了一个强大而简单的 API 令牌身份验证守护程序。此外，`install:api` 命令还创建了 `routes/api.php` 文件：
+`install:api` 命令安装了 [Laravel Sanctum](/docs/11/packages/sanctum)，它为认证第三方 API 消费者、SPA 或移动应用程序提供了一个强大而简单的 API 令牌身份验证守护程序。此外，`install:api` 命令还创建了 `routes/api.php` 文件：
 
 ```php
 Route::get('/user', function (Request $request) {
@@ -82,7 +82,7 @@ Route::any('/', function () {
 
 #### 依赖注入 {#dependency-injection}
 
-你可以在你的路由的回调签名中键入提示任何路由所需的依赖项。声明的依赖项将自动被 Laravel [服务容器](/docs/{{version}}/container)解析并注入到回调中。例如，你可以键入提示 `Illuminate\Http\Request` 类以自动将当前的 HTTP 请求注入到你的路由回调中：
+你可以在你的路由的回调签名中键入提示任何路由所需的依赖项。声明的依赖项将自动被 Laravel [服务容器](/docs/11/architecture-concepts/container)解析并注入到回调中。例如，你可以键入提示 `Illuminate\Http\Request` 类以自动将当前的 HTTP 请求注入到你的路由回调中：
 
 ```php
 use Illuminate\Http\Request;
@@ -94,7 +94,7 @@ Route::get('/users', function (Request $request) {
 
 #### CSRF 保护 {#csrf-protection}
 
-记住，指向在 `web` 路由文件中定义的 `POST`，`PUT`，`PATCH` 或 `DELETE` 路由的任何 HTML 表单都应该包含一个 CSRF 令牌字段。否则，请求将被拒绝。你可以在 [CSRF 文档](/docs/{{version}}/csrf) 中阅读更多关于 CSRF 保护的信息：
+记住，指向在 `web` 路由文件中定义的 `POST`，`PUT`，`PATCH` 或 `DELETE` 路由的任何 HTML 表单都应该包含一个 CSRF 令牌字段。否则，请求将被拒绝。你可以在 [CSRF 文档](/docs/11/csrf) 中阅读更多关于 CSRF 保护的信息：
 
 ```html
 <form method="POST" action="/profile">@csrf ...</form>
@@ -415,7 +415,7 @@ $url = route('profile', ['id' => 1, 'photos' => 'yes']);
 ```
 
 ::: note
-有时，您可能希望为 URL 参数指定请求范围的默认值，例如当前的区域设置。为此，您可以使用 [`URL::defaults` 方法](/docs/{{version}}/urls#default-values)。
+有时，您可能希望为 URL 参数指定请求范围的默认值，例如当前的区域设置。为此，您可以使用 [`URL::defaults` 方法](/docs/11/basics/urls#default-values)。
 :::
 
 #### 检查当前路由
@@ -450,7 +450,7 @@ public function handle(Request $request, Closure $next): Response
 
 ### 中间件
 
-要将 [中间件](/docs/{{version}}/middleware) 分配给组内的所有路由，您可以在定义组之前使用 `middleware` 方法。中间件按照数组中列出的顺序执行：
+要将 [中间件](/docs/11/basics/middleware) 分配给组内的所有路由，您可以在定义组之前使用 `middleware` 方法。中间件按照数组中列出的顺序执行：
 
 ```php
 Route::middleware(['first', 'second'])->group(function () {
@@ -466,7 +466,7 @@ Route::middleware(['first', 'second'])->group(function () {
 
 ### 控制器
 
-如果一组路由都利用同一个 [控制器](/docs/{{version}}/controllers)，您可以使用 `controller` 方法为组内的所有路由定义公共控制器。然后，在定义路由时，您只需要提供它们调用的控制器方法：
+如果一组路由都利用同一个 [控制器](/docs/11/controllers)，您可以使用 `controller` 方法为组内的所有路由定义公共控制器。然后，在定义路由时，您只需要提供它们调用的控制器方法：
 
 ```php
 use App\Http\Controllers\OrderController;
@@ -553,7 +553,7 @@ public function show(User $user)
 
 #### 软删除模型
 
-通常情况下，隐式模型绑定不会检索已经 [软删除的](/docs/{{version}}/eloquent#软删除) 模型。然而，您可以通过在路由定义时链接 `withTrashed` 方法，来指示隐式绑定检索这些模型：
+通常情况下，隐式模型绑定不会检索已经 [软删除的](/docs/11/eloquent/eloquent#软删除) 模型。然而，您可以通过在路由定义时链接 `withTrashed` 方法，来指示隐式绑定检索这些模型：
 
 ```php
 use App\Models\User;
@@ -870,7 +870,7 @@ RateLimiter::for('login', function (Request $request) {
 
 ### 附加限速器到路由
 
-限速器可以使用 `throttle` [中间件](/docs/{{version}}/middleware) 附加到路由或路由组。throttle 中间件接受你希望分配给该路由的限速器名称：
+限速器可以使用 `throttle` [中间件](/docs/11/basics/middleware) 附加到路由或路由组。throttle 中间件接受你希望分配给该路由的限速器名称：
 
 ```php
 Route::middleware(['throttle:uploads'])->group(function () {
@@ -906,7 +906,7 @@ HTML 表单不支持 `PUT`、`PATCH` 或 `DELETE` 动作。因此，当从 HTML 
 </form>
 ```
 
-为了方便起见，你可以使用 `@method` [Blade 指令](/docs/{{version}}/blade) 来生成 `_method` 输入字段：
+为了方便起见，你可以使用 `@method` [Blade 指令](/docs/11/basics/blade) 来生成 `_method` 输入字段：
 
 ```html
 <form action="/example" method="POST">@method('PUT') @csrf</form>
@@ -928,7 +928,7 @@ $action = Route::currentRouteAction(); // string
 
 ### 跨源资源共享 (CORS)
 
-Laravel 可以自动地使用你配置的值响应 CORS `OPTIONS` HTTP 请求。`OPTIONS` 请求将自动由自动包含在你应用程序全局中间件堆栈中的 `HandleCors` [中间件](/docs/{{version}}/middleware) 处理。
+Laravel 可以自动地使用你配置的值响应 CORS `OPTIONS` HTTP 请求。`OPTIONS` 请求将自动由自动包含在你应用程序全局中间件堆栈中的 `HandleCors` [中间件](/docs/11/basics/middleware) 处理。
 
 有时，你可能需要为你的应用程序自定义 CORS 配置值。你可以通过使用 `config:publish` Artisan 命令来发布 `cors` 配置文件：
 

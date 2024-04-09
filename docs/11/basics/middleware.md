@@ -52,7 +52,7 @@ class EnsureTokenIsValid
 最好将中间件设想为 HTTP 请求在击中你的应用程序之前必须经过的一系列 "层"。每一层都可以检查请求甚至完全拒绝它。
 
 :::info
-所有中间件通过 [服务容器](/docs/{{version}}/container) 解析，因此你可以在中间件的构造函数中提示任何你需要的依赖。
+所有中间件通过 [服务容器](/docs/11/architecture-concepts/container) 解析，因此你可以在中间件的构造函数中提示任何你需要的依赖。
 :::
 
 #### 中间件和响应
@@ -175,7 +175,7 @@ Route::middleware([EnsureTokenIsValid::class])->group(function () {
 });
 ```
 
-你也可以从整个 [组](/docs/{{version}}/routing#route-groups) 的路由定义中排除给定的一组中间件：
+你也可以从整个 [组](/docs/11/basics/routing#route-groups) 的路由定义中排除给定的一组中间件：
 
 ```php
 use App\Http\Middleware\EnsureTokenIsValid;
@@ -452,7 +452,7 @@ class TerminatingMiddleware
 
 `terminate` 方法应该接收请求和响应。一旦你定义了一个可终止的中间件，你应该将它添加到你的应用程序的 `bootstrap/app.php` 文件中的路由或全局中间件列表中。
 
-当在你的中间件上调用 `terminate` 方法时，Laravel 会从[服务容器](/docs/{{version}}/container)中解析一个中间件的新实例。如果你希望在调用 `handle` 和 `terminate` 方法时使用相同的中间件实例，请使用容器的 `singleton` 方法将中间件注册到容器中。通常，这应该在你的 `AppServiceProvider` 中的 `register` 方法中完成：
+当在你的中间件上调用 `terminate` 方法时，Laravel 会从[服务容器](/docs/11/architecture-concepts/container)中解析一个中间件的新实例。如果你希望在调用 `handle` 和 `terminate` 方法时使用相同的中间件实例，请使用容器的 `singleton` 方法将中间件注册到容器中。通常，这应该在你的 `AppServiceProvider` 中的 `register` 方法中完成：
 
 ```php
 use App\Http\Middleware\TerminatingMiddleware;

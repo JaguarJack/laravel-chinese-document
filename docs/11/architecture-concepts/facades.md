@@ -10,7 +10,7 @@
 
 ## 介绍
 
-在 Laravel 文档中，您会看到许多与 Laravel 功能交互的代码示例，这些示例通过 "门面" 与 Laravel 的特性进行交互。门面为应用程序的[服务容器](/docs/{{version}}/container)中可用的类提供了一个 "静态" 接口。Laravel 自带许多门面，它们提供了对几乎所有 Laravel 特性的访问。
+在 Laravel 文档中，您会看到许多与 Laravel 功能交互的代码示例，这些示例通过 "门面" 与 Laravel 的特性进行交互。门面为应用程序的[服务容器](/docs/11/architecture-concepts/container)中可用的类提供了一个 "静态" 接口。Laravel 自带许多门面，它们提供了对几乎所有 Laravel 特性的访问。
 
 Laravel 门面充当对服务容器中的基础类的 "静态代理"，提供了简洁、表达力强的语法，同时保持了比传统静态方法更多的可测试性和灵活性。如果您不完全了解门面是如何工作的，也没关系，只需跟着流程继续学习 Laravel。
 
@@ -29,7 +29,7 @@ Route::get('/cache', function () {
 
 #### 助手函数
 
-为了补充门面，Laravel 提供了各种全局 "助手函数"，使与常见的 Laravel 特性交互变得更加简单。您可能会与一些常见的助手函数进行交互，如 `view`、`response`、`url`、`config` 等。每个 Laravel 提供的助手函数都有其相应特性的文档；然而，您可以在专门的 [助手文档](/docs/{{version}}/helpers) 中找到完整的列表。
+为了补充门面，Laravel 提供了各种全局 "助手函数"，使与常见的 Laravel 特性交互变得更加简单。您可能会与一些常见的助手函数进行交互，如 `view`、`response`、`url`、`config` 等。每个 Laravel 提供的助手函数都有其相应特性的文档；然而，您可以在专门的 [助手文档](/docs/11/digging-deeper/reverb) 中找到完整的列表。
 
 例如，我们可以使用 `response` 函数来生成 JSON 响应，而不是使用 `Illuminate\Support\Facades\Response` 门面：
 
@@ -171,7 +171,7 @@ class Cache extends Facade
 }
 ```
 
-相反，`Cache` 门面扩展了基础的 `Facade` 类，并定义了 `getFacadeAccessor()` 方法。此方法的作用是返回服务容器绑定的名称。当用户引用 `Cache` 门面上的任何静态方法时，Laravel 将从[服务容器](/docs/{{version}}/container)中解析 `cache` 绑定，并针对该对象运行所请求的方法（在本例中是 `get`）。
+相反，`Cache` 门面扩展了基础的 `Facade` 类，并定义了 `getFacadeAccessor()` 方法。此方法的作用是返回服务容器绑定的名称。当用户引用 `Cache` 门面上的任何静态方法时，Laravel 将从[服务容器](/docs/11/architecture-concepts/container)中解析 `cache` 绑定，并针对该对象运行所请求的方法（在本例中是 `get`）。
 
 ## 实时门面
 
@@ -248,7 +248,7 @@ test('podcast can be published', function () {
 
 ## 门面类参考
 
-以下是每个门面及其底层类。这是一个快速查找给定门面根的 API 文档的有用工具。在适用的情况下，还包括[服务容器绑定](/docs/{{version}}/container)键。
+以下是每个门面及其底层类。这是一个快速查找给定门面根的 API 文档的有用工具。在适用的情况下，还包括[服务容器绑定](/docs/11/architecture-concepts/container)键。
 
 | 门面              | 类                                              | 服务容器绑定         |
 | ----------------- | ----------------------------------------------- | -------------------- |

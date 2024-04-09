@@ -89,11 +89,11 @@ php artisan make:controller ProvisionServer --invokable
 ```
 
 > [!NOTE]
-> 控制器存根可以通过 [存根发布](/docs/{{version}}/artisan#stub-customization) 自定义。
+> 控制器存根可以通过 [存根发布](/docs/11/digging-deeper/artisan#stub-customization) 自定义。
 
 ## 控制器中间件
 
-[中间件](/docs/{{version}}/middleware) 可以在你的路由文件中被分配给控制器的路由:
+[中间件](/docs/11/basics/middleware) 可以在你的路由文件中被分配给控制器的路由:
 
 ```php
 Route::get('profile', [UserController::class, 'show'])->middleware('auth');
@@ -205,7 +205,7 @@ Route::resource('photos', PhotoController::class)
 
 #### 软删除模型
 
-通常情况下，隐式模型绑定不会检索已经[软删除](/docs/{{version}}/eloquent#soft-deleting)的模型，并且会返回一个 404 HTTP 响应。然而，你可以在定义资源路由时调用 `withTrashed` 方法来指示框架允许软删除的模型:
+通常情况下，隐式模型绑定不会检索已经[软删除](/docs/11/eloquent/eloquent#soft-deleting)的模型，并且会返回一个 404 HTTP 响应。然而，你可以在定义资源路由时调用 `withTrashed` 方法来指示框架允许软删除的模型:
 
 ```php
 use App\Http\Controllers\PhotoController;
@@ -221,7 +221,7 @@ Route::resource('photos', PhotoController::class)->withTrashed(['show']);
 
 #### 指定资源模型
 
-如果你在使用[路由模型绑定](/docs/{{version}}/routing#route-model-binding)，并且希望资源控制器的方法类型提示一个模型实例，你可以在生成控制器时使用 `--model` 选项:
+如果你在使用[路由模型绑定](/docs/11/basics/routing#route-model-binding)，并且希望资源控制器的方法类型提示一个模型实例，你可以在生成控制器时使用 `--model` 选项:
 
 ```shell
 php artisan make:controller PhotoController --model=Photo --resource
@@ -229,7 +229,7 @@ php artisan make:controller PhotoController --model=Photo --resource
 
 #### 生成表单请求
 
-当生成资源控制器时，你可以提供 `--requests` 选项来指示 Artisan 为控制器的存储和更新方法生成[表单请求类](/docs/{{version}}/validation#form-request-validation):
+当生成资源控制器时，你可以提供 `--requests` 选项来指示 Artisan 为控制器的存储和更新方法生成[表单请求类](/docs/11/basic/validation#form-request-validation):
 
 ```shell
 php artisan make:controller PhotoController --model=Photo --resource --requests
@@ -297,7 +297,7 @@ Route::resource('photos.comments', PhotoCommentController::class);
 
 #### 限定嵌套资源
 
-Laravel 的[隐式模型绑定](/docs/{{version}}/routing#implicit-model-binding-scoping)功能可以自动限定嵌套绑定，以确认解析的子模型属于父模型。通过在定义嵌套资源时使用 `scoped` 方法，你可以启用自动限定，同时指导 Laravel 应该通过哪个字段检索子资源。有关如何实现这一点的更多信息，请查看[限定资源路由](#restful-scoping-resource-routes)的文档。
+Laravel 的[隐式模型绑定](/docs/11/basics/routing#implicit-model-binding-scoping)功能可以自动限定嵌套绑定，以确认解析的子模型属于父模型。通过在定义嵌套资源时使用 `scoped` 方法，你可以启用自动限定，同时指导 Laravel 应该通过哪个字段检索子资源。有关如何实现这一点的更多信息，请查看[限定资源路由](#restful-scoping-resource-routes)的文档。
 
 #### 浅层嵌套
 
@@ -353,7 +353,7 @@ Route::resource('users', AdminUserController::class)->parameters([
 
 ### 限定资源路由
 
-Laravel 的[限定隐式模型绑定](/docs/{{version}}/routing#implicit-model-binding-scoping)功能可以自动限定嵌套绑定，以确认解析的子模型属于父模型。通过在定义嵌套资源时使用 `scoped` 方法，你可以启用自动限定，同时指导 Laravel 应该通过哪个字段检索子资源:
+Laravel 的[限定隐式模型绑定](/docs/11/basics/routing#implicit-model-binding-scoping)功能可以自动限定嵌套绑定，以确认解析的子模型属于父模型。通过在定义嵌套资源时使用 `scoped` 方法，你可以启用自动限定，同时指导 Laravel 应该通过哪个字段检索子资源:
 
 ```php
 use App\Http\Controllers\PhotoCommentController;
@@ -388,7 +388,7 @@ public function boot(): void
 }
 ```
 
-Laravel 的复数器支持[几种不同的语言，你可以根据需要进行配置](/docs/{{version}}/localization#pluralization-language)。一旦动词和复数语言被定制化，比如 `Route::resource('publicacion', PublicacionController::class)` 的资源路由注册会生成如下 URIs：
+Laravel 的复数器支持[几种不同的语言，你可以根据需要进行配置](/docs/11/localization#pluralization-language)。一旦动词和复数语言被定制化，比如 `Route::resource('publicacion', PublicacionController::class)` 的资源路由注册会生成如下 URIs：
 
 ```
 /publicacion/crear
@@ -486,7 +486,7 @@ Route::apiSingleton('photos.thumbnail', ProfileController::class)->creatable();
 
 #### 构造函数注入
 
-Laravel [服务容器](/docs/{{version}}/container) 用于解析所有 Laravel 控制器。因此，你可以在构造函数中为控制器可能需要的任何依赖进行类型提示。声明的依赖项将自动被解析并注入到控制器实例中：
+Laravel [服务容器](/docs/11/architecture-concepts/container) 用于解析所有 Laravel 控制器。因此，你可以在构造函数中为控制器可能需要的任何依赖进行类型提示。声明的依赖项将自动被解析并注入到控制器实例中：
 
 ```php
 <?php
