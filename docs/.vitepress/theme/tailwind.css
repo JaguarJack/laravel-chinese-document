@@ -4,9 +4,16 @@
 
 @tailwind utilities;
 
+.VPContent {
+  .container {
+    .name:h1 {
+      @apply text-red-500 !important;
+    }
+  }
+}
 .VPSidebar {
   .items {
-    @apply border-l border-[#e2e2e3] dark:border-gray-900 grid gap-y-3;
+    @apply border-l border-[#e2e2e3] dark:border-gray-900 grid gap-y-3 mt-3;
 
     .is-active {
       @apply border-l-2 border-indigo-600;
@@ -20,10 +27,10 @@
 .dark {
   .VPSidebar {
     .items {
-      @apply grid border-l border-gray-800 gap-y-3;
+      @apply grid mt-3 border-l border-gray-800 gap-y-3;
 
       .is-active {
-        @apply border-l-2 border-indigo-400;
+        @apply border-l-2 border-indigo-600;
       }
       .item {
         @apply h-6 pl-4;

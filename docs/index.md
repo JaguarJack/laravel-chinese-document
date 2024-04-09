@@ -12,7 +12,7 @@ hero:
     alt: Laravel 中文文档
   actions:
     - theme: brand
-      text: 安装
+      text: 快速开始
       link: /docs/11/getting-started/installation
     - theme: alt
       text: 发布说明

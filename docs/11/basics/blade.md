@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Blade 模板
 
 [[toc]]
