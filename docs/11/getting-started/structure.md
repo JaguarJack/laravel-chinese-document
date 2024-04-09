@@ -72,7 +72,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 `api.php` 文件包含旨在无状态的路由，因此通过这些路由进入应用程序的请求旨在通过[令牌](/docs/11/packages/sanctum)进行认证，并且不会访问会话状态。
 
-`channels.php` 文件是您可以注册应用程序支持的所有[事件广播](/docs/11/broadcasting)频道的地方。
+`channels.php` 文件是您可以注册应用程序支持的所有[事件广播](/docs/11/digging-deeper/broadcasting)频道的地方。
 
 #### `storage` 目录
 
@@ -100,7 +100,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Broadcasting` 目录
 
-`Broadcasting` 目录包含应用程序的所有广播频道类。这些类是使用 `make:channel` 命令生成的。默认情况下，这个目录不存在，但当你创建第一个频道时，它将为你创建。要了解更多关于频道的信息，请查看[事件广播](/docs/11/broadcasting)文档。
+`Broadcasting` 目录包含应用程序的所有广播频道类。这些类是使用 `make:channel` 命令生成的。默认情况下，这个目录不存在，但当你创建第一个频道时，它将为你创建。要了解更多关于频道的信息，请查看[事件广播](/docs/11/digging-deeper/broadcasting)文档。
 
 #### `Console` 目录
 
@@ -128,7 +128,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Mail` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `make:mail` Artisan 命令，它将为您创建。`Mail` 目录包含由应用程序发送的所有[代表电子邮件的类](/docs/11/mail)。邮件对象允许您将构建电子邮件的所有逻辑封装在一个简单的类中，该类可以使用 `Mail::send` 方法发送。
+默认情况下，这个目录不存在，但如果您执行 `make:mail` Artisan 命令，它将为您创建。`Mail` 目录包含由应用程序发送的所有[代表电子邮件的类](/docs/11/digging-deeper/mail)。邮件对象允许您将构建电子邮件的所有逻辑封装在一个简单的类中，该类可以使用 `Mail::send` 方法发送。
 
 #### `Models` 目录
 
@@ -136,11 +136,11 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Notifications` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `make:notification` Artisan 命令，它将为您创建。`Notifications` 目录包含应用程序发送的所有“事务性”[通知](/docs/11/notifications)，例如关于应用程序内发生的事件的简单通知。Laravel 的通知功能抽象了通过多种驱动程序（如电子邮件、Slack、SMS 或存储在数据库中）发送通知的功能。
+默认情况下，这个目录不存在，但如果您执行 `make:notification` Artisan 命令，它将为您创建。`Notifications` 目录包含应用程序发送的所有“事务性”[通知](/docs/11/digging-deeper/notifications)，例如关于应用程序内发生的事件的简单通知。Laravel 的通知功能抽象了通过多种驱动程序（如电子邮件、Slack、SMS 或存储在数据库中）发送通知的功能。
 
 #### `Policies` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `make:policy` Artisan 命令，它将为您创建。`Policies` 目录包含应用程序的[授权策略类](/docs/11/authorization)。策略用于确定用户是否可以对资源执行给定操作。
+默认情况下，这个目录不存在，但如果您执行 `make:policy` Artisan 命令，它将为您创建。`Policies` 目录包含应用程序的[授权策略类](/docs/11/security/authorization)。策略用于确定用户是否可以对资源执行给定操作。
 
 #### `Providers` 目录
 

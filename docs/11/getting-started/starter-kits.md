@@ -22,7 +22,7 @@ Laravel Breeze 的默认视图层由简单的 [Blade 模板](/docs/11/basics/bla
 
 ### 安装
 
-首先，您应该[创建一个新的 Laravel 应用程序](/docs/11/installation)。如果您使用 [Laravel 安装器](/docs/11/installation#creating-a-laravel-project) 创建应用程序，将在安装过程中提示您安装 Laravel Breeze。否则，您将需要按照下面的手动安装说明进行操作。
+首先，您应该[创建一个新的 Laravel 应用程序](/docs/11/getting-started/installation)。如果您使用 [Laravel 安装器](/docs/11/getting-started/installation#creating-a-laravel-project) 创建应用程序，将在安装过程中提示您安装 Laravel Breeze。否则，您将需要按照下面的手动安装说明进行操作。
 
 如果您已经创建了一个没有入门套件的新 Laravel 应用程序，您可以使用 Composer 手动安装 Laravel Breeze：
 
@@ -57,7 +57,7 @@ npm run dev
 接下来，您可以在 Web 浏览器中导航到应用程序的 `/login` 或 `/register` URL。Breeze 的所有路由都定义在 `routes/auth.php` 文件中。
 
 > [!NOTE]
-> 要了解有关编译应用程序 CSS 和 JavaScript 的更多信息，请查看 Laravel 的 [Vite 文档](/docs/11/vite#running-vite)。
+> 要了解有关编译应用程序 CSS 和 JavaScript 的更多信息，请查看 Laravel 的 [Vite 文档](/docs/11/basics/vite#running-vite)。
 
 ### Breeze 和 Livewire
 

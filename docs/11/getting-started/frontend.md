@@ -170,4 +170,4 @@ const props = defineProps(['user'])
 通过使用 [Laravel Breeze](/docs/11/getting-started/starter-kits#laravel-breeze) 开始您的应用程序开发是开始使用 Laravel 和 Vite 的最快方式，我们最简单的入门套件通过提供前端和后端认证脚手架来加速您的应用程序开发。
 
 > [!NOTE]
-> 有关使用 Laravel 和 Vite 的更详细文档，请参阅我们[专门的文档，了解如何打包和编译您的资源](/docs/11/vite)。
+> 有关使用 Laravel 和 Vite 的更详细文档，请参阅我们[专门的文档，了解如何打包和编译您的资源](/docs/11/basics/vite)。

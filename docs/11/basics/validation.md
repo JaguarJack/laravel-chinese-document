@@ -403,7 +403,7 @@ protected $redirectRoute = 'dashboard';
 
 ### 授权表单请求
 
-表单请求类还包含一个 `authorize` 方法。在这个方法中，你可以确定当前认证的用户是否真的有权限更新给定的资源。例如，你可以确定用户是否真的拥有他们试图更新的博客评论。你很可能会在这个方法内与你的 [授权门和策略](/docs/11/authorization) 交互：
+表单请求类还包含一个 `authorize` 方法。在这个方法中，你可以确定当前认证的用户是否真的有权限更新给定的资源。例如，你可以确定用户是否真的拥有他们试图更新的博客评论。你很可能会在这个方法内与你的 [授权门和策略](/docs/11/security/authorization) 交互：
 
 ```php
 use App\Models\Comment;

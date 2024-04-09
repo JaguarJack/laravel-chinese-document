@@ -21,7 +21,7 @@ Laravel 力求在提供强大功能（如彻底的依赖注入、表达式数据
 
 我们喜欢称 Laravel 为“渐进式”框架。这意味着 Laravel 与您一同成长。如果您刚开始接触 Web 开发，Laravel 庞大的文档库、指南和[视频教程](https://laracasts.com)将帮助您在不感到压力的情况下学习基础知识。
 
-如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/11/architecture-concepts/container)、[单元测试](/docs/11/testing/testing)、[队列](/docs/11/digging-deeper/queues)、[实时事件](/docs/11/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
+如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/11/architecture-concepts/container)、[单元测试](/docs/11/testing/testing)、[队列](/docs/11/digging-deeper/queues)、[实时事件](/docs/11/digging-deeper/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
 
 #### 一个可扩展的框架
 
@@ -59,7 +59,7 @@ cd example-app
 php artisan serve
 ```
 
-启动 Artisan 开发服务器后，您的应用程序将在 Web 浏览器中通过 [http://localhost:8000](http://localhost:8000) 访问。接下来，您已准备好[开始进入 Laravel 生态系统的下一步](#next-steps)。当然，您可能还想要[配置数据库](#databases-and-migrations)。
+启动 Artisan 开发服务器后，您的应用程序将在 Web 浏览器中通过 http://localhost:8000 访问。接下来，您已准备好[开始进入 Laravel 生态系统的下一步](#next-steps)。当然，您可能还想要[配置数据库](#databases-and-migrations)。
 
 > [!NOTE]
 > 如果您希望在开发 Laravel 应用程序时获得一个良好的开端，可以考虑使用我们的[启动套件之一](/docs/11/getting-started/starter-kits)。Laravel 的启动套件为您的新 Laravel 应用程序提供了后端和前端认证脚手架。
@@ -260,7 +260,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 
 - [请求生命周期](/docs/11/architecture-concepts/lifecycle)
 - [配置](/docs/11/getting-started/configuration)
-- [目录结构](/docs/11/structure)
+- [目录结构](/docs/11/getting-started/structure)
 - [前端](/docs/11/getting-started/frontend)
 - [服务容器](/docs/11/architecture-concepts/container)
 - [Facades](/docs/11/architecture-concepts/facades)
@@ -276,7 +276,7 @@ Laravel 可以作为全栈框架服务。所谓“全栈”框架，我们的意
 
 如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[前端开发](/docs/11/getting-started/frontend)、[路由](/docs/11/basics/routing)、[视图](/docs/11/basics/views)或 [Eloquent ORM](/docs/11/eloquent/eloquent) 的文档。此外，您可能对学习社区包如 [Livewire](https://livewire.laravel.com) 和 [Inertia](https://inertiajs.com) 感兴趣。这些包允许您使用 Laravel 作为全栈框架，同时享受单页 JavaScript 应用程序提供的许多 UI 优势。
 
-如果您使用 Laravel 作为全栈框架，我们还强烈建议您学习如何使用 [Vite](/docs/11/vite) 编译应用程序的 CSS 和 JavaScript。
+如果您使用 Laravel 作为全栈框架，我们还强烈建议您学习如何使用 [Vite](/docs/11/basics/vite) 编译应用程序的 CSS 和 JavaScript。
 
 > [!NOTE]
 > 如果您希望在构建应用程序时获得一个良好的开端，请查看我们官方的[应用程序启动套件之一](/docs/11/getting-started/starter-kits)。
