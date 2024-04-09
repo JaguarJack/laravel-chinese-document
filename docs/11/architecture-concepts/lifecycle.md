@@ -20,7 +20,7 @@
 
 接下来，根据请求进入应用程序的类型，使用应用程序实例的 `handleRequest` 或 `handleCommand` 方法，将传入的请求发送到 HTTP 内核或控制台内核。这两个内核作为所有请求流经的中心位置。现在，让我们只关注 HTTP 内核，它是 `Illuminate\Foundation\Http\Kernel` 的实例。
 
-HTTP 内核定义了一个 `bootstrappers` 数组，这些 `bootstrappers` 将在请求执行之前运行。这些引导程序配置错误处理、配置日志记录、[检测应用环境](/docs/11/configuration#environment-configuration)，以及执行请求实际处理之前需要完成的其他任务。通常，这些类处理您不需要担心的内部 Laravel 配置。
+HTTP 内核定义了一个 `bootstrappers` 数组，这些 `bootstrappers` 将在请求执行之前运行。这些引导程序配置错误处理、配置日志记录、[检测应用环境](/docs/11/getting-started/configuration#environment-configuration)，以及执行请求实际处理之前需要完成的其他任务。通常，这些类处理您不需要担心的内部 Laravel 配置。
 
 HTTP 内核还负责将请求通过应用程序的中间件堆栈传递。这些中间件处理读写 [HTTP 会话](/docs/11/basics/session)、确定应用程序是否处于维护模式、[验证 CSRF 令牌](/docs/11/basics/csrf) 等。我们很快会讨论这些。
 

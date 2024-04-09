@@ -62,7 +62,7 @@ Route::get('/', function (Service $service) {
 
 在这个例子中，访问应用程序的 `/` 路由将自动解析 `Service` 类并将其注入到路由的处理程序中。这是改变游戏规则的。这意味着您可以在不担心臃肿配置文件的情况下开发应用程序并利用依赖注入。
 
-幸运的是，当构建 Laravel 应用程序时，许多您将编写的类会自动通过容器接收它们的依赖，包括[控制器](/docs/11/basics/controllers)、[事件监听器](/docs/11/events)、[中间件](/docs/11/basics/middleware)等。此外，您可以在[队列作业](/docs/11/digging-deeper/queues)的 `handle` 方法中类型提示依赖。一旦您体验到自动和零配置依赖注入的力量，就感觉没有它无法开发。
+幸运的是，当构建 Laravel 应用程序时，许多您将编写的类会自动通过容器接收它们的依赖，包括[控制器](/docs/11/basics/controllers)、[事件监听器](/docs/11/digging-deeper/events)、[中间件](/docs/11/basics/middleware)等。此外，您可以在[队列作业](/docs/11/digging-deeper/queues)的 `handle` 方法中类型提示依赖。一旦您体验到自动和零配置依赖注入的力量，就感觉没有它无法开发。
 
 ### 何时使用容器
 
@@ -78,7 +78,7 @@ Route::get('/', function (Request $request) {
 
 在许多情况下，由于自动依赖注入和[门面](/docs/11/architecture-concepts/facades)，您可以在**从未**手动绑定或从容器解析任何东西的情况下构建 Laravel 应用程序。**那么，您什么时候会手动与容器交互呢？** 让我们看看两种情况。
 
-首先，如果您编写了一个实现接口的类，并且希望在路由或类构造函数中类型提示该接口，您必须[告诉容器如何解析该接口](#binding-interfaces-to-implementations)。其次，如果您[编写 Laravel 包](/docs/11/packages)并计划与其他 Laravel 开发者共享，您可能需要将包的服务绑定到容器中。
+首先，如果您编写了一个实现接口的类，并且希望在路由或类构造函数中类型提示该接口，您必须[告诉容器如何解析该接口](#binding-interfaces-to-implementations)。其次，如果您[编写 Laravel 包](/docs/11/digging-deeper/packages)并计划与其他 Laravel 开发者共享，您可能需要将包的服务绑定到容器中。
 
 ## 绑定
 
@@ -381,7 +381,7 @@ public function __construct(
 
 ### 自动注入
 
-或者，您可以在容器解析的类的构造函数中类型提示依赖，包括[控制器](/docs/11/basics/controllers)、[事件监听器](/docs/11/events)、[中间件](/docs/11/basics/middleware) 等。此外，您还可以在 [队列作业](/docs/11/digging-deeper/queues) 的 `handle` 方法中类型提示依赖。实际上，这是大多数情况下您的对象应该被容器解析的方式。
+或者，您可以在容器解析的类的构造函数中类型提示依赖，包括[控制器](/docs/11/basics/controllers)、[事件监听器](/docs/11/digging-deeper/events)、[中间件](/docs/11/basics/middleware) 等。此外，您还可以在 [队列作业](/docs/11/digging-deeper/queues) 的 `handle` 方法中类型提示依赖。实际上，这是大多数情况下您的对象应该被容器解析的方式。
 
 例如，您可能在控制器的构造函数中类型提示您的应用程序定义的存储库。存储库将自动被解析并注入到类中：
 

@@ -38,7 +38,7 @@ php artisan migrate
 
 #### Redis
 
-在 Laravel 中使用 Redis 会话之前，你将需要通过 PECL 安装 PhpRedis PHP 扩展或通过 Composer 安装 `predis/predis` 包（~1.0）。有关配置 Redis 的更多信息，请参阅 Laravel 的 [Redis 文档](/docs/11/redis#configuration)。
+在 Laravel 中使用 Redis 会话之前，你将需要通过 PECL 安装 PhpRedis PHP 扩展或通过 Composer 安装 `predis/predis` 包（~1.0）。有关配置 Redis 的更多信息，请参阅 Laravel 的 [Redis 文档](/docs/11/database/redis#configuration)。
 
 > [!NOTE] > `SESSION_CONNECTION` 环境变量或 `session.php` 配置文件中的 `connection` 选项可用于指定哪个 Redis 连接用于会话存储。
 
@@ -230,7 +230,7 @@ $request->session()->flush();
 
 重新生成会话 ID 通常是为了防止恶意用户对你的应用程序进行 [会话固定](https://owasp.org/www-community/attacks/Session_fixation) 攻击。
 
-如果你使用 Laravel [应用启动器工具包](/docs/11/getting-started/starter-kits) 或 [Laravel Fortify](/docs/11/fortify)，Laravel 在认证过程中会自动重新生成会话 ID；然而，如果你需要手动重新生成会话 ID，你可以使用 `regenerate` 方法：
+如果你使用 Laravel [应用启动器工具包](/docs/11/getting-started/starter-kits) 或 [Laravel Fortify](/docs/11/packages/fortify)，Laravel 在认证过程中会自动重新生成会话 ID；然而，如果你需要手动重新生成会话 ID，你可以使用 `regenerate` 方法：
 
 ```php
 $request->session()->regenerate();
@@ -245,7 +245,7 @@ $request->session()->invalidate();
 ## 会话阻塞
 
 > [!WARNING]
-> 要使用会话阻塞，你的应用程序必须使用支持 [原子锁](/docs/11/cache#atomic-locks) 的缓存驱动。目前这些缓存驱动包括 `memcached`、`dynamodb`、`redis`、`database`、`file` 和 `array` 驱动。此外，你可能不使用 `cookie` 会话驱动。
+> 要使用会话阻塞，你的应用程序必须使用支持 [原子锁](/docs/11/digging-deeper/cache#atomic-locks) 的缓存驱动。目前这些缓存驱动包括 `memcached`、`dynamodb`、`redis`、`database`、`file` 和 `array` 驱动。此外，你可能不使用 `cookie` 会话驱动。
 
 默认情况下，Laravel 允许使用相同会话的请求并发执行。因此，例如，如果你使用 JavaScript HTTP 库对你的应用程序发起两个 HTTP 请求，它们将同时执行。对于许多应用程序，这不是问题；然而，在少数使用并发请求向两个不同应用端点写入数据的应用程序中，可能会发生会话数据丢失。
 

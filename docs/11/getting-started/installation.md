@@ -77,7 +77,7 @@ Laravel 出箱即用几乎不需要额外配置。您可以自由地开始开发
 您的 `.env` 文件不应该提交到应用程序的源代码控制中，因为使用您的应用程序的每个开发者/服务器可能需要不同的环境配置。此外，如果入侵者访问到您的源代码库，这将是一个安全风险，因为任何敏感凭据都会被暴露。
 
 > [!NOTE]
-> 有关 `.env` 文件和基于环境的配置的更多信息，请查看完整的[配置文档](/docs/11/configuration#environment-configuration)。
+> 有关 `.env` 文件和基于环境的配置的更多信息，请查看完整的[配置文档](/docs/11/getting-started/configuration#environment-configuration)。
 
 ### 数据库和迁移
 
@@ -259,7 +259,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 现在您已经创建了您的 Laravel 项目，您可能想知道接下来学习什么。首先，我们强烈建议通过阅读以下文档来熟悉 Laravel 的工作方式：
 
 - [请求生命周期](/docs/11/architecture-concepts/lifecycle)
-- [配置](/docs/11/configuration)
+- [配置](/docs/11/getting-started/configuration)
 - [目录结构](/docs/11/structure)
 - [前端](/docs/11/getting-started/frontend)
 - [服务容器](/docs/11/architecture-concepts/container)

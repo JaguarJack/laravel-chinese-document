@@ -173,7 +173,7 @@ Laravel 内置的每个验证规则都有一个错误消息，位于你的应用
 
 在 `lang/en/validation.php` 文件中，你会找到每个验证规则的翻译条目。根据你的应用程序的需要，你可以自由更改或修改这些消息。
 
-此外，你可以复制这个文件到另一个语言目录来翻译你的应用程序的语言的消息。要了解更多关于 Laravel 本地化的信息，请查看完整的[本地化文档](/docs/11/localization)。
+此外，你可以复制这个文件到另一个语言目录来翻译你的应用程序的语言的消息。要了解更多关于 Laravel 本地化的信息，请查看完整的[本地化文档](/docs/11/digging-deeper/localization)。
 
 > [!WARNING]
 > 默认情况下，Laravel 应用程序框架不包括 `lang` 目录。如果你想自定义 Laravel 的语言文件，你可以通过 `lang:publish` Artisan 命令发布它们。
@@ -790,7 +790,7 @@ Laravel 内置的验证规则每个都有一个错误消息，位于应用程序
 
 在 `lang/en/validation.php` 文件中，你会找到每个验证规则的翻译条目。根据应用程序的需求，你可以自由更改或修改这些消息。
 
-此外，你可以将此文件复制到另一个语言目录以翻译应用程序的语言消息。要了解更多关于 Laravel 本地化信息，请查看完整的[本地化文档](/docs/11/localization)。
+此外，你可以将此文件复制到另一个语言目录以翻译应用程序的语言消息。要了解更多关于 Laravel 本地化信息，请查看完整的[本地化文档](/docs/11/digging-deeper/localization)。
 
 > [!WARNING]
 > 默认情况下，Laravel 应用程序框架不包含 `lang` 目录。如果你想自定义 Laravel 的语言文件，你可以通过 `lang:publish` Artisan 命令发布它们。
@@ -2254,7 +2254,7 @@ $request->validate([
 ]);
 ```
 
-在 `$fail` 闭包中，您可以提供一个[翻译字符串键](/docs/11/localization)，并指示 Laravel 翻译错误消息：
+在 `$fail` 闭包中，您可以提供一个[翻译字符串键](/docs/11/digging-deeper/localization)，并指示 Laravel 翻译错误消息：
 
 ```php
 if (strtoupper($value) !== $value) {

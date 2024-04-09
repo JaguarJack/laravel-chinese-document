@@ -388,7 +388,7 @@ public function boot(): void
 }
 ```
 
-Laravel 的复数器支持[几种不同的语言，你可以根据需要进行配置](/docs/11/localization#pluralization-language)。一旦动词和复数语言被定制化，比如 `Route::resource('publicacion', PublicacionController::class)` 的资源路由注册会生成如下 URIs：
+Laravel 的复数器支持[几种不同的语言，你可以根据需要进行配置](/docs/11/digging-deeper/localization#pluralization-language)。一旦动词和复数语言被定制化，比如 `Route::resource('publicacion', PublicacionController::class)` 的资源路由注册会生成如下 URIs：
 
 ```
 /publicacion/crear

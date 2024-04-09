@@ -4,7 +4,7 @@
 
 ## 简介
 
-Laravel 是一个后端框架，提供了构建现代 Web 应用所需的所有功能，如[路由](/docs/11/basics/routing)、[验证](/docs/11/basics/validation)、[缓存](/docs/11/cache)、[队列](/docs/11/digging-deeper/queues)、[文件存储](/docs/11/digging-deeper/filesystem)等。然而，我们认为为开发者提供一个包括构建应用前端的强大全栈体验是很重要的。
+Laravel 是一个后端框架，提供了构建现代 Web 应用所需的所有功能，如[路由](/docs/11/basics/routing)、[验证](/docs/11/basics/validation)、[缓存](/docs/11/digging-deeper/cache)、[队列](/docs/11/digging-deeper/queues)、[文件存储](/docs/11/digging-deeper/filesystem)等。然而，我们认为为开发者提供一个包括构建应用前端的强大全栈体验是很重要的。
 
 在使用 Laravel 构建应用时，有两种主要的方法来处理前端开发，您选择哪种方法取决于您是想通过利用 PHP 来构建前端，还是使用 Vue 和 React 这样的 JavaScript 框架。我们将在下面讨论这两种选项，以便您可以就应用程序的最佳前端开发方法做出明智的决定。
 

@@ -108,7 +108,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Events` 目录
 
-默认情况下，这个目录不存在，但当你使用 `event:generate` 和 `make:event` Artisan 命令时，它将为你创建。`Events` 目录包含[事件类](/docs/11/events)。事件可用于提醒应用程序的其他部分某个给定动作已经发生，提供了极大的灵活性和解耦。
+默认情况下，这个目录不存在，但当你使用 `event:generate` 和 `make:event` Artisan 命令时，它将为你创建。`Events` 目录包含[事件类](/docs/11/digging-deeper/events)。事件可用于提醒应用程序的其他部分某个给定动作已经发生，提供了极大的灵活性和解耦。
 
 #### `Exceptions` 目录
 
@@ -124,7 +124,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Listeners` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `event:generate` 或 `make:listener` Artisan 命令，它将为您创建。`Listeners` 目录包含处理[事件](/docs/11/events)的类。事件监听器接收事件实例并对事件触发时执行逻辑。例如，`UserRegistered` 事件可能由 `SendWelcomeEmail` 监听器处理。
+默认情况下，这个目录不存在，但如果您执行 `event:generate` 或 `make:listener` Artisan 命令，它将为您创建。`Listeners` 目录包含处理[事件](/docs/11/digging-deeper/events)的类。事件监听器接收事件实例并对事件触发时执行逻辑。例如，`UserRegistered` 事件可能由 `SendWelcomeEmail` 监听器处理。
 
 #### `Mail` 目录
 
