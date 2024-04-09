@@ -4,7 +4,8 @@ import version11 from './siders/version11'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Laravel 中文文档',
-  description: 'Laravel 中文文档',
+  description: 'Laravel 中文文档是由 CatchAdmin 开发团队通过 ChatGPT4 对原官方文档进行翻译，对翻译有误的地方做了一部分调整',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   rewrites: {
     '11/(.*)': 'docs/11/(.*)'
   },
