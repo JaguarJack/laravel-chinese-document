@@ -1518,7 +1518,7 @@ Route::get('/tasks', function () {
 
 ### CSRF 字段
 
-无论何时在应用程序中定义 HTML 表单，你都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便[CSRF 保护](/docs/11/csrf)中间件可以验证请求。你可以使用 `@csrf` Blade 指令来生成令牌字段：
+无论何时在应用程序中定义 HTML 表单，你都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便[CSRF 保护](/docs/11/basics/csrf)中间件可以验证请求。你可以使用 `@csrf` Blade 指令来生成令牌字段：
 
 ```blade
 <form method="POST" action="/profile">
@@ -1542,7 +1542,7 @@ Route::get('/tasks', function () {
 
 ### 验证错误
 
-`@error` 指令可用于快速检查给定属性是否存在[验证错误信息](/docs/11/basic/validation#quick-displaying-the-validation-errors)。在 `@error` 指令内部，你可以回显 `$message` 变量来显示错误消息：
+`@error` 指令可用于快速检查给定属性是否存在[验证错误信息](/docs/11/basics/validation#quick-displaying-the-validation-errors)。在 `@error` 指令内部，你可以回显 `$message` 变量来显示错误消息：
 
 ```blade
 <!-- /resources/views/post/create.blade.php -->
@@ -1570,7 +1570,7 @@ Route::get('/tasks', function () {
     class="@error('email') is-invalid @else is-valid @enderror">
 ```
 
-你可以将[特定错误包的名称](/docs/11/basic/validation#named-error-bags)作为第二个参数传递给 `@error` 指令，以在包含多个表单的页面上检索验证错误信息：
+你可以将[特定错误包的名称](/docs/11/basics/validation#named-error-bags)作为第二个参数传递给 `@error` 指令，以在包含多个表单的页面上检索验证错误信息：
 
 ```blade
 <!-- /resources/views/auth.blade.php -->

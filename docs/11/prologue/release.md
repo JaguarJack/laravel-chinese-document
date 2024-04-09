@@ -234,7 +234,7 @@ $job->handle();
 $job->assertReleased(delay: 30);
 ```
 
-有关测试排队作业的更多信息，请查看[队列文档](/docs/11/queues#testing)。
+有关测试排队作业的更多信息，请查看[队列文档](/docs/11/digging-deeper/queues#testing)。
 
 ### 新的 Artisan 命令
 

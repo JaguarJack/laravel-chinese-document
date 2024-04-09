@@ -275,7 +275,7 @@ class AssignRequestId
 ```
 
 > 注意：
-> 如果您需要在处理队列作业时共享日志上下文，您可以使用[作业中间件](/docs/11/queues#job-middleware)。
+> 如果您需要在处理队列作业时共享日志上下文，您可以使用[作业中间件](/docs/11/digging-deeper/queues#job-middleware)。
 
 ### 写入特定渠道
 

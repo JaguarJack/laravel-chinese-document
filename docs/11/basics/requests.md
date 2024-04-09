@@ -504,7 +504,7 @@ $request->mergeIfMissing(['votes' => 0]);
 
 ### 旧输入
 
-Laravel 允许您在下一个请求期间保留一个请求的输入。当在检测到验证错误后重新填充表单时，此功能特别有用。然而，如果您使用 Laravel 内置的[验证功能](/docs/11/basic/validation)，您可能不需要直接手动使用这些 session 输入闪存方法，因为 Laravel 的一些内置验证工具会自动调用它们。
+Laravel 允许您在下一个请求期间保留一个请求的输入。当在检测到验证错误后重新填充表单时，此功能特别有用。然而，如果您使用 Laravel 内置的[验证功能](/docs/11/basics/validation)，您可能不需要直接手动使用这些 session 输入闪存方法，因为 Laravel 的一些内置验证工具会自动调用它们。
 
 #### 将输入闪存到 Session
 

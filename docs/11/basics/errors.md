@@ -45,7 +45,7 @@
 ```
 
 > 注意：
-> 要自定义给定异常的异常报告，您也可以使用[可报告异常](/docs/11/basic/errors#renderable-exceptions)。
+> 要自定义给定异常的异常报告，您也可以使用[可报告异常](/docs/11/basics/errors#renderable-exceptions)。
 
 #### 全局日志上下文
 

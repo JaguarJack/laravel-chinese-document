@@ -21,7 +21,7 @@ Laravel 力求在提供强大功能（如彻底的依赖注入、表达式数据
 
 我们喜欢称 Laravel 为“渐进式”框架。这意味着 Laravel 与您一同成长。如果您刚开始接触 Web 开发，Laravel 庞大的文档库、指南和[视频教程](https://laracasts.com)将帮助您在不感到压力的情况下学习基础知识。
 
-如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/11/architecture-concepts/container)、[单元测试](/docs/11/testing/testing)、[队列](/docs/11/queues)、[实时事件](/docs/11/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
+如果您是一名资深开发者，Laravel 为您提供了强大的工具，用于[依赖注入](/docs/11/architecture-concepts/container)、[单元测试](/docs/11/testing/testing)、[队列](/docs/11/digging-deeper/queues)、[实时事件](/docs/11/broadcasting)等。Laravel 已经为构建专业 Web 应用程序并准备好处理企业级工作负载进行了微调。
 
 #### 一个可扩展的框架
 
@@ -261,7 +261,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 - [请求生命周期](/docs/11/architecture-concepts/lifecycle)
 - [配置](/docs/11/configuration)
 - [目录结构](/docs/11/structure)
-- [前端](/docs/11/frontend)
+- [前端](/docs/11/getting-started/frontend)
 - [服务容器](/docs/11/architecture-concepts/container)
 - [Facades](/docs/11/architecture-concepts/facades)
 
@@ -274,7 +274,7 @@ curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 
 Laravel 可以作为全栈框架服务。所谓“全栈”框架，我们的意思是您将使用 Laravel 来路由请求到您的应用程序并通过 [Blade 模板](/docs/11/basics/blade) 或类似 [Inertia](https://inertiajs.com) 的单页应用程序混合技术来渲染您的前端。这是使用 Laravel 框架最常见的方式，也是我们认为使用 Laravel 最高效的方式。
 
-如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[前端开发](/docs/11/frontend)、[路由](/docs/11/basics/routing)、[视图](/docs/11/basics/views)或 [Eloquent ORM](/docs/11/eloquent/eloquent) 的文档。此外，您可能对学习社区包如 [Livewire](https://livewire.laravel.com) 和 [Inertia](https://inertiajs.com) 感兴趣。这些包允许您使用 Laravel 作为全栈框架，同时享受单页 JavaScript 应用程序提供的许多 UI 优势。
+如果这是您计划使用 Laravel 的方式，您可能想要查看我们关于[前端开发](/docs/11/getting-started/frontend)、[路由](/docs/11/basics/routing)、[视图](/docs/11/basics/views)或 [Eloquent ORM](/docs/11/eloquent/eloquent) 的文档。此外，您可能对学习社区包如 [Livewire](https://livewire.laravel.com) 和 [Inertia](https://inertiajs.com) 感兴趣。这些包允许您使用 Laravel 作为全栈框架，同时享受单页 JavaScript 应用程序提供的许多 UI 优势。
 
 如果您使用 Laravel 作为全栈框架，我们还强烈建议您学习如何使用 [Vite](/docs/11/vite) 编译应用程序的 CSS 和 JavaScript。
 

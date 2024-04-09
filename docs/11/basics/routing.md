@@ -94,7 +94,7 @@ Route::get('/users', function (Request $request) {
 
 #### CSRF 保护 {#csrf-protection}
 
-记住，指向在 `web` 路由文件中定义的 `POST`，`PUT`，`PATCH` 或 `DELETE` 路由的任何 HTML 表单都应该包含一个 CSRF 令牌字段。否则，请求将被拒绝。你可以在 [CSRF 文档](/docs/11/csrf) 中阅读更多关于 CSRF 保护的信息：
+记住，指向在 `web` 路由文件中定义的 `POST`，`PUT`，`PATCH` 或 `DELETE` 路由的任何 HTML 表单都应该包含一个 CSRF 令牌字段。否则，请求将被拒绝。你可以在 [CSRF 文档](/docs/11/basics/csrf) 中阅读更多关于 CSRF 保护的信息：
 
 ```html
 <form method="POST" action="/profile">@csrf ...</form>
@@ -466,7 +466,7 @@ Route::middleware(['first', 'second'])->group(function () {
 
 ### 控制器
 
-如果一组路由都利用同一个 [控制器](/docs/11/controllers)，您可以使用 `controller` 方法为组内的所有路由定义公共控制器。然后，在定义路由时，您只需要提供它们调用的控制器方法：
+如果一组路由都利用同一个 [控制器](/docs/11/basics/controllers)，您可以使用 `controller` 方法为组内的所有路由定义公共控制器。然后，在定义路由时，您只需要提供它们调用的控制器方法：
 
 ```php
 use App\Http\Controllers\OrderController;

@@ -229,7 +229,7 @@ php artisan make:controller PhotoController --model=Photo --resource
 
 #### 生成表单请求
 
-当生成资源控制器时，你可以提供 `--requests` 选项来指示 Artisan 为控制器的存储和更新方法生成[表单请求类](/docs/11/basic/validation#form-request-validation):
+当生成资源控制器时，你可以提供 `--requests` 选项来指示 Artisan 为控制器的存储和更新方法生成[表单请求类](/docs/11/basics/validation#form-request-validation):
 
 ```shell
 php artisan make:controller PhotoController --model=Photo --resource --requests

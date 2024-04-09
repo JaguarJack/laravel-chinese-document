@@ -210,7 +210,7 @@ public function getRouteKey(): mixed
 
 ### 重定向到控制器动作
 
-你也可以生成重定向到 [控制器动作](/docs/11/controllers) 的重定向。为此，将控制器和动作名称传递给 `action` 方法：
+你也可以生成重定向到 [控制器动作](/docs/11/basics/controllers) 的重定向。为此，将控制器和动作名称传递给 `action` 方法：
 
 ```php
 use App\Http\Controllers\UserController;

@@ -120,7 +120,7 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Jobs` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `make:job` Artisan 命令，它将为您创建。`Jobs` 目录包含应用程序的[可队列化作业](/docs/11/queues)。作业可以由您的应用程序排队，或在当前请求生命周期内同步运行。在当前请求期间同步运行的作业有时被称为“命令”，因为它们是[命令模式](https://en.wikipedia.org/wiki/Command_pattern)的实现。
+默认情况下，这个目录不存在，但如果您执行 `make:job` Artisan 命令，它将为您创建。`Jobs` 目录包含应用程序的[可队列化作业](/docs/11/digging-deeper/queues)。作业可以由您的应用程序排队，或在当前请求生命周期内同步运行。在当前请求期间同步运行的作业有时被称为“命令”，因为它们是[命令模式](https://en.wikipedia.org/wiki/Command_pattern)的实现。
 
 #### `Listeners` 目录
 
@@ -150,4 +150,4 @@ Laravel 应用程序的默认结构旨在为大型和小型应用程序提供一
 
 #### `Rules` 目录
 
-默认情况下，这个目录不存在，但如果您执行 `make:rule` Artisan 命令，它将为您创建。`Rules` 目录包含应用程序的自定义验证规则对象。规则用于在简单的对象中封装复杂的验证逻辑。有关更多信息，请查看[验证文档](/docs/11/basic/validation)。
+默认情况下，这个目录不存在，但如果您执行 `make:rule` Artisan 命令，它将为您创建。`Rules` 目录包含应用程序的自定义验证规则对象。规则用于在简单的对象中封装复杂的验证逻辑。有关更多信息，请查看[验证文档](/docs/11/basics/validation)。
