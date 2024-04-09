@@ -1,29 +1,26 @@
-name: Deploy
+name: Deploy Vitepress to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - master # 修改为你的默认分支名称
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: yarn
-      - run: yarn install --frozen-lockfile
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Build
-        run: yarn docs:build
+      - name: Install dependencies
+        run: yarn install
 
-      - name: Deploy
+      - name: Build Vitepress
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
-          # cname: example.com # if wanna deploy to custom domain
+          publish_dir: ./dist # Vitepress 生成的静态文件目录，如果与默认不同，请修改
