@@ -1,38 +1,27 @@
-name: Build and Deploy to GitHub Pages
-
+name: Build and Deploy
 on:
   push:
     branches:
-      - master # 更改为你的默认分支名
-
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@master
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.1
-        with:
-          node-version: '20'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2.1.6
-        with:
-          path: ~/.yarn # yarn 缓存文件路径
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
           yarn install
           yarn docs:build
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v5.0.0
         with:
-          branch: master
-          folder: docs/.vitepress/dist
-          clean: true
+          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SERVER_USERNAME }}
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SECRET }}
+          ARGS: -avzr --delete
+          SOURCE: 'docs/.vitepress/dist/'
+          REMOTE_PORT: ${{ secrets.SERVER_PORT }}
+          TARGET: ${{ secrets.SERVER_WORKDIR }}
+          EXCLUDE: '/docs/.vitepress/, /node_modules/, /.github,/.git'
