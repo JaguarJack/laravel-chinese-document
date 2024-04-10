@@ -686,7 +686,6 @@ $singular = Str::pluralStudly('VerifiedHuman', 1);
 // VerifiedHuman
 ```
 
-````markdown
 #### `Str::position()` {.collection-method}
 
 `Str::position` 方法返回字符串中子字符串第一次出现的位置。如果给定字符串中不存在子字符串，则返回 `false`：
@@ -702,7 +701,6 @@ $position = Str::position('Hello, World!', 'W');
 
 // 7
 ```
-````
 
 #### `Str::random()` {.collection-method}
 
