@@ -77,7 +77,7 @@ Route::any('/', function () {
 });
 ```
 
-> **注意**  
+> [!NOTE]  
 > 当定义多个共享同一 URI 的路由时，使用 `get`，`post`，`put`，`patch`，`delete` 和 `options` 方法的路由应在使用 `any`，`match` 和 `redirect` 方法的路由之前定义。这确保了传入的请求与正确的路由匹配。
 
 #### 依赖注入 {#dependency-injection}
@@ -120,7 +120,7 @@ Route::redirect('/here', '/there', 301);
 Route::permanentRedirect('/here', '/there');
 ```
 
-> **警告**  
+> [!WARNING]  
 > 在重定向路由中使用路由参数时，以下参数是由 Laravel 保留的，不能被使用：`destination` 和 `status`。
 
 ### 视图路由

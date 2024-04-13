@@ -290,7 +290,7 @@ public function boot(): void
 }
 ```
 
-> **注意**
+> [!NOTE]
 > 您不应该在 `dehydrating` 回调中使用 `Context` facade，因为那会改变当前进程的上下文。确保您只对传递给回调的存储库进行更改。
 
 ### 水合
@@ -317,5 +317,5 @@ public function boot(): void
 }
 ```
 
-> **注意**
+> [!NOTE]
 > 您不应该在 `hydrated` 回调中使用 `Context` facade，确保您只对传递给回调的存储库进行更改。

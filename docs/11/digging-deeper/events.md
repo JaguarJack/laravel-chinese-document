@@ -243,7 +243,7 @@ class SendShipmentNotification
 }
 ```
 
-> **注意**
+> [!NOTE]
 > 你的事件监听器也可以在构造函数中类型提示它们需要的任何依赖。所有事件监听器都是通过 Laravel [服务容器](/docs/11/architecture-concepts/container)解析的，因此依赖项将自动注入。
 
 #### 停止事件的传播
@@ -419,7 +419,7 @@ class SendShipmentNotification implements ShouldQueue, ShouldHandleEventsAfterCo
 }
 ```
 
-> **注意**
+> [!NOTE]
 > 要了解更多关于如何解决这些问题的信息，请查看有关[队列作业和数据库事务](/docs/11/digging-deeper/queues#jobs-and-database-transactions)的文档。
 
 ### 处理失败的作业

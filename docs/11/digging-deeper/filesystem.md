@@ -297,7 +297,7 @@ $url = Storage::url('file.jpg');
 
 #### 临时上传 URLs
 
-> 警告：
+> [!WARNING]：
 > 生成临时上传 URLs 的能力仅由 `s3` 驱动支持。
 
 如果你需要生成一个可用于直接从客户端应用程序上传文件的临时 URL，你可以使用 `temporaryUploadUrl` 方法。此方法接受一个路径和一个 `DateTime` 实例，指定 URL 何时过期。`temporaryUploadUrl` 方法返回一个关联数组，可以将其解构为上传 URL 和应与上传请求一起包含的头部：
@@ -471,7 +471,7 @@ $path = Storage::putFileAs(
 );
 ```
 
-> 警告：
+> [!WARNING]：
 > 不可打印和无效的 unicode 字符将自动从文件路径中移除。因此，你可能希望在将文件路径传递给 Laravel 的文件存储方法之前，先对其进行清理。文件路径使用 `League\Flysystem\WhitespacePathNormalizer::normalizePath` 方法进行标准化。
 
 #### 指定磁盘
@@ -661,7 +661,7 @@ test('albums can be uploaded', function () {
 
 默认情况下，`fake` 方法将删除其临时目录中的所有文件。如果你想保留这些文件，你可以改用 "persistentFake" 方法。有关测试文件上传的更多信息，你可以查阅 [HTTP 测试文档中有关文件上传](/docs/11/testing/http-tests#testing-file-uploads) 的信息。
 
-> 警告：
+> [!WARNING]：
 > `image` 方法需要 [GD 扩展](https://www.php.net/manual/en/book.image.php)。
 
 ## 自定义文件系统

@@ -6,7 +6,7 @@
 
 Laravel 包含了使用填充类为数据库填充数据的能力。所有的填充类都存储在 `database/seeders` 目录中。默认情况下，为你定义了一个 `DatabaseSeeder` 类。在这个类中，你可以使用 `call` 方法来运行其他填充类，允许你控制填充顺序。
 
-> [!注意]  
+> [!NOTE]  
 > 数据库填充期间会自动禁用[批量赋值保护](/docs/11/eloquent/eloquent#mass-assignment)。
 
 ## 编写填充器
@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
 }
 ```
 
-> [!注意]  
+> [!NOTE]  
 > 你可以在 `run` 方法的签名中类型提示所需的任何依赖。它们会自动通过 Laravel [服务容器](/docs/11/architecture-concepts/container) 被解析。
 
 ### 使用模型工厂

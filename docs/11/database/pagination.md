@@ -120,7 +120,7 @@ $users = DB::table('users')->orderBy('id')->cursorPaginate(15);
 
 获取到光标分页器实例后，你可以像使用 `paginate` 和 `simplePaginate` 方法时一样[显示分页结果](#displaying-pagination-results)。有关光标分页器实例提供的方法的更多信息，请查阅[光标分页器实例方法文档](#cursor-paginator-instance-methods)。
 
-> [!警告]  
+> [!WARNING]  
 > 你的查询必须包含 "order by" 子句，才能利用光标分页。此外，查询排序的列必须属于你正在分页的表。
 
 #### 光标与偏移分页的对比
@@ -155,7 +155,7 @@ select * from users where id > 15 order by id asc limit 15;
 
 换句话说，`Paginator` 对应于查询构造器上的 `simplePaginate` 方法，`CursorPaginator` 对应于 `cursorPaginate` 方法，`LengthAwarePaginator` 对应于 `paginate` 方法。
 
-> [!警告]  
+> [!WARNING]  
 > 当手动创建分页器实例时，你应该手动 "切片" 传递给分页器的结果数组。如果你不确定如何做到这一点，请查阅 [array_slice](https://secure.php.net/manual/en/function.array-slice.php) PHP 函数。
 
 ### 自定义分页 URL

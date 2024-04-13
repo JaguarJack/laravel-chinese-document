@@ -24,7 +24,7 @@ $collection = collect(['taylor', 'abigail', null])->map(function (?string $name)
 $collection = collect([1, 2, 3]);
 ```
 
-> **注意：** > [Eloquent](/docs/11/eloquent/eloquent) 查询的结果始终返回为 `Collection` 实例。
+> [!NOTE] > [Eloquent](/docs/11/eloquent/eloquent) 查询的结果始终返回为 `Collection` 实例。
 
 ## 扩展 Collections
 
@@ -197,7 +197,7 @@ $collection->all();
 // [1, 2, 3]
 ```
 
-> **注意：**
+> [!NOTE]
 > 当你有一个 `Enumerable` 实例且需要非懒惰的 collection 实例时，`collect` 方法特别有用。由于 `collect()` 是 `Enumerable` 合约的一部分，你可以安全地使用它来获取 `Collection` 实例。
 
 #### `combine()`
@@ -297,7 +297,7 @@ collect(['1', '2'])->containsOneItem();
 
 此方法与 [`contains`](#method-contains) 方法具有相同的签名；然而，所有值都使用“严格”比较进行比较。
 
-> **注意：**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-contains) 时，该方法的行为会有所不同。
 
 #### `count()`
@@ -415,7 +415,7 @@ $diff->all();
 // [1, 3, 5]
 ```
 
-> **注意：**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-diff) 时，此方法的行为会发生变化。
 
 #### `diffAssoc()`
@@ -656,7 +656,8 @@ return $collection->ensure([User::class, Customer::class]);
 return $collection->ensure('int');
 ```
 
-> **警告：** > `ensure` 方法并不保证不会在随后的时间向 collection 中添加不同类型的元素。
+> [!WARNING] 
+> `ensure` 方法并不保证不会在随后的时间向 collection 中添加不同类型的元素。
 
 #### `every()`
 
@@ -698,7 +699,7 @@ $filtered->all();
 
 与 `except` 相反的方法，请参阅 [only](#method-only) 方法。
 
-> **注意：**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-except) 时，此方法的行为会发生变化。
 
 #### `filter()`
@@ -901,7 +902,7 @@ $collection->all();
 // ['framework' => 'laravel']
 ```
 
-> **警告：**
+> [!WARNING]
 > 与大多数其它集合方法不同，`forget` 不返回一个新修改的集合；它修改的是它被调用的集合。
 
 #### `forPage()`
@@ -1123,7 +1124,7 @@ $intersect->all();
 // [0 => 'Desk', 2 => 'Chair']
 ```
 
-> **注意：**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-intersect) 时，此方法的行为会有所不同。
 
 #### `intersectAssoc()`
@@ -1326,7 +1327,7 @@ $multiplied->all();
 // [2, 4, 6, 8, 10]
 ```
 
-> **警告：**
+> [!WARNING]
 > 像大多数其他集合方法一样，`map` 返回一个新的集合实例；它不修改调用它的集合。如果你想转换原始集合，请使用 [`transform`](#method-transform) 方法。
 
 #### `mapInto()`
@@ -1599,7 +1600,7 @@ $filtered->all();
 
 `only` 方法的逆过程，请参见 [`except`](#method-except) 方法。
 
-> **注意：**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-only) 时，这个方法的行为有所不同。
 
 #### `pad()`
@@ -2219,7 +2220,7 @@ $subset->all();
 // [3, 4]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果未找到给定值或回调函数永远不返回 `true` ，`skipUntil` 方法将返回一个空的集合。
 
 #### `skipWhile()`
@@ -2238,7 +2239,7 @@ $subset->all();
 // [4]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果回调函数永远不返回 `false` ，`skipWhile` 方法将返回一个空的集合。
 
 #### `slice()`
@@ -2360,7 +2361,7 @@ $sorted->values()->all();
 
 如果你的排序需求更高级，你可以传递一个具有自己算法的回调函数给 `sort` 。参考 PHP 的 [`uasort`](https://secure.php.net/manual/en/function.uasort.php#refsect1-function.uasort-parameters) 文档，这正是集合的 `sort` 方法内部调用的方法。
 
-> **注意：**
+> [!NOTE]
 > 如果你需要对嵌套数组或对象的集合进行排序，请参阅 [`sortBy`](#method-sortby) 和 [`sortByDesc`](#method-sortbydesc) 方法。
 
 #### `sortBy()`
@@ -2722,7 +2723,7 @@ $subset->all();
 // [3, 4]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果未找到给定值或回调函数永远不返回 `true` ，`skipUntil` 方法将返回一个空的集合。
 
 #### `skipWhile()`
@@ -2741,7 +2742,7 @@ $subset->all();
 // [4]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果回调函数永远不返回 `false` ，`skipWhile` 方法将返回一个空的集合。
 
 #### `slice()`
@@ -2863,7 +2864,7 @@ $sorted->values()->all();
 
 如果你的排序需求更高级，你可以传递一个具有自己算法的回调函数给 `sort` 。参考 PHP 的 [`uasort`](https://secure.php.net/manual/en/function.uasort.php#refsect1-function.uasort-parameters) 文档，这正是集合的 `sort` 方法内部调用的方法。
 
-> **注意：**
+> [!NOTE]
 > 如果你需要对嵌套数组或对象的集合进行排序，请参阅 [`sortBy`](#method-sortby) 和 [`sortByDesc`](#method-sortbydesc) 方法。
 
 #### `sortBy()`
@@ -3235,7 +3236,7 @@ $subset->all();
 // [1, 2]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果未找到给定值或回调从未返回 `true`，`takeUntil` 方法将返回集合中的所有项目。
 
 #### `takeWhile()`
@@ -3254,7 +3255,7 @@ $subset->all();
 // [1, 2]
 ```
 
-> **警告：**
+> [!WARNING]
 > 如果回调从未返回 `false`，`takeWhile` 方法将返回集合中的所有项目。
 
 #### `tap()`
@@ -3302,7 +3303,7 @@ $collection->toArray();
 */
 ```
 
-> **警告：** > `toArray` 还会将集合中的所有嵌套对象转换为数组，这些对象是 `Arrayable` 的实例。如果你想获取集合的底层原始数组，请使用 [`all`](#method-all) 方法。
+> [!WARNING] > `toArray` 还会将集合中的所有嵌套对象转换为数组，这些对象是 `Arrayable` 的实例。如果你想获取集合的底层原始数组，请使用 [`all`](#method-all) 方法。
 
 #### `toJson()`
 
@@ -3332,7 +3333,7 @@ $collection->all();
 // [2, 4, 6, 8, 10]
 ```
 
-> **警告**
+> [!WARNING]
 > 与大多数其它集合方法不同，`transform` 修改了集合本身。如果你希望创建一个新的集合，请使用 [`map`](#method-map) 方法。
 
 #### `undot()`
@@ -3443,7 +3444,7 @@ $unique->values()->all();
 
 `unique` 方法在检查项目值时使用“宽松”比较，这意味着具有整数值的字符串将被认为等同于同一值的整数。使用 [`uniqueStrict`](#method-uniquestrict) 方法进行“严格”比较来过滤。
 
-> **注意**
+> [!NOTE]
 > 使用 [Eloquent Collections](/docs/11/eloquent/eloquent-collections#method-unique) 时，这个方法的行为有所不同。
 
 #### `uniqueStrict()`

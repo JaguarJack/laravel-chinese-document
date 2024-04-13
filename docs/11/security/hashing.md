@@ -73,7 +73,7 @@ $hashed = Hash::make('password', [
 ]);
 ```
 
-> [!注意]  
+> [!NOTE]  
 > 关于这些选项的更多信息，请参考 [官方 PHP 文档关于 Argon 散列的内容](https://secure.php.net/manual/en/function.password-hash.php)。
 
 ### 验证密码是否与散列匹配

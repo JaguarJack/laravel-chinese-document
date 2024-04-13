@@ -14,7 +14,7 @@ Laravel 提供两种主要的授权操作方法：[gates](#gates) 和 [policies]
 
 ### 编写 Gates
 
-> [!警告]  
+> [!WARNING]  
 > Gates 是学习 Laravel 授权功能的基础，然而，在构建健壮的 Laravel 应用时，你应该考虑使用 [policies](#creating-policies) 来组织你的授权规则。
 
 Gates 是判断用户是否有权执行给定操作的闭包。通常，gates 在 `App\Providers\AppServiceProvider` 类的 `boot` 方法中使用 `Gate` facade 来定义。Gates 总是接收一个用户实例作为它们的第一个参数，并且可以可选地接收额外参数，例如相关的 Eloquent 模型。

@@ -237,7 +237,7 @@ Cache::add('key', 'value', $seconds);
 Cache::forever('key', 'value');
 ```
 
-> **注意**  
+> [!NOTE]  
 > 如果您使用的是 Memcached 驱动程序，当缓存达到大小限制时，存储的“永久”项目可能会被移除。
 
 ### 从缓存中移除项目
@@ -262,7 +262,7 @@ Cache::put('key', 'value', -5);
 Cache::flush();
 ```
 
-> **警告**  
+> [!WARNING]  
 > 清除缓存不会尊重您配置的缓存 "前缀"，并将移除所有来自缓存的条目。当清除一个被其他应用程序共享的缓存时，请谨慎考虑。
 
 ### 缓存助手函数
@@ -289,12 +289,12 @@ cache()->remember('users', $seconds, function () {
 });
 ```
 
-> **注意**  
+> [!NOTE]  
 > 当测试全局 `cache` 函数的调用时，您可以使用 `Cache::shouldReceive` 方法，就像您在 [测试 facade](/docs/11/testing/mocking#mocking-facades) 时一样。
 
 ## 原子锁
 
-> **警告**  
+> [!WARNING]  
 > 要使用此功能，您的应用程序必须使用 `memcached`、`redis`、`dynamodb`、`database`、`file` 或 `array` 缓存驱动程序作为应用程序的默认缓存驱动程序。此外，所有服务器必须与相同的中心缓存服务器通信。
 
 ### 管理锁
@@ -411,7 +411,7 @@ Cache::extend('mongo', function (Application $app) {
 });
 ```
 
-> **注意**  
+> [!NOTE]  
 > 如果您想知道在哪里放置您的自定义缓存驱动程序代码，您可以在您的 `app` 目录中创建一个 `Extensions` 命名空间。但是，请记住，Laravel 没有严格的应用程序结构，您可以根据自己的喜好自由组织您的应用程序。
 
 ### 注册驱动程序

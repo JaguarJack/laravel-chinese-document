@@ -8,7 +8,7 @@ Laravel 的数据库查询构建器提供了一个方便、流畅的接口来创
 
 Laravel 查询构建器使用 PDO 参数绑定来保护你的应用程序免受 SQL 注入攻击。你不需要清理或净化传递给查询构建器的字符串，因为查询绑定已经足够安全。
 
-> 警告  
+> [!WARNING]  
 > PDO 不支持绑定列名。因此，你绝不应该允许用户输入控制你的查询引用的列名，包括 "order by" 列。
 
 ## 运行数据库查询
@@ -51,7 +51,7 @@ foreach ($users as $user) {
 }
 ```
 
-> 注意  
+[!NOTE]  
 > Laravel 集合提供了用于映射和减少数据的极其强大的方法。要了解更多关于 Laravel 集合的信息，请查看[集合文档](/docs/11/digging-deeper/collections)。
 
 #### 从表中检索单个行/列
@@ -138,7 +138,7 @@ DB::table('users')->where('active', false)
     });
 ```
 
-> 警告  
+> [!WARNING]  
 > 在分块回调中更新或删除记录时，任何对主键或外键的更改都可能影响分块查询。这可能会导致某些记录不包括在分块结果中。
 
 ### 懒加载结果流
@@ -164,7 +164,7 @@ DB::table('users')->where('active', false)
     });
 ```
 
-> 警告  
+> [!WARNING]  
 > 在迭代时更新或删除记录时，任何对主键或外键的更改都可能影响分块查询。这可能会导致某些记录不包括在结果中。
 
 ### 聚合
@@ -241,7 +241,7 @@ $users = DB::table('users')
              ->get();
 ```
 
-> 警告  
+> [!WARNING]  
 > 原始语句将作为字符串插入查询中，所以你应该非常小心以避免创建 SQL 注入漏洞。
 
 ### Raw 方法
@@ -382,7 +382,7 @@ $users = DB::table('users')
 
 #### Lateral Joins
 
-> 警告  
+> [!WARNING]  
 > 横向连接目前只有 PostgreSQL、MySQL >= 8.0.14 和 SQL Server 支持。
 
 你可以使用 `joinLateral` 和 `leftJoinLateral` 方法使用子查询执行 "lateral join"。这些方法各接受两个参数：子查询和它的表别名。连接条件应该在给定子查询的 `where` 子句中指定。横向连接对每一行进行评估，并可以引用子查询之外的列。
@@ -465,7 +465,7 @@ $users = DB::table('users')->where([
 ])->get();
 ```
 
-> 警告  
+> [!WARNING]  
 > PDO 不支持绑定列名。因此，你绝不应该允许用户输入决定你的查询引用的列名，包括 "order by" 列。
 
 ### 或者 Where 子句
@@ -497,7 +497,7 @@ $users = DB::table('users')
 select * from users where votes > 100 or (name = 'Abigail' and votes > 50)
 ```
 
-> 警告  
+> [!WARNING]  
 > 你应该始终对 `orWhere` 调用进行分组，以避免全局作用域应用时出现预期之外的行为。
 
 ### Where Not 子句
@@ -789,7 +789,7 @@ $users = DB::table('users')
 select * from users where name = 'John' and (votes > 100 or title = 'Admin')
 ```
 
-> [!警告]  
+> [!WARNING]  
 > 你应该始终分组 `orWhere` 调用以避免全局作用域应用时出现意外行为。
 
 ### 高级 Where 子句
@@ -855,7 +855,7 @@ $incomes = Income::where('amount', '<', function ($query) {
 
 ### 全文本 Where 子句
 
-> [!警告]  
+> [!WARNING]  
 > 全文本 where 子句目前由 MySQL 和 PostgreSQL 支持。
 
 `whereFullText` 和 `orWhereFullText` 方法可用于在查询中添加全文本 "where" 子句，针对已经建立了[全文索引](/docs/11/database/migrations#available-index-types)的列。这些方法将会由 Laravel 转换为底层数据库系统适用的相应 SQL。例如，对于使用 MySQL 的应用程序，会生成一个 `MATCH AGAINST` 子句：
@@ -1059,7 +1059,7 @@ $id = DB::table('users')->insertGetId(
 );
 ```
 
-> [!警告]  
+> [!WARNING]  
 > 使用 PostgreSQL 时，`insertGetId` 方法期望自动递增列被命名为 `id`。如果你想从不同的 "序列" 中检索 ID，你可以将列名作为第二个参数传递给 `insertGetId` 方法。
 
 ### 上插
@@ -1079,7 +1079,7 @@ DB::table('flights')->upsert(
 
 在上面的例子中，Laravel 将尝试插入两条记录。如果一个记录已经存在于 `departure` 和 `destination` 列值相同，Laravel 将更新该记录的 `price` 列。
 
-> [!警告]  
+> [!WARNING]  
 > 除了 SQL Server 之外的所有数据库都要求 `upsert` 方法的第二个参数中的列有一个 "primary" 或 "unique" 索引。此外，MySQL 数据库驱动忽略 `upsert` 方法的第二个参数，并总是使用表的 "primary" 和 "unique" 索引来检测现有记录。
 
 ## 更新语句

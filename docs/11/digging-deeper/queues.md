@@ -1675,7 +1675,7 @@ Laravel 包含了一个 Artisan 命令，可以启动一个队列工作器并处
 php artisan queue:work
 ```
 
-> [!注意]
+> [!NOTE]
 > 为了让 `queue:work` 进程在后台永久运行，您应该使用进程监控工具如 [Supervisor](#supervisor-configuration) 来确保队列工作器不会停止运行。
 
 执行 `queue:work` 命令时可包含 `-v` 标志，如果您希望在命令的输出中包含处理过的作业 ID：
@@ -2123,7 +2123,7 @@ class AppServiceProvider extends ServiceProvider
 
 ### 从队列中清除作业
 
-> **注意**  
+> [!NOTE]  
 > 在使用 [Horizon](/docs/11/packages/horizon) 时，你应该使用 `horizon:clear` 命令来清除队列中的作业，而不是 `queue:clear` 命令。
 
 如果你希望删除默认连接的默认队列中的所有作业，你可以使用 `queue:clear` Artisan 命令来完成：
@@ -2138,7 +2138,7 @@ php artisan queue:clear
 php artisan queue:clear redis --queue=emails
 ```
 
-> **警告**  
+> [!WARNING]  
 > 从队列中清除作业仅适用于 SQS、Redis 和数据库队列驱动。此外，SQS 消息删除过程需要多达 60 秒，因此在你清除队列后的 60 秒内发送到 SQS 队列的作业也可能被删除。
 
 ### 监控队列

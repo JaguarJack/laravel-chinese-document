@@ -20,7 +20,7 @@ Laravel 会使用迁移名称来尝试猜测表的名称以及迁移是否会创
 
 如果你想为生成的迁移指定一个自定义路径，执行 `make:migration` 命令时可以使用 `--path` 选项。给定的路径应与你的应用的基本路径相关。
 
-> [!注意]
+> [!NOTE]
 > 迁移模板可以使用 [stub 发布](/docs/11/digging-deeper/artisan#stub-customization) 进行自定义。
 
 ### 压缩迁移
@@ -503,7 +503,7 @@ $table->foreignUuid('user_id');
 $table->geography('coordinates', subtype: 'point', srid: 4326);
 ```
 
-> [!注意]
+> [!NOTE]
 > 对于空间类型的支持取决于你的数据库驱动。请查阅你的数据库文档。如果你的应用使用 PostgreSQL 数据库，你必须在 `geography` 方法可用之前安装 [PostGIS](https://postgis.net) 扩展。
 
 #### `geometry()`
@@ -514,7 +514,7 @@ $table->geography('coordinates', subtype: 'point', srid: 4326);
 $table->geometry('positions', subtype: 'point', srid: 0);
 ```
 
-> [!注意]
+> [!NOTE]
 > 对于空间类型的支持取决于你的数据库驱动。请查阅你的数据库文档。如果你的应用使用 PostgreSQL 数据库，你必须在 `geometry` 方法可用之前安装 [PostGIS](https://postgis.net) 扩展。
 
 #### `id()`

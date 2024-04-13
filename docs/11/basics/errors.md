@@ -44,7 +44,7 @@
 })
 ```
 
-> 注意：
+[!NOTE]
 > 要自定义给定异常的异常报告，您也可以使用[可报告异常](/docs/11/basics/errors#renderable-exceptions)。
 
 #### 全局日志上下文
@@ -315,7 +315,7 @@ public function report(): bool
 }
 ```
 
-> 注意：
+[!NOTE]
 > 您可以为 `report` 方法的任何所需依赖类型提示，并且 Laravel 的[服务容器](/docs/11/architecture-concepts/container)将自动将它们注入到方法中。
 
 ### 节流报告的异常

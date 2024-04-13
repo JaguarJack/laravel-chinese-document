@@ -16,7 +16,7 @@
 
 默认情况下，Laravel 包括三个服务器端广播驱动程序供您选择：[Laravel Reverb](https://reverb.laravel.com)，[Pusher Channels](https://pusher.com/channels)，和 [Ably](https://ably.com)。
 
-> **注意**  
+> [!NOTE]  
 > 在深入事件广播之前，请确保您已经阅读了 Laravel 关于 [事件和监听器](/docs/11/digging-deeper/events) 的文档。
 
 ## 服务器端安装
@@ -91,7 +91,7 @@ BROADCAST_CONNECTION=pusher
 
 ### Ably
 
-> **注意**  
+> [!NOTE]  
 > 下面的文档讨论了如何在 "Pusher 兼容" 模式下使用 Ably。然而，Ably 团队推荐并维护了一个广播器和 Echo 客户端，能够利用 Ably 提供的独特功能。有关使用 Ably 维护的驱动程序的更多信息，请 [参阅 Ably 的 Laravel 广播器文档](https://github.com/ably/laravel-broadcaster)。
 
 如果您计划使用 [Ably](https://ably.com) 广播事件，您应该使用 Composer 包管理器安装 Ably PHP SDK：
@@ -149,7 +149,7 @@ window.Echo = new Echo({
 npm run build
 ```
 
-> **警告**  
+> [!WARNING]  
 > Laravel Echo 的 `reverb` 广播商需要 laravel-echo v1.16.0+。
 
 ### Pusher Channels
@@ -203,7 +203,7 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 npm run build
 ```
 
-> **注意**  
+> [!NOTE]  
 > 要了解有关编译应用程序 JavaScript 资源的更多信息，请参阅关于 [Vite](/docs/11/basics/vite) 的文档。
 
 #### 使用现有的客户端实例
@@ -227,7 +227,7 @@ window.Echo = new Echo({
 
 ### Ably
 
-> 注意  
+[!NOTE]  
 > 下面的文档讨论如何在 "Pusher 兼容" 模式下使用 Ably。然而，Ably 团队推荐并维护一个广播器和 Echo 客户端，能够利用 Ably 提供的独特功能。为了获取更多关于使用 Ably 维护的驱动程序的信息，请查阅 [Ably 的 Laravel 广播器文档](https://github.com/ably/laravel-broadcaster)。
 
 [Laravel Echo](https://github.com/laravel/echo) 是一个 JavaScript 库，它使订阅频道和监听由你的服务器端广播驱动器广播的事件变得无痛。Echo 也利用 `pusher-js` NPM 包来实现 WebSocket 订阅、频道和消息的 Pusher 协议。
@@ -266,7 +266,7 @@ window.Echo = new Echo({
 npm run dev
 ```
 
-> 注意  
+[!NOTE]  
 > 想了解更多关于编译你的应用的 JavaScript 资源的信息，请查看 [Vite](/docs/11/basics/vite) 的文档。
 
 ## 概念概述

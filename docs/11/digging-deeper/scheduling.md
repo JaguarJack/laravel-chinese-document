@@ -307,7 +307,7 @@ Schedule::command('emails:send')->withoutOverlapping(10);
 
 ### 单服务器运行任务
 
-> [!警告]  
+> [!WARNING]  
 > 要使用此功能，您的应用程序必须使用 `database`、`memcached`、`dynamodb` 或 `redis` 缓存驱动作为应用程序的默认缓存驱动。此外，所有服务器必须与同一个中央缓存服务器进行通信。
 
 如果您的应用程序的调度器在多台服务器上运行，您可以限制计划任务只在单个服务器上执行。例如，假设您有一个计划任务，每周五晚上生成新报告。如果任务调度器在三个工作服务器上运行，则计划任务将在所有三个服务器上运行并生成报告三次。这不好！
@@ -360,7 +360,7 @@ Schedule::command('analytics:report')
          ->runInBackground();
 ```
 
-> [!警告]  
+> [!WARNING]  
 > `runInBackground` 方法只能在使用 `command` 和 `exec` 方法时使用。
 
 ### 维护模式
@@ -460,7 +460,7 @@ Schedule::command('report:generate')
          ->emailOutputOnFailure('taylor@example.com');
 ```
 
-> [!警告]  
+> [!WARNING]  
 > `emailOutputTo`、`emailOutputOnFailure`、`sendOutputTo` 和 `appendOutputTo` 方法仅限于 `command` 和 `exec` 方法。
 
 ## 任务钩子
