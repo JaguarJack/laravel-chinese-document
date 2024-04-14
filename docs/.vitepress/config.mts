@@ -21,6 +21,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {
+        text: 'Laravel开源后台',
+        link: 'https://github.com/JaguarJack/catch-admin'
+      },
+      {
         text: '11.x',
         items: [
           { text: '11.x', link: '/docs/11/prologue/release' }
