@@ -1,3 +1,7 @@
+---
+title: Laravel 数据库查询生成器
+---
+
 # 数据库：查询生成器
 
 [[toc]]
@@ -51,7 +55,8 @@ foreach ($users as $user) {
 }
 ```
 
-[!NOTE]  
+[!NOTE]
+
 > Laravel 集合提供了用于映射和减少数据的极其强大的方法。要了解更多关于 Laravel 集合的信息，请查看[集合文档](/docs/11/digging-deeper/collections)。
 
 #### 从表中检索单个行/列

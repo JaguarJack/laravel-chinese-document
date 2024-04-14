@@ -1,21 +1,10 @@
+---
+title: Laravel Eloquent 修改器与类型转换
+---
+
 # Eloquent: 修改器与类型转换
 
-- [简介](#introduction)
-- [访问器和修改器](#accessors-and-mutators)
-  - [定义访问器](#defining-an-accessor)
-  - [定义修改器](#defining-a-mutator)
-- [属性类型转换](#attribute-casting)
-  - [数组与 JSON 类型转换](#array-and-json-casting)
-  - [日期类型转换](#date-casting)
-  - [枚举类型转换](#enum-casting)
-  - [加密类型转换](#encrypted-casting)
-  - [查询时类型转换](#query-time-casting)
-- [自定义类型转换](#custom-casts)
-  - [值对象类型转换](#value-object-casting)
-  - [数组/JSON 序列化](#array-json-serialization)
-  - [向内类型转换](#inbound-casting)
-  - [转换参数](#cast-parameters)
-  - [可转换类型](#castables)
+[[toc]]
 
 ## 简介
 

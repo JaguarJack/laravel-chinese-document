@@ -1,3 +1,7 @@
+---
+title: Laravel Eloquent API 资源
+---
+
 # Eloquent：API 资源
 
 [[toc]]
@@ -371,8 +375,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-> [!WARNING]
-> `withoutWrapping` 方法只影响最外层响应，不会移除你自己的资源集合手动添加的 `data` 键。
+> [!WARNING] > `withoutWrapping` 方法只影响最外层响应，不会移除你自己的资源集合手动添加的 `data` 键。
 
 #### 包装嵌套资源
 

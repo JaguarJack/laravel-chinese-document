@@ -1,21 +1,10 @@
+---
+title: Laravel Envoy
+---
+
 # Laravel Envoy
 
-- [简介](#introduction)
-- [安装](#installation)
-- [编写任务](#writing-tasks)
-  - [定义任务](#defining-tasks)
-  - [多服务器](#multiple-servers)
-  - [设置](#setup)
-  - [变量](#variables)
-  - [故事](#stories)
-  - [钩子](#completion-hooks)
-- [执行任务](#running-tasks)
-  - [确认任务执行](#confirming-task-execution)
-- [通知](#notifications)
-  - [Slack](#slack)
-  - [Discord](#discord)
-  - [Telegram](#telegram)
-  - [Microsoft Teams](#microsoft-teams)
+[[toc]]
 
 ## 简介
 

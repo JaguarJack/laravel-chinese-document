@@ -1,3 +1,7 @@
+---
+title: Laravel 配置
+---
+
 # 配置
 
 [[toc]]

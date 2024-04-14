@@ -1,3 +1,7 @@
+---
+title: Laravel 安装
+---
+
 # 安装
 
 [[toc]]

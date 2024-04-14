@@ -1,21 +1,10 @@
+---
+title: Laravel Eloquent 工厂
+---
+
 # Eloquent：工厂
 
-- [介绍](#introduction)
-- [定义模型工厂](#defining-model-factories)
-  - [生成工厂](#generating-factories)
-  - [工厂状态](#factory-states)
-  - [工厂回调](#factory-callbacks)
-- [使用工厂创建模型](#creating-models-using-factories)
-  - [实例化模型](#instantiating-models)
-  - [持久化模型](#persisting-models)
-  - [序列](#sequences)
-- [工厂关系](#factory-relationships)
-  - [一对多关系](#has-many-relationships)
-  - [从属关系](#belongs-to-relationships)
-  - [多对多关系](#many-to-many-relationships)
-  - [多态关系](#polymorphic-relationships)
-  - [在工厂中定义关系](#defining-relationships-within-factories)
-  - [复用现有模型进行关联](#recycling-an-existing-model-for-relationships)
+[[toc]]
 
 ## 介绍
 
@@ -72,7 +61,7 @@ class UserFactory extends Factory
 
 通过 `fake` 帮助函数，工厂可以访问 [Faker](https://github.com/FakerPHP/Faker) PHP 库，这使你能够为测试和数据填充方便地生成各种类型的随机数据。
 
- > [!Note]  
+> [!Note]  
 > 你可以通过更新 `config/app.php` 配置文件中的 `faker_locale` 选项来更改应用的 Faker 语言环境。
 
 ## 定义模型工厂
@@ -248,7 +237,7 @@ $user = User::factory()->state([
 ])->make();
 ```
 
- > [!Note]  
+> [!Note]  
 > 使用工厂创建模型时，[批量赋值保护](/docs/11/eloquent/eloquent#mass-assignment)会被自动禁用。
 
 ### 持久化模型

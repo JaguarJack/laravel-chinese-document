@@ -1,19 +1,6 @@
 # Laravel Folio
 
-- [简介](#introduction)
-- [安装](#installation)
-  - [页面路径/URIs](#page-paths-uris)
-  - [子域名路由](#subdomain-routing)
-- [创建路由](#creating-routes)
-  - [嵌套路由](#nested-routes)
-  - [索引路由](#index-routes)
-- [路由参数](#route-parameters)
-- [路由模型绑定](#route-model-binding)
-  - [软删除模型](#soft-deleted-models)
-- [渲染钩子](#render-hooks)
-- [命名路由](#named-routes)
-- [中间件](#middleware)
-- [路由缓存](#route-caching)
+[[toc]]
 
 ## 简介
 

@@ -1,3 +1,7 @@
+---
+title: Laravel Eloquent 序列化
+---
+
 # Eloquent：序列化
 
 [[toc]]
@@ -6,7 +10,7 @@
 
 在使用 Laravel 构建 API 时，你经常需要将你的模型和关系转换为数组或 JSON。Eloquent 包含了便捷的方法来进行这些转换，以及控制哪些属性包含在你模型的序列化表示中。
 
- > [!Note]  
+> [!Note]  
 > 有关处理 Eloquent 模型和集合 JSON 序列化的更加强大的方法，请查看 [Eloquent API 资源](/docs/11/eloquent/eloquent-resources)的文档。
 
 ## 序列化模型和集合
@@ -93,7 +97,7 @@ class User extends Model
 }
 ```
 
- > [!Note]  
+> [!Note]  
 > 要隐藏关系，请将关系的方法名添加到你的 Eloquent 模型的 `$hidden` 属性中。
 
 或者，你可以使用 `visible` 属性来定义一个“允许列表”，其中包含应该包含在模型的数组和 JSON 表示中的属性。当模型被转换为数组或 JSON 时，所有未出现在 `$visible` 数组中的属性都将被隐藏：

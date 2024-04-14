@@ -1,22 +1,10 @@
+---
+title: Laravel HTTP 客户端
+---
+
 # HTTP 客户端
 
-- [简介](#introduction)
-- [发起请求](#making-requests)
-  - [请求数据](#request-data)
-  - [头信息](#headers)
-  - [认证](#authentication)
-  - [超时](#timeout)
-  - [重试](#retries)
-  - [错误处理](#error-handling)
-  - [Guzzle 中间件](#guzzle-middleware)
-  - [Guzzle 选项](#guzzle-options)
-- [并发请求](#concurrent-requests)
-- [宏](#macros)
-- [测试](#testing)
-  - [伪造响应](#faking-responses)
-  - [检查请求](#inspecting-requests)
-  - [防止错误请求](#preventing-stray-requests)
-- [事件](#events)
+[[toc]]
 
 ## 简介
 

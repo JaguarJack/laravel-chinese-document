@@ -1,3 +1,7 @@
+---
+title: Laravel 契约
+---
+
 # 契约
 
 [[toc]]

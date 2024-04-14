@@ -1,3 +1,7 @@
+---
+title: Laravel Dusk
+---
+
 # Laravel Dusk
 
 [[toc]]
@@ -692,7 +696,7 @@ $browser->radio('size', 'large');
 $browser->attach('photo', __DIR__.'/photos/mountains.png');
 ```
 
->  [!WARNING]  
+> [!WARNING]  
 > `attach` 函数要求您的服务器上安装并启用了 `Zip` PHP 扩展。
 
 ### 点击按钮
@@ -729,7 +733,7 @@ if ($browser->seeLink($linkText)) {
 }
 ```
 
->  [!WARNING]  
+> [!WARNING]  
 > 这些方法与 jQuery 交互。如果页面上没有可用的 jQuery，Dusk 将自动将其注入到页面中，以便在测试期间使用。
 
 ### 使用键盘
