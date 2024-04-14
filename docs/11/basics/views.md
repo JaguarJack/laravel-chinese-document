@@ -1,3 +1,7 @@
+---
+title: Laravel 视图
+---
+
 # 视图
 
 [[toc]]

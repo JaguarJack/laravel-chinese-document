@@ -1,3 +1,7 @@
+---
+title: Laravel 邮件
+---
+
 # 邮件
 
 [[toc]]

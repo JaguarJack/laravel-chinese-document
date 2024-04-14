@@ -1,3 +1,7 @@
+---
+title: Laravel 前端资源
+---
+
 # 资源打包 (Vite)
 
 [[toc]]

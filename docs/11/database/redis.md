@@ -1,3 +1,7 @@
+---
+title: Laravel Redis
+---
+
 # 数据库: Redis
 
 [[toc]]

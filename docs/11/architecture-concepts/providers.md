@@ -1,3 +1,7 @@
+---
+title: Laravel 服务提供者
+---
+
 # 服务提供者
 
 - [简介](#introduction)

@@ -1,3 +1,9 @@
+---
+title: Laravel 文件存储
+---
+
+# 文件存储
+
 ## 介绍
 
 Laravel 提供了强大的文件系统抽象，多亏了 Frank de Jonge 优秀的 [Flysystem](https://github.com/thephpleague/flysystem) PHP 包。Laravel 的 Flysystem 集成提供了简单的驱动程序，用于处理本地文件系统、SFTP 和 Amazon S3。更好的是，当你在本地开发机器和生产服务器之间切换这些存储选项时，API 对每个系统都保持不变。

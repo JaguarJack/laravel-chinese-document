@@ -1,3 +1,7 @@
+---
+title: Laravel 广播
+---
+
 # 广播
 
 [[toc]]
@@ -227,7 +231,8 @@ window.Echo = new Echo({
 
 ### Ably
 
-[!NOTE]  
+[!NOTE]
+
 > 下面的文档讨论如何在 "Pusher 兼容" 模式下使用 Ably。然而，Ably 团队推荐并维护一个广播器和 Echo 客户端，能够利用 Ably 提供的独特功能。为了获取更多关于使用 Ably 维护的驱动程序的信息，请查阅 [Ably 的 Laravel 广播器文档](https://github.com/ably/laravel-broadcaster)。
 
 [Laravel Echo](https://github.com/laravel/echo) 是一个 JavaScript 库，它使订阅频道和监听由你的服务器端广播驱动器广播的事件变得无痛。Echo 也利用 `pusher-js` NPM 包来实现 WebSocket 订阅、频道和消息的 Pusher 协议。
@@ -266,7 +271,8 @@ window.Echo = new Echo({
 npm run dev
 ```
 
-[!NOTE]  
+[!NOTE]
+
 > 想了解更多关于编译你的应用的 JavaScript 资源的信息，请查看 [Vite](/docs/11/basics/vite) 的文档。
 
 ## 概念概述

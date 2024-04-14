@@ -1,4 +1,4 @@
-# Pint
+# Laravel Pint
 
 [[toc]]
 

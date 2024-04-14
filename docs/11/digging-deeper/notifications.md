@@ -1,3 +1,7 @@
+---
+title: Laravel 通知
+---
+
 # 通知
 
 [[toc]]
@@ -1294,6 +1298,7 @@ class User extends Authenticatable
 ### 通知外部 Slack 工作空间
 
 [!NOTE]
+
 > 在向外部 Slack 工作空间发送通知之前，你的 Slack 应用必须被[分发](#slack-app-distribution)。
 
 当然，你经常会想要将通知发送到你应用程序用户拥有的 Slack 工作空间。要做到这一点，你首先需要为用户获取一个 Slack OAuth token。幸运的是，[Laravel Socialite](/docs/11/packages/socialite)包括了一个 Slack 驱动程序，它将允许你轻松地通过 Slack 认证你应用程序的用户并[获取一个 bot token](/docs/11/packages/socialite#slack-bot-scopes)。

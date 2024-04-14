@@ -1,3 +1,7 @@
+---
+title: Laravel 生成 URL
+---
+
 # 生成 URL
 
 [[toc]]

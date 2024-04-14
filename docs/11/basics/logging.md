@@ -1,3 +1,7 @@
+---
+title: Laravel 日志记录
+---
+
 # 日志记录
 
 [[toc]]
@@ -33,6 +37,7 @@ Laravel 日志基于“渠道”概念。每个渠道代表一种特定的日志
 | `syslog`     | 基于 `SyslogHandler` 的 Monolog 驱动                   |
 
 [!NOTE]
+
 > 查看有关[高级渠道自定义](#monolog-channel-customization)的文档，了解更多关于 `monolog` 和 `custom` 驱动的信息。
 
 #### 配置渠道名称
@@ -275,6 +280,7 @@ class AssignRequestId
 ```
 
 [!NOTE]
+
 > 如果您需要在处理队列作业时共享日志上下文，您可以使用[作业中间件](/docs/11/digging-deeper/queues#job-middleware)。
 
 ### 写入特定渠道
@@ -364,6 +370,7 @@ class CustomizeFormatter
 ```
 
 [!NOTE]
+
 > 您的所有 "tap" 类都是由[服务容器](/docs/11/architecture-concepts/container)解析的，因此它们所需的任何构造函数依赖关系都会自动被注入。
 
 ### 创建 Monolog 处理器渠道

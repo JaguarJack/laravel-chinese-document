@@ -1,4 +1,8 @@
-# Collections
+---
+title: Laravel 集合
+---
+
+# 集合
 
 [[toc]]
 
@@ -656,8 +660,7 @@ return $collection->ensure([User::class, Customer::class]);
 return $collection->ensure('int');
 ```
 
-> [!WARNING] 
-> `ensure` 方法并不保证不会在随后的时间向 collection 中添加不同类型的元素。
+> [!WARNING] > `ensure` 方法并不保证不会在随后的时间向 collection 中添加不同类型的元素。
 
 #### `every()`
 

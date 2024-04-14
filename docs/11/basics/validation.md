@@ -1,3 +1,7 @@
+---
+title: Laravel 验证 表单验证
+---
+
 # 表单验证
 
 [[toc]]
@@ -1885,6 +1889,7 @@ $v = Validator::make($data, [
 在上面的例子中，如果 `email` 字段存在于 `$data` 数组中，则只会验证该字段。
 
 [!NOTE]
+
 > 如果您正在尝试验证应始终存在但可能为空的字段，请查看[可选字段的注释](#a-note-on-optional-fields)。
 
 ### 复杂条件验证
@@ -1919,6 +1924,7 @@ $validator->sometimes(['reason', 'cost'], 'required', function (Fluent $input) {
 ```
 
 [!NOTE]
+
 > 传递给闭包的 `$input` 参数将是 `Illuminate\Support\Fluent` 的实例，可用于访问您正在验证的输入和文件。
 
 ### 复杂条件数组验证
@@ -2094,6 +2100,7 @@ Validator::validate($input, [
 ```
 
 [!NOTE]
+
 > 有关验证图像尺寸的更多信息，请参阅[尺寸规则文档](#rule-dimensions)。
 
 ### 文件大小

@@ -1,3 +1,7 @@
+---
+title: Laravel 响应
+---
+
 # HTTP 响应
 
 [[toc]]

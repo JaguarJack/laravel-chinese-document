@@ -1,5 +1,5 @@
 ---
-outline: deep
+title: Laravel Blade 模板
 ---
 
 # Blade 模板

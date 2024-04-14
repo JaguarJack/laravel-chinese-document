@@ -1,3 +1,7 @@
+---
+title: Laravel Homestead
+---
+
 # Homestead
 
 [[toc]]

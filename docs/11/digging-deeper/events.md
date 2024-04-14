@@ -1,25 +1,10 @@
+---
+title: Laravel 事件
+---
+
 # 事件
 
-- [介绍](#introduction)
-- [生成事件和监听器](#generating-events-and-listeners)
-- [注册事件和监听器](#registering-events-and-listeners)
-  - [事件发现](#event-discovery)
-  - [手动注册事件](#manually-registering-events)
-  - [闭包监听器](#closure-listeners)
-- [定义事件](#defining-events)
-- [定义监听器](#defining-listeners)
-- [队列化事件监听器](#queued-event-listeners)
-  - [手动交互队列](#manually-interacting-with-the-queue)
-  - [队列化事件监听器与数据库事务](#queued-event-listeners-and-database-transactions)
-  - [处理失败的作业](#handling-failed-jobs)
-- [分派事件](#dispatching-events)
-  - [在数据库事务之后分派事件](#dispatching-events-after-database-transactions)
-- [事件订阅者](#event-subscribers)
-  - [编写事件订阅者](#writing-event-subscribers)
-  - [注册事件订阅者](#registering-event-subscribers)
-- [测试](#testing)
-  - [仿造部分事件集合](#faking-a-subset-of-events)
-  - [作用域事件仿造](#scoped-event-fakes)
+[[toc]]
 
 ## 介绍
 

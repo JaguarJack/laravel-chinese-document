@@ -1,5 +1,11 @@
+---
+title: Laravel Facade 门面
+---
+
 # 门面
+
 [[toc]]
+
 # 介绍
 
 在 Laravel 文档中，您会看到很多通过“facades”与 Laravel 功能进行交互的代码示例。Facades 为应用程序的[服务容器](/docs/11/architecture-concepts/container)中的类提供了一个“静态”接口。Laravel 提供了许多 facades，几乎可以访问 Laravel 的所有功能。
