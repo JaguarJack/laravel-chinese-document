@@ -303,7 +303,7 @@ $posts = Post::whereBelongsTo($users)->get();
 $posts = Post::whereBelongsTo($user, 'author')->get();
 ```
 
-### Has One of Many
+### 一对多关系
 
 有时一个模型可能有许多相关的模型，但你想要方便地检索关系中的 "最新" 或 "最老" 的相关模型。例如，一个 `User` 模型可能与许多 `Order` 模型相关，但你想定义一个便捷的方式来与用户下的最新订单进行交互。你可以使用 `hasOne` 关系类型结合 `ofMany` 方法来达成这一目的：
 
@@ -346,7 +346,7 @@ public function largestOrder(): HasOne
 > [!WARNING]  
 > 由于 PostgreSQL 不支持对 UUID 列执行 `MAX` 函数，因此目前无法与 PostgreSQL UUID 列结合使用 one-of-many 关系。
 
-#### 转换 “Many” 关系为 Has One 关系
+#### 转换 `一对多` 关系为 `一对一` 关系
 
 通常，当使用 `latestOfMany`、`oldestOfMany` 或 `ofMany` 方法检索单个模型时，你已经为同一模型定义了一个 "has many" 关系。为方便起见，Laravel 允许你通过在关系上调用 `one` 方法，轻松地将此关系转换为 "has one" 关系：
 
@@ -389,7 +389,7 @@ public function currentPricing(): HasOne
 }
 ```
 
-### Has One Through
+### 远程一对一
 
 "has-one-through" 关系定义了与另一个模型的一对一关系。然而，这种关系指出声明模型可以匹配到另一个模型的一个实例，通过 _通过_ 第三个模型。
 
@@ -477,7 +477,7 @@ return $this->through('cars')->has('owner');
 return $this->throughCars()->hasOwner();
 ```
 
-### Has Many Through
+### 远程一对多
 
 "has-many-through" 关系提供了通过中间关系访问远程关系的便捷方式。例如，假设我们正在构建一个类似于 [Laravel Vapor](https://vapor.laravel.com) 的部署平台。一个 `Project` 模型可能通过一个中间的 `Environment` 模型访问多个 `Deployment` 模型。使用这个例子，你可以很容易地为给定的项目收集所有部署。让我们来看看定义这种关系所需的表结构：
 
@@ -825,7 +825,7 @@ public $incrementing = true;
 
 一对一多态关系类似于典型的一对一关系；然而，子模型可以使用单一关联属于多于一种类型的模型。例如，一个博客 `Post` 和一个 `User` 可能与一个 `Image` 模型共享多态关系。使用一对一多态关系允许你有一个唯一图像的单一表格，这些图像可能与帖子和用户相关联。首先，让我们看看构建这种关系所需的表结构：
 
-```plaintext
+```php
 posts
     id - integer
     name - string
@@ -1265,7 +1265,7 @@ public function bestImage(): MorphOne
 }
 ```
 
- > [!Note]  
+> [!Note]  
 > 可以构建更高级的“多中的一”关系。有关更多信息，请查阅 has one of many 文档。
 
 ### 多对多（多态）
