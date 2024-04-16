@@ -405,7 +405,9 @@ expect($response['created'])->toBeTrue();
 $this->assertTrue($response['created']);
 ```
 
-> [!NOTE] > `assertJson` 方法将响应转换为数组，并使用 `PHPUnit::assertArraySubset` 验证给定数组是否存在于应用程序返回的 JSON 响应中。因此，即使 JSON 响应中还有其他属性，此测试仍会通过，只要存在给定的片段。
+> [!NOTE]
+
+> `assertJson` 方法将响应转换为数组，并使用 `PHPUnit::assertArraySubset` 验证给定数组是否存在于应用程序返回的 JSON 响应中。因此，即使 JSON 响应中还有其他属性，此测试仍会通过，只要存在给定的片段。
 
 #### 断言精确的 JSON 匹配
 
