@@ -94,8 +94,6 @@ php artisan install:broadcasting
 
 此不再需要单独的 HTTP "kernel" 类。
 
-抱歉造成了困扰。让我再次进行完整的翻译：
-
 ---
 
 #### 调度
