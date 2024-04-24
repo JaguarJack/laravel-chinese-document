@@ -747,6 +747,64 @@ class OrderShipmentStatusUpdated implements ShouldBroadcast
 }
 ```
 
+### 匿名事件广播
+
+有时，您可能希望在不创建专用事件类的情况下，向应用程序的前端广播一个简单的事件。为了满足这一需求，`Broadcast` facade 允许您广播“匿名事件”：
+
+```php
+Broadcast::on('orders.'.$order->id)->send();
+```
+
+上面的示例将广播以下事件：
+
+```json
+{
+  "event": "AnonymousEvent",
+  "data": "[]",
+  "channel": "orders.1"
+}
+```
+
+使用 `as` 和 `with` 方法，您可以自定义事件的名称和数据：
+
+```php
+Broadcast::on('orders.'.$order->id)
+    ->as('OrderPlaced')
+    ->with($order)
+    ->send();
+```
+
+上面的示例将广播如下事件：
+
+```json
+{
+  "event": "OrderPlaced",
+  "data": "{ id: 1, total: 100 }",
+  "channel": "orders.1"
+}
+```
+
+如果您希望在私有频道或存在频道上广播匿名事件，您可以使用 `private` 和 `presence` 方法：
+
+```php
+Broadcast::private('orders.'.$order->id)->send();
+Broadcast::presence('channels.'.$channel->id)->send();
+```
+
+使用 `send` 方法广播匿名事件会将事件分派到您应用程序的[队列](/docs/{{version}}/queues)中进行处理。但是，如果您希望立即广播事件，您可以使用 `sendNow` 方法：
+
+```php
+Broadcast::on('orders.'.$order->id)->sendNow();
+```
+
+要向除当前认证用户以外的所有频道订阅者广播事件，您可以调用 `toOthers` 方法：
+
+```php
+Broadcast::on('orders.'.$order->id)
+    ->toOthers()
+    ->send();
+```
+
 ## 接收广播
 
 ### 监听事件
