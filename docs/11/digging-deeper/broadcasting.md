@@ -791,7 +791,7 @@ Broadcast::private('orders.'.$order->id)->send();
 Broadcast::presence('channels.'.$channel->id)->send();
 ```
 
-使用 `send` 方法广播匿名事件会将事件分派到您应用程序的[队列](/docs/{{version}}/queues)中进行处理。但是，如果您希望立即广播事件，您可以使用 `sendNow` 方法：
+使用 `send` 方法广播匿名事件会将事件分派到您应用程序的[队列](/docs/11/digging-deeper/queues)中进行处理。但是，如果您希望立即广播事件，您可以使用 `sendNow` 方法：
 
 ```php
 Broadcast::on('orders.'.$order->id)->sendNow();
