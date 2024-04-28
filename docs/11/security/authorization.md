@@ -746,3 +746,44 @@ public function update(Request $request, Post $post): RedirectResponse
 
     return return redirect('/posts');
 ```
+
+## 授权和 Inertia
+
+尽管授权必须始终在服务器上处理，但是向前端应用程序提供授权数据以便正确渲染应用程序的用户界面常常很方便。Laravel 没有定义将授权信息暴露给 Inertia 驱动前端的必须约定。
+
+然而，如果你使用的是 Laravel 的基于 Inertia 的[入门套件](/docs/11/getting-started/starter-kits)之一，你的应用程序已经包含一个`HandleInertiaRequests`中间件。在这个中间件的`share`方法中，你可以返回为应用程序中的所有 Inertia 页面提供的共享数据。此共享数据可以作为为用户定义授权信息的便捷位置：
+
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use App\Models\Post;
+use Illuminate\Http\Request;
+use Inertia\Middleware;
+
+class HandleInertiaRequests extends Middleware
+{
+    // ...
+
+    /**
+     * 定义默认共享的属性。
+     *
+     * @return array<string, mixed>
+     */
+    public function share(Request $request)
+    {
+        return [
+            ...parent::share($request),
+            'auth' => [
+                'user' => $request->user(),
+                'permissions' => [
+                    'post' => [
+                        'create' => $request->user()->can('create', Post::class),
+                    ],
+                ],
+            ],
+        ];
+    }
+}
+```
