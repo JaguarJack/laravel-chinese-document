@@ -25,7 +25,7 @@ export default defineConfig({
     nav: [
       {
         text: 'Laravel开源后台',
-        link: 'https://github.com/JaguarJack/catch-admin'
+        link: 'https://catchadmin.com'
       },
       {
         text: '11.x',
