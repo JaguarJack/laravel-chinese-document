@@ -149,6 +149,12 @@ public function boot(): void
 
 `<livewire:pulse.servers />` 卡片显示运行 `pulse:check` 命令的所有服务器的系统资源使用情况。有关系统资源报告的更多信息，请参考 [服务器记录器](#servers-recorder) 文档。
 
+如果你替换了基础设施中的服务器，你可能希望在一定的时间后停止在 Pulse 仪表板上显示非活动的服务器。你可以使用 `ignore-after` 属性来实现这一点，该属性接受一个以秒为单位的数字，表示非活动服务器应该在多少秒后从 Pulse 仪表板中移除。或者，你可以提供一个相对时间格式的字符串，比如 `1 小时` 或 `3 天 1 小时`：
+
+```blade
+<livewire:pulse.servers ignore-after="3 hours" />
+```
+
 #### 应用程序使用情况
 
 `<livewire:pulse.usage />` 卡片显示对您的应用程序发送请求、分派作业和遇到慢速请求的前 10 名用户。
