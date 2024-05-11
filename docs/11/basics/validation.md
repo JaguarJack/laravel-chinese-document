@@ -1091,6 +1091,10 @@ if ($validator->stopOnFirstFailure()->fails()) {
 
 验证的字段必须有一个匹配的 `{field}_confirmation` 字段。例如，如果正在验证的字段是 `password`，输入中必须存在一个匹配的 `password_confirmation` 字段。
 
+#### contains:_foo_,_bar_,...
+
+这个验证字段必须是一个数组，其中包含了所有给定的参数数值。
+
 ### current_password
 
 验证的字段必须与认证用户的密码匹配。你可以使用规则的第一个参数指定一个 [认证守卫](/docs/11/security/authentication)：
