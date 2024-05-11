@@ -88,7 +88,7 @@ php artisan folio:list
 您可以通过在 Folio 目录中的一个或多个目录中创建一个嵌套路由。例如，要创建一个可以通过 `/user/profile` 访问的页面，请在 `pages/user` 目录中创建一个 `profile.blade.php` 模板：
 
 ```bash
-php artisan make:folio user/profile
+php artisan folio:page user/profile
 
 # pages/user/profile.blade.php → /user/profile
 ```
@@ -98,10 +98,10 @@ php artisan make:folio user/profile
 有时，您可能希望将给定页面作为目录的“索引”。通过在 Folio 目录中放置一个 `index.blade.php` 模板，任何对该目录根的请求都将路由到该页面：
 
 ```bash
-php artisan make:folio index
+php artisan folio:page index
 # pages/index.blade.php → /
 
-php artisan make:folio users/index
+php artisan folio:page users/index
 # pages/users/index.blade.php → /users
 ```
 
@@ -110,7 +110,7 @@ php artisan make:folio users/index
 通常，您需要将传入请求的 URL 中的片段注入到您的页面中，以便您可以与它们交互。例如，您可能需要访问正在显示其配置文件的用户的“ID”。为了实现这一点，您可以使用方括号将页面文件名的一段封装起来：
 
 ```bash
-php artisan make:folio "users/[id]"
+php artisan folio:page "users/[id]"
 
 # pages/users/[id].blade.php → /users/1
 ```
@@ -124,7 +124,7 @@ php artisan make:folio "users/[id]"
 要捕获多个片段，您可以在封装的片段前加上三个点 `...`：
 
 ```bash
-php artisan make:folio "users/[...ids]"
+php artisan folio:page "users/[...ids]"
 
 # pages/users/[...ids].blade.php → /users/1/2/3
 ```
@@ -144,7 +144,7 @@ php artisan make:folio "users/[...ids]"
 如果页面模板的文件名中的通配符片段与应用程序的 Eloquent 模型之一相对应，Folio 将自动利用 Laravel 的路由模型绑定功能，并尝试将解析的模型实例注入到您的页面中：
 
 ```bash
-php artisan make:folio "users/[User]"
+php artisan folio:page "users/[User]"
 
 # pages/users/[User].blade.php → /users/1
 ```
@@ -166,7 +166,7 @@ php artisan make:folio "users/[User]"
 默认情况下，Folio 将在应用程序的 `app/Models` 目录下搜索您的模型。然而，如果需要，您可以在模板的文件名中指定模型的完全限定类名：
 
 ```bash
-php artisan make:folio "users/[.App.Models.User]"
+php artisan folio:page "users/[.App.Models.User]"
 
 # pages/users/[.App.Models.User].blade.php → /users/1
 ```
