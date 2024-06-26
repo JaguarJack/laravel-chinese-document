@@ -526,9 +526,9 @@ foreach ($users as $user) {
 
 尽管 `cursor` 方法的内存使用量远低于常规查询（因为每次只保留一个 Eloquent 模型在内存中），但最终仍会耗尽内存。这是[由于 PHP 的 PDO 驱动在其缓冲区内部缓存所有原始查询结果](https://www.php.net/manual/en/mysqlinfo.concepts.buffering.php)。如果您处理的是非常大量的 Eloquent 记录，请考虑使用 [`lazy` 方法](#chunking-using-lazy-collections)。
 
-### Advanced Subqueries（高级子查询）
+### 高级子查询
 
-#### Subquery Selects（子查询选择）
+#### 子查询选择
 
 Eloquent 还提供高级子查询支持，允许您在单个查询中从相关表中提取信息。例如，假设我们有一个飞行 `destinations` 的表和一个到达目的地的 `flights` 表。`flights` 表包含一个 `arrived_at` 列，指示飞机到达目的地的时间。
 
@@ -545,7 +545,7 @@ return Destination::addSelect(['last_flight' => Flight::select('name')
 ])->get();
 ```
 
-#### Subquery Ordering（子查询排序）
+#### 子查询排序
 
 此外，查询构造器的 `orderBy` 函数支持子查询。继续使用我们的飞行示例，我们可以使用此功能对所有目的地进行排序，基于最后一次航班到达目的地的时间。再次，这可以在执行单个数据库查询的同时完成：
 
@@ -558,7 +558,7 @@ return Destination::orderByDesc(
 )->get();
 ```
 
-## Retrieving Single Models / Aggregates（检索单个模型/聚合）
+## 检索单个模型/聚合
 
 除了根据给定查询检索所有匹配的记录之外，您还可以使用 `find`、`first` 或 `firstWhere` 方法检索单个记录。这些方法不是返回模型集合，而是返回单个模型实例：
 
@@ -587,7 +587,7 @@ $flight = Flight::where('legs', '>', 3)->firstOr(function () {
 });
 ```
 
-#### Not Found Exceptions（未找到的例外情况）
+#### 模型未找到异常
 
 有时候您可能希望在找不到模型时抛出异常。这在路由或控制器中特别有用。`findOrFail` 和 `firstOrFail` 方法将检索查询的第一个结果；但是，如果没有找到结果，将抛出 `Illuminate\Database\Eloquent\ModelNotFoundException` 异常：
 
@@ -607,7 +607,7 @@ Route::get('/api/flights/{id}', function (string $id) {
 });
 ```
 
-### Retrieving or Creating Models（检索或创建模型）
+### 检索或创建模型
 
 `firstOrCreate` 方法将尝试使用给定的列/值对定位数据库记录。如果在数据库中找不到模型，则将插入合并第一个数组参数与可选的第二个数组参数的属性的记录：
 
@@ -639,7 +639,7 @@ $flight = Flight::firstOrNew(
 );
 ```
 
-### Retrieving Aggregates（检索聚合）
+### 检索聚合
 
 在与 Eloquent 模型交互时，您还可以使用 `count`、`sum`、`max` 和其他 [聚合方法](/docs/11/database/queries#aggregates)提供的 Laravel [query builder](/docs/11/database/queries)。正如您所期望的，这些方法返回一个标量值而不是 Eloquent 模型实例：
 
@@ -649,9 +649,9 @@ $count = Flight::where('active', 1)->count();
 $max = Flight::where('active', 1)->max('price');
 ```
 
-## Inserting and Updating Models（插入和更新模型）
+## 插入和更新模型
 
-### Inserts（插入）
+### 插入
 
 当然，使用 Eloquent 时，我们不仅需要从数据库中检索模型。我们还需要插入新的记录。幸运的是，Eloquent 使其变得简单。要将新记录插入到数据库中，您应该实例化一个新的模型实例并设置模型的属性。然后，在模型实例上调用 `save` 方法：
 
@@ -699,7 +699,7 @@ $flight = Flight::create([
 
 但是，在使用 `create` 方法之前，您需要在模型类上指定 `fillable` 或 `guarded` 属性。这些属性是必需的，因为所有 Eloquent 模型默认受到大规模赋值漏洞的保护。要了解有关大规模赋值的更多信息，请参阅 [大规模赋值文档](#mass-assignment)。
 
-### Updates（更新）
+### 更新模型
 
 `save` 方法也可用来更新已存在于数据库中的模型。要更新模型，您应该检索它并设置您希望更新的任何属性。然后，应该调用模型的 `save` 方法。同样，`updated_at` 时间戳将自动更新，因此无需手动设置其值：
 
@@ -979,8 +979,9 @@ class Flight extends Model
 }
 ```
 
-> [!NOTE]  
-> `SoftDeletes` trait 会自动将 `deleted_at` 属性转换成一个 `DateTime` / `Carbon` 实例。
+:::warning
+`SoftDeletes` trait 会自动将 `deleted_at` 属性转换成一个 `DateTime` / `Carbon` 实例
+:::
 
 你应该还要在你的数据库表中添加 `deleted_at` 列。Laravel [模式构建器](/docs/11/database/migrations) 包含一个助手方法来创建此列：
 
@@ -1142,8 +1143,9 @@ Schedule::command('model:prune', [
 php artisan model:prune --pretend
 ```
 
-> [!WARNING]  
-> 如果软删除的模型符合可清理查询，则将被永久删除（`forceDelete`）。
+:::warning  
+如果软删除的模型符合可清理查询，则将被永久删除（`forceDelete`）。
+:::
 
 #### 批量清理
 
@@ -1249,10 +1251,10 @@ class AncientScope implements Scope
 }
 ```
 
-> [!NOTE]  
-> 如果你的全局作用域正在向查询的 select 子句中添加列，你应该使用 `addSelect` 方法而不是 `select`。这样可以防止无意中替换查询现有的 select 子句。
+:::info
+如果你的全局作用域正在向查询的 select 子句中添加列，你应该使用 `addSelect` 方法而不是 `select`。这样可以防止无意中替换查询现有的 select 子句。
+:::
 
-````php
 #### 应用全局作用域
 
 要给模型分配一个全局作用域，可以简单地在模型上使用 `ScopedBy` 属性：
@@ -1270,7 +1272,7 @@ class User extends Model
 {
     //
 }
-````
+```
 
 或者，你可以通过覆盖模型的 `booted` 方法并调用模型的 `addGlobalScope` 方法来手动注册全局作用域。`addGlobalScope` 方法接受作用域实例作为唯一参数：
 
@@ -1442,7 +1444,6 @@ $users = User::ofType('admin')->get();
 
 ## 比较模型
 
-````
 有时你可能需要确定两个模型是否是 "相同" 的。`is` 和 `isNot` 方法可用于快速验证两个模型是否具有相同的主键、表和数据库连接：
 
 ```php
@@ -1453,7 +1454,7 @@ if ($post->is($anotherPost)) {
 if ($post->isNot($anotherPost)) {
     // ...
 }
-````
+```
 
 当你使用 `belongsTo`, `hasOne`, `morphTo`, 和 `morphOne` [关系](/docs/11/eloquent/eloquent-relationships)时，`is` 和 `isNot` 方法也可以使用。当你想要比较相关模型而不发出查询来检索模型时，这个方法特别有用：
 
@@ -1465,8 +1466,9 @@ if ($post->author()->is($user)) {
 
 ## 事件
 
-> [!NOTE]
-> 想直接将 Eloquent 事件广播到你的客户端应用？查看 Laravel 的 [模型事件广播](/docs/11/digging-deeper/broadcasting#model-broadcasting)。
+:::info
+想直接将 Eloquent 事件广播到你的客户端应用？查看 Laravel 的 [模型事件广播](/docs/11/digging-deeper/broadcasting#model-broadcasting)。
+:::
 
 Eloquent 模型触发了几个事件，允许你挂接到模型生命周期的以下时刻：`retrieved`, `creating`, `created`, `updating`, `updated`, `saving`, `saved`, `deleting`, `deleted`, `trashed`, `forceDeleting`, `forceDeleted`, `restoring`, `restored`, 和 `replicating`。
 
@@ -1502,8 +1504,9 @@ class User extends Authenticatable
 
 在定义并映射你的 Eloquent 事件后，你可以使用[事件监听器](/docs/11/packages/sail#defining-listeners)来处理事件。
 
-> [!WARNING]
-> 当通过 Eloquent 发起大规模更新或删除查询时，不会为受影响的模型调度 `saved`, `updated`, `deleting`, 和 `deleted` 模型事件。这是因为在执行大规模更新或删除时，模型根本不会被检索。
+:::warning
+当通过 Eloquent 发起大规模更新或删除查询时，不会为受影响的模型调度 `saved`, `updated`, `deleting`, 和 `deleted` 模型事件。这是因为在执行大规模更新或删除时，模型根本不会被检索。
+:::
 
 ### 使用闭包
 
