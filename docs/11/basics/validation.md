@@ -862,7 +862,6 @@ The credit card number field is required when payment type is credit card.
 
 下面是所有可用的验证规则及其功能的列表：
 
-````markdown
 ## 可用的验证规则
 
 以下是所有可用的验证规则及其功能的列表：
@@ -989,7 +988,6 @@ The credit card number field is required when payment type is credit card.
 ```php
 'start_date' => 'required|date|after:tomorrow'
 ```
-````
 
 除了传递一个由 `strtotime` 评估的日期字符串，您还可以指定另一个字段与日期进行比较：
 
