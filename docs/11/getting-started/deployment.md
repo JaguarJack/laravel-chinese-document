@@ -72,6 +72,20 @@ server {
 }
 ```
 
+### 使用 FrankenPHP 运行 Laravel 应用
+
+FrankenPHP 也可以用于服务您的 Laravel 应用。FrankenPHP 是一个由 Go 语言编写的现代 PHP 应用服务器。要使用 FrankenPHP 服务 Laravel PHP 应用，只需调用其 `php-server` 命令：
+
+```bash
+frankenphp php-server -r public/
+```
+
+要利用 FrankenPHP 支持的更强大功能，例如其与 Laravel Octane 的集成、HTTP/3、现代压缩技术或将 Laravel 应用打包为独立二进制文件的能力，请查阅 FrankenPHP 的 Laravel 文档。
+
+### 目录权限
+
+Laravel 需要对 `bootstrap/cache` 和 `storage` 目录进行写操作，因此您应确保 Web 服务器进程拥有写入这些目录的权限。
+
 ## 优化
 
 在将应用程序部署到生产环境时，有多种文件应该被缓存，包括您的配置、事件、路由和视图。Laravel 提供了一个方便的 `optimize` Artisan 命令，将缓存所有这些文件。通常，此命令应该作为应用程序部署过程的一部分被调用：
@@ -98,8 +112,9 @@ php artisan config:cache
 
 此命令将把 Laravel 的所有配置文件合并到一个单一的缓存文件中，这大大减少了框架在加载配置值时必须对文件系统进行的访问次数。
 
-> [!WARNING]
-> 如果您在部署过程中执行 `config:cache` 命令，您应该确保只从配置文件中调用 `env` 函数。一旦配置被缓存，`.env` 文件将不会被加载，所有对 `.env` 变量的 `env` 函数调用都将返回 `null`。
+:::warning
+如果您在部署过程中执行 `config:cache` 命令，您应该确保只从配置文件中调用 `env` 函数。一旦配置被缓存，`.env` 文件将不会被加载，所有对 `.env` 变量的 `env` 函数调用都将返回 `null`。
+:::
 
 ### 事件缓存
 
@@ -160,8 +175,9 @@ Laravel 包括一个内置的健康检查路由，可用于监控您的应用程
 
 Laravel Forge 可以在 DigitalOcean、Linode、AWS 等各种基础设施提供商上创建服务器。此外，Forge 安装并管理构建健壮的 Laravel 应用程序所需的所有工具，如 Nginx、MySQL、Redis、Memcached、Beanstalk 等。
 
-> [!NOTE]
-> 想要完整的使用 Laravel Forge 部署指南？查看 [Laravel Bootcamp](https://bootcamp.laravel.com/deploying) 和在 Laracasts 上可用的 Forge [视频系列](https://laracasts.com/series/learn-laravel-forge-2022-edition)。
+:::info
+想要完整的使用 Laravel Forge 部署指南？查看 [Laravel Bootcamp](https://bootcamp.laravel.com/deploying) 和在 Laracasts 上可用的 Forge [视频系列](https://laracasts.com/series/learn-laravel-forge-2022-edition)。
+:::
 
 #### Laravel Vapor
 
