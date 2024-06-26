@@ -321,5 +321,6 @@ public function boot(): void
 }
 ```
 
-> [!NOTE]
-> 您不应该在 `hydrated` 回调中使用 `Context` facade，确保您只对传递给回调的存储库进行更改。
+:::info
+您不应该在 `hydrated` 回调中使用 `Context` facade，确保您只对传递给回调的存储库进行更改。
+:::
