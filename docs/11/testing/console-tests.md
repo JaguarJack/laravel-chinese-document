@@ -20,8 +20,6 @@ test('console command', function () {
 });
 ```
 
-````
-
 ```php
 /**
  * 测试控制台命令。
@@ -172,4 +170,3 @@ class ConsoleEventTest extends TestCase
     // ...
 }
 ```
-````
