@@ -438,7 +438,6 @@ class ExampleTest extends DuskTestCase
     });
 ```
 
-````markdown
 ### 认证
 
 在测试需要认证的页面时，您可以使用 Dusk 的 `loginAs` 方法来避免在每个测试中都与应用程序的登录屏幕进行交互。`loginAs` 方法接受与您的可认证模型相关联的主键或可认证模型实例：
@@ -452,7 +451,6 @@ class ExampleTest extends DuskTestCase
                 ->visit('/home');
     });
 ```
-````
 
 > [!WARNING]  
 > 使用 `loginAs` 方法后，用户会话将在文件中的所有测试中保持。
