@@ -210,7 +210,6 @@ php artisan dusk:fails
 php artisan dusk --group=foo
 ```
 
-````markdown
 > [!NOTE]  
 > 如果您正在使用 Laravel Sail 来管理您的本地开发环境，请参阅 Sail 文档中关于 [配置和运行 Dusk 测试](/docs/11/packages/sail#laravel-dusk) 的部分。
 
@@ -229,7 +228,6 @@ php artisan dusk --group=foo
         // static::startChromeDriver();
     }
 ```
-````
 
 此外，如果您在 9515 端口以外启动了 ChromeDriver，您应该修改同类中的 `driver` 方法以反映正确的端口：
 
@@ -440,7 +438,6 @@ class ExampleTest extends DuskTestCase
     });
 ```
 
-````markdown
 ### 认证
 
 在测试需要认证的页面时，您可以使用 Dusk 的 `loginAs` 方法来避免在每个测试中都与应用程序的登录屏幕进行交互。`loginAs` 方法接受与您的可认证模型相关联的主键或可认证模型实例：
@@ -454,7 +451,6 @@ class ExampleTest extends DuskTestCase
                 ->visit('/home');
     });
 ```
-````
 
 > [!WARNING]  
 > 使用 `loginAs` 方法后，用户会话将在文件中的所有测试中保持。
