@@ -1,4 +1,4 @@
-# Lavevel Pulse
+# Laravel Pulse
 
 [[toc]]
 
