@@ -1268,6 +1268,22 @@ $number = Number::spell(10, until: 10);
 // 10
 ```
 
+#### Number::trim()
+
+Number::trim 方法删除给定数字小数点后的最后一个`零`
+
+```php
+use Illuminate\Support\Number;
+
+$number = Number::trim(12.0);
+
+// 12
+
+$number = Number::trim(12.30);
+
+// 12.3
+```
+
 #### `Number::useLocale()`
 
 `Number::useLocale` 方法全局设置默认数字区域设置，这影响了 `Number` 类方法后续调用时数字和货币的格式化方式：
