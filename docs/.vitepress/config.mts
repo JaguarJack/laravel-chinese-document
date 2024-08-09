@@ -39,6 +39,10 @@ export default defineConfig({
         link: 'https://catchadmin.com'
       },
       {
+        text: '入门教程',
+        link: 'https://laravel-study.catchadmin.com/start/hello-laravel'
+      },
+      {
         text: '11.x',
         items: [
           { text: '11.x', link: '/docs/11/prologue/release' }
